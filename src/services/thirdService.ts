@@ -1,5 +1,5 @@
 import requestService from "./requestService";
-import { ApiResponse } from "../types/index";
+import { ApiResponse, User } from "../types/index";
 
 // 数据服务类
 class ThirdService {
@@ -82,6 +82,13 @@ class ThirdService {
     return requestService.post<ApiResponse<any>>(
       "/rwpt/thirdservice/hk/stats/notice",
       data
+    );
+  }
+
+  // 获取当前登录用户
+  public async currentUser(): Promise<ApiResponse<User>> {
+    return requestService.post<ApiResponse<User>>(
+      "/rwpt/thirdservice/JN/current/user/info"
     );
   }
 }

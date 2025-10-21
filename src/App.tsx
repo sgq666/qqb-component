@@ -11,6 +11,7 @@ import FgExcel from "./pages/fgExcel";
 import Hello from "./pages/Hello";
 import Fulltext from "./pages/Fulltext";
 import Notice from "./pages/Notice";
+import NoticeNew from "./pages/NoticeNew";
 import TestDecrypt from "./pages/TestDecrypt/indext"; // 添加解密测试页面
 import { message, notification } from "antd";
 
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/fulltext" component={Fulltext} />
           <Route exact path="/notice" component={Notice} />
           <Route exact path="/testDecrypt" component={TestDecrypt} /> {/* 添加解密测试路由 */}
+          <Route exact path="/noticeNew" component={NoticeNew} />
         </Switch>
       </Router>
     </ConfigProvider>
