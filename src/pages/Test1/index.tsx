@@ -427,7 +427,7 @@ const Test1: React.FC = () => {
                           >
                             <Image
                               src={
-                                process.env.REACT_APP_API_BASE_URL +
+                                process.env.REACT_APP_NGINX_BASE_URL +
                                 "/" +
                                 img.fileDownloadUrlBase64
                               }

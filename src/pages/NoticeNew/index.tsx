@@ -556,19 +556,18 @@ const NoticeNew: React.FC = () => {
         triggerVibration();
         showBrowserNotification(data.size);
         message.success(`检测到 ${data.size} 个新任务！`);
+        // 每次检查完成后,有发现新任务才更新startTime为当前时间
+        const newStartTime = new Date().toISOString();
+        console.log("⏰ 更新startTime:", {
+          请求时使用的时间: formatDateTime(currentStartTime),
+          更新后的时间: formatDateTime(newStartTime),
+        });
+        // 同时更新状态和引用
+        setStartTime(newStartTime);
+        startTimeRef.current = newStartTime;
       } else {
         console.log("✅ 检查完成：暂无新任务");
       }
-
-      // 每次检查完成后更新startTime为当前时间
-      const newStartTime = new Date().toISOString();
-      console.log("⏰ 更新startTime:", {
-        请求时使用的时间: formatDateTime(currentStartTime),
-        更新后的时间: formatDateTime(newStartTime),
-      });
-      // 同时更新状态和引用
-      setStartTime(newStartTime);
-      startTimeRef.current = newStartTime;
     } catch (error) {
       console.error("检查新任务失败:", error);
       message.error("检查新任务失败，请检查网络连接");
@@ -581,12 +580,6 @@ const NoticeNew: React.FC = () => {
       const validDepartments = (departments as string[]).filter(
         (dept: string) => dept && dept.trim() !== ""
       );
-      const deptCodes =
-        validDepartments.length > 0
-          ? validDepartments
-          : currentUser?.deptCode
-          ? [currentUser.deptCode]
-          : [];
 
       // 即使出错也记录历史
       const historyItem: ListenHistoryItem = {
@@ -858,14 +851,12 @@ const NoticeNew: React.FC = () => {
             // 如果用户所在部门层级大于deptLevel，需要向上查找
             let currentDept: ExtendedDataNode | undefined = userDept;
             let currentDeptParentCode: string | undefined = undefined; // 明确声明类型
-            
+
             // 提取查找父级部门的逻辑到循环外部，避免在循环中创建函数
             const findParentDept = (parentCode: string | undefined) => {
-              return taskRes.data.find(
-                (dept) => dept.deptCode === parentCode
-              );
+              return taskRes.data.find((dept) => dept.deptCode === parentCode);
             };
-            
+
             while (
               currentDept &&
               (currentDept.deptLevel || 0) > Number(deptLevel)
@@ -940,12 +931,12 @@ const NoticeNew: React.FC = () => {
     if (hasAutoStartedListening.current) {
       return;
     }
-    
+
     // 只有在taskIds存在且不为"-1"时才自动开始监听
     if (taskIds && taskIds !== "-1") {
       // 标记已自动开始监听，避免重复触发
       hasAutoStartedListening.current = true;
-      
+
       loadInitialData().then(() => {
         // 数据加载完成后，检查是否有taskIds参数
         // 将逗号分隔的字符串转换为数组

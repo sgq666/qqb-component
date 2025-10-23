@@ -60,16 +60,31 @@ class RequestService {
           message.error(response.data.message || "请求失败");
           return Promise.reject(new Error(response.data.message || "请求失败"));
         }
-        
+      
         // 只有在环境变量REACT_APP_DECRY等于1时才对响应数据中的data字段进行解密处理
         if (this.NEED_DECRYPT && response.data && response.data.data) {
           try {
-            response.data.data = this.decryptData(response.data.data);
+            const decryptedData = this.decryptData(response.data.data);
+          
+            // 尝试将解密后的字符串解析为JSON对象
+            try {
+              const parsedData = JSON.parse(decryptedData);
+              // 确保解析后的数据是对象或数组，而不是字符串、数字等基本类型
+              if (typeof parsedData === 'object' && parsedData !== null) {
+                response.data.data = parsedData;
+              } else {
+                // 如果解析结果不是对象或数组，保持原始字符串
+                response.data.data = decryptedData;
+              }
+            } catch (parseError) {
+              // 如果解析失败，保持原始字符串
+              response.data.data = decryptedData;
+            }
           } catch (e) {
             console.warn("数据解密失败:", e);
           }
         }
-        
+      
         return response.data;
       },
       (error: AxiosError) => {
@@ -86,6 +101,17 @@ class RequestService {
    */
   private decryptData(encrypted: string): string {
     try {
+      // 检查输入是否为空
+      if (!encrypted) {
+        throw new Error("加密数据不能为空");
+      }
+      
+      // 检查是否是有效的Base64字符串
+      const base64Regex = /^[A-Za-z0-9+/]*={0,2}$/;
+      if (!base64Regex.test(encrypted)) {
+        message.error("输入的数据不是有效的Base64格式");
+      }
+      
       // 将密钥和IV转换为CryptoJS格式
       const key = CryptoJS.enc.Utf8.parse(this.AES_KEY);
       const iv = CryptoJS.enc.Utf8.parse(this.AES_IV);
@@ -98,21 +124,54 @@ class RequestService {
         padding: CryptoJS.pad.Pkcs7
       });
       
+      // 检查解密结果
+      if (!decrypted || decrypted.toString() === '') {
+        throw new Error("解密失败，可能是密钥或IV不匹配，或者输入数据已损坏");
+      }
+      
       // 转换为UTF-8字符串
-      return decrypted.toString(CryptoJS.enc.Utf8);
+      const result = decrypted.toString(CryptoJS.enc.Utf8);
+      
+      // 检查解密结果是否为空
+      if (result === null || result === undefined) {
+        throw new Error("解密结果为空，可能是密钥或IV不匹配");
+      }
+      
+      return result;
     } catch (error) {
       console.error("解密失败:", error);
-      throw error;
+      console.error("输入的加密数据:", encrypted);
+      // 提供更详细的错误信息
+      if (error instanceof Error) {
+        throw new Error(`解密失败: ${error.message}`);
+      } else {
+        throw new Error("解密失败: 未知错误");
+      }
     }
   }
 
   /**
    * 公共解密方法，可以在其他地方使用
    * @param encrypted Base64编码的加密数据
-   * @returns 解密后的字符串
+   * @returns 解密后的数据（如果是JSON格式会自动解析为对象）
    */
-  public decrypt(encrypted: string): string {
-    return this.decryptData(encrypted);
+  public decrypt(encrypted: string): any {
+    const decryptedData = this.decryptData(encrypted);
+    
+    // 尝试将解密后的字符串解析为JSON对象
+    try {
+      const parsedData = JSON.parse(decryptedData);
+      // 确保解析后的数据是对象或数组，而不是字符串、数字等基本类型
+      if (typeof parsedData === 'object' && parsedData !== null) {
+        return parsedData;
+      } else {
+        // 如果解析结果不是对象或数组，返回原始字符串
+        return decryptedData;
+      }
+    } catch (parseError) {
+      // 如果解析失败，返回原始字符串
+      return decryptedData;
+    }
   }
 
   private handleError(error: AxiosError) {

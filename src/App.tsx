@@ -13,6 +13,7 @@ import Fulltext from "./pages/Fulltext";
 import Notice from "./pages/Notice";
 import NoticeNew from "./pages/NoticeNew";
 import TestDecrypt from "./pages/TestDecrypt/indext"; // 添加解密测试页面
+import Ldrk from "./pages/Ldrk"; // 添加流动人口Excel读取页面
 import { message, notification } from "antd";
 
 // 配置 message 和 notification 的默认配置
@@ -44,6 +45,7 @@ function App() {
           <Route exact path="/notice" component={Notice} />
           <Route exact path="/testDecrypt" component={TestDecrypt} /> {/* 添加解密测试路由 */}
           <Route exact path="/noticeNew" component={NoticeNew} />
+          <Route exact path="/ldrk" component={Ldrk} /> {/* 添加流动人口Excel读取路由 */}
         </Switch>
       </Router>
     </ConfigProvider>
