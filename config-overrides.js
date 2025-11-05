@@ -29,5 +29,11 @@ module.exports = function override(config, env) {
     "./cptable": "xlsx-style/dist/cpexcel.js",
   };
 
+  // 在生产环境中确保静态资源可以添加请求头
+  if (env === 'production') {
+    // 为静态资源添加请求头的配置
+    // 注意：这需要在服务器端配置，或者通过Service Worker实现
+  }
+
   return config;
 };

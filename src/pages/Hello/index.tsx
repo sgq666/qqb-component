@@ -20,6 +20,9 @@ const routes: RouteInfo[] = [
   { path: "/hyb", name: "附件审批", description: "HyB附件审批" },
   { path: "/fulltext", name: "富文本展示", description: "可以编辑和展示富文本信息" },
   { path: "/notice", name: "检测任务", description: "检测任务下发，并且发出提示" },
+  { path: "/api-tester", name: "测试接口请求", description: "用于测试API接口的工具，可以发送各种HTTP请求并查看响应结果" },
+  { path: "/data-matcher", name: "数据匹配工具", description: "用于匹配两个数组：支持字符串数组或包含name/code字段的对象数组，支持code精确匹配和文本相似度匹配" },
+  { path: "/tools", name: "实用工具集", description: "Base64图片显示和XML转JSON工具" }
 ];
 
 const Hello: React.FC = () => {

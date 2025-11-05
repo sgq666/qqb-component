@@ -20,7 +20,6 @@ import {
 } from "@ant-design/icons";
 import thirdservice from "../../services/thirdService";
 import { ApiResponse } from "../../types/index";
-import DecryptTest from './DecryptTest'; // 引入解密测试组件
 // import demoData from "./data";
 
 const { Text } = Typography;
@@ -68,7 +67,6 @@ const Test1: React.FC = () => {
     null
   );
   const [unsavedChanges, setUnsavedChanges] = useState<boolean>(false); // 新增状态跟踪未保存的更改
-  const [showDecryptTest, setShowDecryptTest] = useState<boolean>(false); // 控制是否显示解密测试组件
 
   // 修改 searchParams 的获取方式，支持 hash 路由
   const searchParams = useMemo(() => {
@@ -104,7 +102,32 @@ const Test1: React.FC = () => {
         const result: ApiResponse<string> = await thirdservice.getSuffFile({
           id,
         });
-        setData(JSON.parse(result.data));
+        
+        // 兼容处理可能返回的数组字符串或数组
+        let parsedData: StuffItem[] = [];
+        if (typeof result.data === 'string') {
+          try {
+            const data = JSON.parse(result.data);
+            // 确保解析后的数据是数组
+            if (Array.isArray(data)) {
+              parsedData = data;
+            } else {
+              // 如果不是数组，将其包装在数组中
+              parsedData = [data];
+            }
+          } catch (parseError) {
+            console.error("解析数据失败:", parseError);
+            message.error("数据格式错误");
+            return;
+          }
+        } else if (Array.isArray(result.data)) {
+          parsedData = result.data;
+        } else {
+          // 如果是对象但不是数组，将其包装在数组中
+          parsedData = [result.data];
+        }
+        
+        setData(parsedData);
         // setData(demoData);
 
         // 初始化问题数据
@@ -325,11 +348,6 @@ const Test1: React.FC = () => {
     }
   };
 
-  // 切换解密测试组件显示状态
-  const toggleDecryptTest = () => {
-    setShowDecryptTest(!showDecryptTest);
-  };
-
   return (
     <div style={{ padding: "20px" }}>
       {/* 固定在顶部的问题反馈区域 */}
@@ -368,17 +386,10 @@ const Test1: React.FC = () => {
               <Button icon={<VerticalAlignTopOutlined />} onClick={scrollToTop}>
                 返回顶部
               </Button>
-              {/* 添加解密测试按钮 */}
-              <Button onClick={toggleDecryptTest}>
-                {showDecryptTest ? "隐藏解密测试" : "显示解密测试"}
-              </Button>
             </Space>
           </Space>
         </Card>
       </Affix>
-
-      {/* 条件渲染解密测试组件 */}
-      {showDecryptTest && <DecryptTest />}
 
       <Card title="图片展示页面">
         <Space direction="vertical" style={{ width: "100%" }}>
@@ -427,7 +438,7 @@ const Test1: React.FC = () => {
                           >
                             <Image
                               src={
-                                process.env.REACT_APP_NGINX_BASE_URL +
+                                process.env.REACT_APP_API_BASE_URL +
                                 "/" +
                                 img.fileDownloadUrlBase64
                               }

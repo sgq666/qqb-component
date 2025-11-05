@@ -13,7 +13,11 @@ import Fulltext from "./pages/Fulltext";
 import Notice from "./pages/Notice";
 import NoticeNew from "./pages/NoticeNew";
 import TestDecrypt from "./pages/TestDecrypt/indext"; // 添加解密测试页面
-import Ldrk from "./pages/Ldrk"; // 添加流动人口Excel读取页面
+import Ldrk from "./pages/Ldrk/index"; // 添加流动人口Excel读取页面
+import ApiTester from "./pages/ApiTester"; // 添加API测试页面
+import DataMatcher from "./pages/DataMatcher"; // 添加数据匹配页面
+import Tools from "./pages/Tools"; // 添加实用工具页面
+import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
 // 配置 message 和 notification 的默认配置
@@ -31,6 +35,8 @@ notification.config({
 function App() {
   return (
     <ConfigProvider locale={zhCN}>
+      {/* 添加 vConsole 控制按钮 */}
+      <VConsoleButton />
       <Router>
         <Switch>
           <Route exact path="/" component={Hello} />
@@ -46,6 +52,9 @@ function App() {
           <Route exact path="/testDecrypt" component={TestDecrypt} /> {/* 添加解密测试路由 */}
           <Route exact path="/noticeNew" component={NoticeNew} />
           <Route exact path="/ldrk" component={Ldrk} /> {/* 添加流动人口Excel读取路由 */}
+          <Route exact path="/api-tester" component={ApiTester} /> {/* 添加API测试路由 */}
+          <Route exact path="/data-matcher" component={DataMatcher} /> {/* 添加数据匹配路由 */}
+          <Route exact path="/tools" component={Tools} /> {/* 添加实用工具路由 */}
         </Switch>
       </Router>
     </ConfigProvider>

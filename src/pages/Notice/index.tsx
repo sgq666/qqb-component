@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { TreeSelect, InputNumber, Button, message, Card, Space } from "antd";
 import type { TreeSelectProps } from "antd";
 import thirdservice from "../../services/thirdService";
@@ -208,6 +208,7 @@ const Notice: React.FC = () => {
   const taskIds = searchParams.get("taskIds") || "";
   const interval = searchParams.get("interval") || 1;
   const [hasNotice, setHasNotice] = useState<boolean>(false);
+  const [title, setTitle] = useState<string>(document.title);
   const [businessTopics, setBusinessTopics] = useState<string[]>([]);
   const [departments, setDepartments] = useState<string[]>([]);
   const [intervalMinutes, setIntervalMinutes] = useState<number>(5);
@@ -230,217 +231,6 @@ const Notice: React.FC = () => {
   const countdownRef = useRef<NodeJS.Timeout | null>(null); // 用于控制倒计时
   const startTimeRef = useRef<string>(new Date().toISOString()); // 用于保存最新的startTime
 
-  // 播放提示音
-  const playSound = useCallback(() => {
-    try {
-      if (audioRef.current) {
-        // 重置音频到开始位置
-        audioRef.current.currentTime = 0;
-        audioRef.current.play().catch((e: any) => {
-          console.log(
-            "提示音播放失败，可能是浏览器限制或音频文件问题:",
-            e.message
-          );
-          console.log("🔔 新任务提醒！");
-        });
-      } else {
-        console.log("🔔 新任务提醒！（音频未初始化）");
-      }
-    } catch (e) {
-      console.log("Audio play error:", e);
-    }
-  }, []);
-
-  // 开始持续播放提示音
-  const startContinuousSound = useCallback(() => {
-    // 先清除之前的定时器
-    if (audioIntervalRef.current) {
-      clearInterval(audioIntervalRef.current);
-    }
-
-    // 立即播放一次
-    playSound();
-
-    // 设置循环播放，每3秒播放一次
-    audioIntervalRef.current = setInterval(() => {
-      playSound();
-    }, 2000); // 每3秒播放一次
-
-    console.log("🔄 开始持续播放提示音");
-  }, [playSound]);
-
-  // 停止持续播放提示音
-  const stopContinuousSound = () => {
-    if (audioIntervalRef.current) {
-      clearInterval(audioIntervalRef.current);
-      audioIntervalRef.current = null;
-      console.log("⏹️ 停止持续播放提示音");
-    }
-  };
-
-  // 检查是否有新任务
-  const checkForNewTasks = useCallback(async (taskIdsParam?: string[]) => {
-    try {
-      console.log("📡 检查新任务中...");
-
-      // 记录请求前的时间，用于参数 - 使用 ref 获取最新值
-      const currentStartTime = startTimeRef.current;
-      
-      // 使用传入的taskIdsParam或默认的businessTopics
-      const effectiveTaskIds = taskIdsParam !== undefined ? taskIdsParam : businessTopics;
-      
-      console.log("🔍 调试信息:", {
-        deptCodes: departments,
-        taskIds: effectiveTaskIds,
-        startTime: formatDateTime(currentStartTime),
-        当前时间: formatDateTime(new Date().toISOString()),
-      });
-
-      // 添加额外的调试信息
-      console.log("🔍 详细调试信息:", {
-        departmentsLength: departments.length,
-        businessTopicsLength: effectiveTaskIds.length,
-        departmentsContent: departments,
-        businessTopicsContent: effectiveTaskIds,
-        isDepartmentsArray: Array.isArray(departments),
-        isBusinessTopicsArray: Array.isArray(effectiveTaskIds),
-      });
-
-      const noticeRes: ApiResponse<any> = await thirdservice.notice({
-        deptCodes: departments,
-        taskIds: effectiveTaskIds, // 使用effectiveTaskIds而不是businessTopics
-        startTime: formatDateTime(currentStartTime),
-      });
-      const data = noticeRes.data;
-
-      // 调试用模拟数据，暂时返回无新任务
-      // const data = { size: 1 }; // 调试时返回0，避免连续触发提醒
-
-      if (data.size > 0) {
-        console.log(`✅ 检查完成：发现 ${data.size} 个新任务`);
-        setHasNotice(true);
-        startContinuousSound(); // 开始持续播放提示音
-        triggerVibration();
-        showBrowserNotification(data.size);
-        message.success(`检测到 ${data.size} 个新任务！`);
-      } else {
-        console.log("✅ 检查完成：暂无新任务");
-      }
-
-      // 每次检查完成后更新startTime为当前时间
-      const newStartTime = new Date().toISOString();
-      console.log("⏰ 更新startTime:", {
-        请求时使用的时间: formatDateTime(currentStartTime),
-        更新后的时间: formatDateTime(newStartTime),
-      });
-      // 同时更新状态和引用
-      setStartTime(newStartTime);
-      startTimeRef.current = newStartTime;
-    } catch (error) {
-      console.error("检查新任务失败:", error);
-      message.error("检查新任务失败，请检查网络连接");
-    }
-  }, [businessTopics, departments, startTimeRef, startContinuousSound]);
-
-  // 开始倒计时
-  const startCountdown = useCallback((seconds: number) => {
-    setCountdown(seconds);
-
-    if (countdownRef.current) {
-      clearInterval(countdownRef.current);
-    }
-
-    countdownRef.current = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev <= 1) {
-          if (countdownRef.current) {
-            clearInterval(countdownRef.current);
-            countdownRef.current = null;
-          }
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-  }, [countdownRef, setCountdown]);
-
-  // 将 startListening 函数移到这里，在 useEffect 之前声明
-  const startListening = useCallback((intervalValue?: number, taskIdsParam?: string[]) => {
-    // 业务专题必须选中至少一个
-    // 使用传入的taskIdsParam或默认的businessTopics
-    const effectiveTaskIds = taskIdsParam !== undefined ? taskIdsParam : businessTopics;
-    console.log("businessTopics:{}", effectiveTaskIds);
-    
-    if (effectiveTaskIds.length === 0) {
-      // 当taskIds为"-1"时不显示警告，因为这是特殊标识
-      if (!taskIds) {
-        // 只有手动点击时才显示警告
-        message.warning("请选择至少一个业务专题");
-        return;
-      }
-    }
-
-    // 使用传入的intervalValue或默认的intervalMinutes
-    const effectiveInterval = intervalValue !== undefined ? intervalValue : intervalMinutes;
-    
-    if (!effectiveInterval || effectiveInterval <= 0) {
-      message.warning("请输入有效的监听间隔");
-      return;
-    }
-
-    setIsListening(true);
-    const newStartTime = new Date().toISOString();
-    setStartTime(newStartTime);
-    startTimeRef.current = newStartTime; // 同时更新ref
-    message.success("开始监听任务");
-
-    // 立即执行一次检查，传递taskIdsParam参数
-    checkForNewTasks(taskIdsParam);
-    
-    // 开始倒计时
-    startCountdown(effectiveInterval * 60);
-
-    // 设置定时器
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
-
-    intervalRef.current = setInterval(() => {
-      // 修复：不传递taskIdsParam参数，让checkForNewTasks函数内部自己判断使用哪个值
-      // 这样可以确保每次都使用最新的businessTopics状态值
-      checkForNewTasks();
-      // 重新开始倒计时 - 在checkForNewTasks完成后重新开始倒计时
-      // 通过延迟一小段时间确保状态更新完成
-      setTimeout(() => {
-        startCountdown(effectiveInterval * 60);
-      }, 100);
-    }, effectiveInterval * 60 * 1000);
-  }, [businessTopics, intervalMinutes, taskIds, checkForNewTasks, startCountdown]);
-
-  // 初始化加载数据
-  const loadInitialData = useCallback(async () => {
-    setDataLoading(true);
-    try {
-      // 并行请求业务专题和责任单位数据
-      const [businessTopicsResponse, departmentsResponse] = await Promise.all([
-        loadBusinessTopics(),
-        loadDepartments(),
-      ]);
-
-      setBusinessTopicsData(businessTopicsResponse);
-      setDepartmentsData(departmentsResponse);
-      console.log("✅ 数据加载完成");
-    } catch (error) {
-      console.error("数据加载失败:", error);
-      message.error("数据加载失败，请刷新页面重试");
-      // 如果接口失败，使用模拟数据作为备选
-      setBusinessTopicsData(mockBusinessTopics);
-      setDepartmentsData(mockDepartments);
-    } finally {
-      setDataLoading(false);
-    }
-  }, []);
-
   // 初始化加载数据
   useEffect(() => {
     loadInitialData().then(() => {
@@ -457,26 +247,20 @@ const Notice: React.FC = () => {
 
         // 设置选中的业务专题
         setBusinessTopics(taskIdArray);
-        console.log("设置后的业务专题ID：", taskIdArray); // 使用taskIdArray而不是businessTopics状态
-        
+        console.log("有效的业务专题ID1：", taskIdArray); // 使用taskIdArray而不是businessTopics状态
         // 如果有有效的业务专题，则自动开始监听
         if (taskIdArray.length > 0) {
-          let intervalValue = 5; // 默认间隔5分钟
           if (interval && !isNaN(Number(interval)) && Number(interval) > 0) {
-            intervalValue = Number(interval);
+            setIntervalMinutes(Number(interval));
           }
-          
-          // 直接使用intervalValue而不是通过状态，因为状态更新是异步的
-          setIntervalMinutes(intervalValue);
-          
           // 延迟一小段时间确保状态更新完成后再开始监听
           setTimeout(() => {
-            startListening(intervalValue, taskIdArray);
+            startListening();
           }, 100);
         }
       }
     });
-  }, [taskIds, interval, loadInitialData, startListening]);
+  }, []);
 
   // 初始化音频
   useEffect(() => {
@@ -529,6 +313,30 @@ const Notice: React.FC = () => {
       }
     };
   }, []);
+
+  // 加载初始数据
+  const loadInitialData = async () => {
+    setDataLoading(true);
+    try {
+      // 并行请求业务专题和责任单位数据
+      const [businessTopicsResponse, departmentsResponse] = await Promise.all([
+        loadBusinessTopics(),
+        loadDepartments(),
+      ]);
+
+      setBusinessTopicsData(businessTopicsResponse);
+      setDepartmentsData(departmentsResponse);
+      console.log("✅ 数据加载完成");
+    } catch (error) {
+      console.error("数据加载失败:", error);
+      message.error("数据加载失败，请刷新页面重试");
+      // 如果接口失败，使用模拟数据作为备选
+      setBusinessTopicsData(mockBusinessTopics);
+      setDepartmentsData(mockDepartments);
+    } finally {
+      setDataLoading(false);
+    }
+  };
 
   // 加载业务专题数据
   const loadBusinessTopics = async (): Promise<ExtendedDataNode[]> => {
@@ -586,22 +394,21 @@ const Notice: React.FC = () => {
 
   // 页面标题闪烁
   useEffect(() => {
-    const originalTitle = document.title;
     let interval: NodeJS.Timeout;
     if (hasNotice) {
       interval = setInterval(() => {
         document.title =
-          document.title === originalTitle ? "【新消息】" + originalTitle : originalTitle;
+          document.title === title ? "【新消息】" + title : title;
       }, 1000);
     } else {
-      document.title = originalTitle;
+      document.title = title;
     }
 
     return () => {
       clearInterval(interval);
-      document.title = originalTitle;
+      document.title = title;
     };
-  }, [hasNotice]);
+  }, [hasNotice, title]);
 
   // 获取业务专题所有叶子节点的值（只能选择叶子节点）
   const getBusinessTopicLeafValues = (
@@ -685,6 +492,104 @@ const Notice: React.FC = () => {
     setDepartments(filteredValues);
   };
 
+  // 检查是否有新任务
+  const checkForNewTasks = async () => {
+    try {
+      console.log("📡 检查新任务中...");
+
+      // 记录请求前的时间，用于参数 - 使用 ref 获取最新值
+      const currentStartTime = startTimeRef.current;
+      console.log("🔍 调试信息:", {
+        deptCodes: departments,
+        taskIds: businessTopics,
+        startTime: formatDateTime(currentStartTime),
+        当前时间: formatDateTime(new Date().toISOString()),
+      });
+
+      const noticeRes: ApiResponse<any> = await thirdservice.notice({
+        deptCodes: departments,
+        taskIds: businessTopics,
+        startTime: formatDateTime(currentStartTime),
+      });
+      const data = noticeRes.data;
+
+      // 调试用模拟数据，暂时返回无新任务
+      // const data = { size: 1 }; // 调试时返回0，避免连续触发提醒
+
+      if (data.size > 0) {
+        console.log(`✅ 检查完成：发现 ${data.size} 个新任务`);
+        setHasNotice(true);
+        startContinuousSound(); // 开始持续播放提示音
+        triggerVibration();
+        showBrowserNotification(data.size);
+        message.success(`检测到 ${data.size} 个新任务！`);
+      } else {
+        console.log("✅ 检查完成：暂无新任务");
+      }
+
+      // 每次检查完成后更新startTime为当前时间
+      const newStartTime = new Date().toISOString();
+      console.log("⏰ 更新startTime:", {
+        请求时使用的时间: formatDateTime(currentStartTime),
+        更新后的时间: formatDateTime(newStartTime),
+      });
+      // 同时更新状态和引用
+      setStartTime(newStartTime);
+      startTimeRef.current = newStartTime;
+    } catch (error) {
+      console.error("检查新任务失败:", error);
+      message.error("检查新任务失败，请检查网络连接");
+    }
+  };
+
+  // 播放提示音
+  const playSound = () => {
+    try {
+      if (audioRef.current) {
+        // 重置音频到开始位置
+        audioRef.current.currentTime = 0;
+        audioRef.current.play().catch((e: any) => {
+          console.log(
+            "提示音播放失败，可能是浏览器限制或音频文件问题:",
+            e.message
+          );
+          console.log("🔔 新任务提醒！");
+        });
+      } else {
+        console.log("🔔 新任务提醒！（音频未初始化）");
+      }
+    } catch (e) {
+      console.log("Audio play error:", e);
+    }
+  };
+
+  // 开始持续播放提示音
+  const startContinuousSound = () => {
+    // 先清除之前的定时器
+    if (audioIntervalRef.current) {
+      clearInterval(audioIntervalRef.current);
+    }
+
+    // 立即播放一次
+    playSound();
+
+    // 设置循环播放，每3秒播放一次
+    audioIntervalRef.current = setInterval(() => {
+      playSound();
+    }, 2000); // 每3秒播放一次
+
+    console.log("🔄 开始持续播放提示音");
+  };
+
+  // 停止持续播放提示音
+  const stopContinuousSound = () => {
+    if (audioIntervalRef.current) {
+      clearInterval(audioIntervalRef.current);
+      audioIntervalRef.current = null;
+      console.log("⏹️ 停止持续播放提示音");
+    }
+  };
+
   // 触发震动
   const triggerVibration = () => {
     if (navigator.vibrate) {
@@ -717,6 +622,28 @@ const Notice: React.FC = () => {
     }
   };
 
+  // 开始倒计时
+  const startCountdown = (seconds: number) => {
+    setCountdown(seconds);
+
+    if (countdownRef.current) {
+      clearInterval(countdownRef.current);
+    }
+
+    countdownRef.current = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          if (countdownRef.current) {
+            clearInterval(countdownRef.current);
+            countdownRef.current = null;
+          }
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
   // 停止倒计时
   const stopCountdown = () => {
     if (countdownRef.current) {
@@ -724,6 +651,47 @@ const Notice: React.FC = () => {
       countdownRef.current = null;
     }
     setCountdown(0);
+  };
+
+  const startListening = () => {
+    // 业务专题必须选中至少一个
+    console.log("businessTopics:{}", businessTopics);
+    if (businessTopics.length === 0) {
+      // 当taskIds为"-1"时不显示警告，因为这是特殊标识
+      if (!taskIds) {
+        // 只有手动点击时才显示警告
+        message.warning("请选择至少一个业务专题");
+        return;
+      }
+    }
+
+    if (!intervalMinutes || intervalMinutes <= 0) {
+      message.warning("请输入有效的监听间隔");
+      return;
+    }
+
+    setIsListening(true);
+    const newStartTime = new Date().toISOString();
+    setStartTime(newStartTime);
+    startTimeRef.current = newStartTime; // 同时更新ref
+    message.success("开始监听任务");
+
+    // 立即执行一次检查
+    checkForNewTasks();
+
+    // 开始倒计时
+    startCountdown(intervalMinutes * 60);
+
+    // 设置定时器
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
+    intervalRef.current = setInterval(() => {
+      checkForNewTasks();
+      // 重新开始倒计时
+      startCountdown(intervalMinutes * 60);
+    }, intervalMinutes * 60 * 1000);
   };
 
   // 停止监听
@@ -773,7 +741,7 @@ const Notice: React.FC = () => {
                 children: "children",
               }}
               loading={dataLoading}
-              disabled={dataLoading || isListening} // 添加isListening状态控制
+              disabled={dataLoading}
               notFoundContent={dataLoading ? "加载中..." : "无数据"}
               dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
             />
@@ -798,7 +766,7 @@ const Notice: React.FC = () => {
                 children: "children",
               }}
               loading={dataLoading}
-              disabled={dataLoading || isListening} // 添加isListening状态控制
+              disabled={dataLoading}
               notFoundContent={dataLoading ? "加载中..." : "无数据"}
               dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
             />
@@ -819,7 +787,7 @@ const Notice: React.FC = () => {
           <Space>
             <Button
               type="primary"
-              onClick={() => startListening()}
+              onClick={startListening}
               disabled={isListening}
             >
               {isListening ? "监听中..." : "开始监听"}

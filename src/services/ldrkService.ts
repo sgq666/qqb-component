@@ -7,6 +7,7 @@ import * as XLSX from "xlsx";
 interface ImportDataItem {
   idCardNo: string;
   sourceName: string;
+  ldrkSuccess: number;
 }
 
 interface ImportRequest {
