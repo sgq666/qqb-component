@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- 海南省轮廓简化版 -->
+  <path d="M300,200 L350,180 L400,190 L450,170 L500,180 L520,200 L540,230 L530,260 L500,280 L470,290 L440,300 L400,310 L360,300 L320,280 L300,250 Z" 
+        fill="#4CAF50" stroke="#388E3C" stroke-width="2"/>
+  
+  <!-- 海口市 -->
+  <circle cx="400" cy="250" r="8" fill="#2196F3"/>
+  <text x="410" y="255" font-family="Arial" font-size="14" fill="#000">海口</text>
+  
+  <!-- 三亚市 -->
+  <circle cx="450" cy="280" r="8" fill="#2196F3"/>
+  <text x="460" y="285" font-family="Arial" font-size="14" fill="#000">三亚</text>
+  
+  <!-- 海域 -->
+  <rect x="0" y="0" width="800" height="600" fill="#2196F3" fill-opacity="0.3"/>
+  
+  <!-- 标题 -->
+  <text x="400" y="50" font-family="Arial" font-size="24" text-anchor="middle" fill="#000">海南省地图</text>
+  
+  <!-- 说明 -->
+  <text x="400" y="550" font-family="Arial" font-size="16" text-anchor="middle" fill="#666">
+    简化版海南省地图 - 适用于内网环境
+  </text>
+</svg>
