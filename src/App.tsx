@@ -17,6 +17,8 @@ import Ldrk from "./pages/Ldrk/index"; // 添加流动人口Excel读取页面
 import ApiTester from "./pages/ApiTester"; // 添加API测试页面
 import DataMatcher from "./pages/DataMatcher"; // 添加数据匹配页面
 import Tools from "./pages/Tools"; // 添加实用工具页面
+import Geolocation from "./pages/Geolocation"; // 添加地理定位页面
+import OfflineMap from "./pages/OfflineMap"; // 添加离线地图页面
 import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
@@ -55,6 +57,8 @@ function App() {
           <Route exact path="/api-tester" component={ApiTester} /> {/* 添加API测试路由 */}
           <Route exact path="/data-matcher" component={DataMatcher} /> {/* 添加数据匹配路由 */}
           <Route exact path="/tools" component={Tools} /> {/* 添加实用工具路由 */}
+          <Route exact path="/geolocation" component={Geolocation} /> {/* 添加地理定位路由 */}
+          <Route exact path="/offline-map" component={OfflineMap} /> {/* 添加离线地图路由 */}
         </Switch>
       </Router>
     </ConfigProvider>

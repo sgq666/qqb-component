@@ -86,6 +86,14 @@ class ThirdService {
     );
   }
 
+  // 任务监听异常日志上报
+  public async logUpload(data: any): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_STATS_NOTICE_LOG_UPLOAD,
+      data
+    );
+  }
+
   // 获取当前登录用户
   public async currentUser(): Promise<ApiResponse<User>> {
     return requestService.post<ApiResponse<User>>(

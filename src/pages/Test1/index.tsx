@@ -17,18 +17,22 @@ import {
   CloseOutlined,
   VerticalAlignTopOutlined,
   CheckCircleOutlined,
+  FilePdfOutlined,
+  FileImageOutlined,
+  FileOutlined,
 } from "@ant-design/icons";
 import thirdservice from "../../services/thirdService";
 import { ApiResponse } from "../../types/index";
-// import demoData from "./data";
+import demoData from "./data";
 
 const { Text } = Typography;
 const { confirm } = Modal;
 
 interface ExtInfoItem {
-  fileUnid: string;
+  id: string; // 使用id字段作为唯一标识
   fileDownloadUrlBase64: string;
   fileName: string;
+  fileExt?: string;
 }
 
 interface ExtInfo {
@@ -44,7 +48,7 @@ interface StuffItem {
 interface SubmitData {
   stuffName: string;
   extInfo: {
-    fileUnid: string;
+    fileUnid: string; // 保持字段名为fileUnid
     issue: string;
   };
 }
@@ -53,10 +57,43 @@ interface SubmitData {
 interface InitDataItem {
   stuffName: string;
   extInfo: {
-    fileUnid: string;
+    fileUnid: string; // 保持字段名为fileUnid
     issue: string;
   };
 }
+
+// 判断是否为图片文件
+const isImageFile = (fileExt?: string): boolean => {
+  const imageExts = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+  return fileExt ? imageExts.includes(fileExt.toLowerCase()) : false;
+};
+
+// 判断是否为PDF文件
+const isPdfFile = (fileExt?: string): boolean => {
+  return fileExt ? fileExt.toLowerCase() === 'pdf' : false;
+};
+
+// 获取文件图标
+const getFileIcon = (fileExt?: string) => {
+  if (isImageFile(fileExt)) {
+    return <FileImageOutlined />;
+  } else if (isPdfFile(fileExt)) {
+    return <FilePdfOutlined />;
+  } else {
+    return <FileOutlined />;
+  }
+};
+
+// 获取文件类型描述
+const getFileTypeDescription = (fileExt?: string) => {
+  if (isImageFile(fileExt)) {
+    return "图片文件";
+  } else if (isPdfFile(fileExt)) {
+    return "PDF文件";
+  } else {
+    return "附件文件";
+  }
+};
 
 const Test1: React.FC = () => {
   const [data, setData] = useState<StuffItem[]>([]);
@@ -66,7 +103,7 @@ const Test1: React.FC = () => {
   const [selectedImageName, setSelectedImageName] = useState<string | null>(
     null
   );
-  const [unsavedChanges, setUnsavedChanges] = useState<boolean>(false); // 新增状态跟踪未保存的更改
+  const [unsavedChanges, setUnsavedChanges] = useState<boolean>(false);
 
   // 修改 searchParams 的获取方式，支持 hash 路由
   const searchParams = useMemo(() => {
@@ -95,10 +132,28 @@ const Test1: React.FC = () => {
     const fetchData = async () => {
       try {
         const id = searchParams.get("id");
+        
+        // 当id为-1时，使用demoData
+        if (id === "-1") {
+          setData(demoData);
+          
+          // 初始化问题数据
+          const initialIssues: Record<string, string> = {};
+          const initData: InitDataItem[] = JSON.parse(
+            searchParams.get("initData") || "[]"
+          );
+          initData.forEach((item) => {
+            initialIssues[item.extInfo.fileUnid] = item.extInfo.issue;
+          });
+          setIssues(initialIssues);
+          return;
+        }
+        
         if (!id) {
           message.error("缺少流水号");
           return;
         }
+        
         const result: ApiResponse<string> = await thirdservice.getSuffFile({
           id,
         });
@@ -128,7 +183,6 @@ const Test1: React.FC = () => {
         }
         
         setData(parsedData);
-        // setData(demoData);
 
         // 初始化问题数据
         const initialIssues: Record<string, string> = {};
@@ -224,7 +278,7 @@ const Test1: React.FC = () => {
 
   const handleSaveIssue = () => {
     if (!selectedImage) {
-      message.warning("请先选择一张图片");
+      message.warning("请先选择一个附件");
       return;
     }
 
@@ -264,13 +318,13 @@ const Test1: React.FC = () => {
       Object.entries(issues).forEach(([fileUnid, issue]) => {
         data.forEach((item) => {
           const foundImage = item.extInfo.fileList.find(
-            (img) => img.fileUnid === fileUnid
+            (img) => img.id === fileUnid // 使用id字段进行匹配
           );
           if (foundImage) {
             submitData.push({
               stuffName: item.stuffName,
               extInfo: {
-                fileUnid: fileUnid,
+                fileUnid: fileUnid, // 保持字段名为fileUnid
                 issue: issue,
               },
             });
@@ -291,7 +345,7 @@ const Test1: React.FC = () => {
 
           data.forEach((item) => {
             const foundImageIndex = item.extInfo.fileList.findIndex(
-              (img) => img.fileUnid === fileUnid
+              (img) => img.id === fileUnid // 使用id字段进行匹配
             );
             if (foundImageIndex !== -1) {
               stuffItem = item;
@@ -302,7 +356,7 @@ const Test1: React.FC = () => {
 
           issueSummary += `${index + 1}. ${
             stuffItem?.stuffName ?? "未知材料"
-          }的第${imageIndex ?? 0}张图片（${
+          }的第${imageIndex ?? 0}个附件（${
             imageItem?.fileName ?? "未知文件"
           }）发现的问题：${issue}\n`;
         });
@@ -348,6 +402,27 @@ const Test1: React.FC = () => {
     }
   };
 
+  // 处理文件预览
+  const handleFilePreview = (file: ExtInfoItem) => {
+    if (isPdfFile(file.fileExt)) {
+      // 对于PDF文件，打开新窗口预览
+      const pdfUrl = `${process.env.REACT_APP_API_BASE_URL}/${file.fileDownloadUrlBase64}`;
+      window.open(pdfUrl, '_blank');
+    } else if (isImageFile(file.fileExt)) {
+      // 图片文件已经在Image组件中支持预览
+      // 这里不需要额外处理
+    } else {
+      // 对于其他文件类型，提示下载
+      const fileUrl = `${process.env.REACT_APP_API_BASE_URL}/${file.fileDownloadUrlBase64}`;
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.download = file.fileName || 'download';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   return (
     <div style={{ padding: "20px" }}>
       {/* 固定在顶部的问题反馈区域 */}
@@ -363,10 +438,10 @@ const Test1: React.FC = () => {
           }}
         >
           <Space direction="vertical" style={{ width: "100%" }}>
-            <Text>选中图片: {selectedImageName || "未选择"}</Text>
+            <Text>选中附件: {selectedImageName || "未选择"}</Text>
             <Input.TextArea
               rows={3}
-              placeholder="请输入您发现的问题，如：图片模糊、图片错误等"
+              placeholder="请输入您发现的问题，如：文件模糊、文件错误等"
               value={currentIssue}
               onChange={(e) => setCurrentIssue(e.target.value)}
               disabled={!selectedImage}
@@ -391,7 +466,7 @@ const Test1: React.FC = () => {
         </Card>
       </Affix>
 
-      <Card title="图片展示页面">
+      <Card title="附件展示页面">
         <Space direction="vertical" style={{ width: "100%" }}>
           {data.map((item: StuffItem, index: number) => (
             <Card
@@ -402,11 +477,13 @@ const Test1: React.FC = () => {
               <Row gutter={[16, 16]}>
                 {item.extInfo.fileList?.map(
                   (img: ExtInfoItem, imgIndex: number) => {
-                    const isSelected = selectedImage === img.fileUnid;
-                    const hasIssue = !!issues[img.fileUnid];
+                    const isSelected = selectedImage === img.id; // 使用id字段进行比较
+                    const hasIssue = !!issues[img.id]; // 使用id字段进行比较
+                    const isImage = isImageFile(img.fileExt);
+                    const isPdf = isPdfFile(img.fileExt);
 
                     return (
-                      <Col xs={24} sm={12} md={8} lg={6} key={img.fileUnid}>
+                      <Col xs={24} sm={12} md={8} lg={6} key={img.id}> {/* 使用id作为key */}
                         <div
                           style={{
                             border: isSelected
@@ -426,7 +503,7 @@ const Test1: React.FC = () => {
                             flexDirection: "column",
                           }}
                         >
-                          {/* 图片容器 */}
+                          {/* 文件容器 */}
                           <div
                             style={{
                               width: "100%",
@@ -436,20 +513,44 @@ const Test1: React.FC = () => {
                               textAlign: "center",
                             }}
                           >
-                            <Image
-                              src={
-                                process.env.REACT_APP_API_BASE_URL +
-                                "/" +
-                                img.fileDownloadUrlBase64
-                              }
-                              fallback="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-                              style={{
-                                width: "100%",
-                                height: "150px",
-                                objectFit: "cover",
-                              }}
-                              preview={true}
-                            />
+                            {isImage ? (
+                              // 图片文件使用Image组件
+                              <Image
+                                src={
+                                  process.env.REACT_APP_API_BASE_URL +
+                                  "/" +
+                                  img.fileDownloadUrlBase64
+                                }
+                                fallback="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+                                style={{
+                                  width: "100%",
+                                  height: "150px",
+                                  objectFit: "cover",
+                                }}
+                                preview={true}
+                              />
+                            ) : (
+                              // 非图片文件显示占位符和文件信息
+                              <div
+                                style={{
+                                  height: "150px",
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  backgroundColor: "#f5f5f5",
+                                  cursor: "pointer",
+                                }}
+                                onClick={() => handleFilePreview(img)}
+                              >
+                                <div style={{ fontSize: "48px", color: isPdf ? "#ff4d4f" : "#1890ff" }}>
+                                  {getFileIcon(img.fileExt)}
+                                </div>
+                                <div style={{ marginTop: "8px", textAlign: "center" }}>
+                                  <Text strong>{getFileTypeDescription(img.fileExt)}</Text>
+                                </div>
+                              </div>
+                            )}
                           </div>
 
                           <div style={{ marginTop: "8px" }}>
@@ -479,7 +580,7 @@ const Test1: React.FC = () => {
                                   isSelected ? <CheckCircleOutlined /> : null
                                 }
                                 onClick={() =>
-                                  handleImageSelect(img.fileUnid, img.fileName)
+                                  handleImageSelect(img.id, img.fileName) // 使用id字段
                                 }
                                 style={{
                                   flexShrink: 0,
@@ -489,6 +590,20 @@ const Test1: React.FC = () => {
                                 {isSelected ? "已选中" : "选择"}
                               </Button>
                             </div>
+
+                            {/* 非图片文件添加预览按钮 */}
+                            {!isImage && (
+                              <div style={{ marginBottom: "8px" }}>
+                                <Button 
+                                  type="link" 
+                                  size="small"
+                                  onClick={() => handleFilePreview(img)}
+                                  block
+                                >
+                                  {isPdf ? "预览PDF" : "下载文件"}
+                                </Button>
+                              </div>
+                            )}
 
                             {hasIssue && (
                               <div
@@ -507,7 +622,7 @@ const Test1: React.FC = () => {
                                   }}
                                 >
                                   <Text type="danger" style={{ flex: 1 }}>
-                                    问题: {issues[img.fileUnid]}
+                                    问题: {issues[img.id]} {/* 使用id字段 */}
                                   </Text>
                                   <Button
                                     type="text"
@@ -516,7 +631,7 @@ const Test1: React.FC = () => {
                                     size="small"
                                     onClick={(e) => {
                                       e.stopPropagation();
-                                      handleClearIssue(img.fileUnid);
+                                      handleClearIssue(img.id); // 使用id字段
                                     }}
                                     style={{
                                       marginLeft: "8px",
@@ -546,7 +661,7 @@ const Test1: React.FC = () => {
 
                   data.forEach((item) => {
                     const foundImageIndex = item.extInfo.fileList.findIndex(
-                      (img) => img.fileUnid === fileUnid
+                      (img) => img.id === fileUnid // 使用id字段进行匹配
                     );
                     if (foundImageIndex !== -1) {
                       stuffItem = item;
@@ -574,7 +689,7 @@ const Test1: React.FC = () => {
                         <div style={{ flex: 1 }}>
                           <Text strong>
                             {stuffItem?.stuffName ?? "未知材料"}的第
-                            {imageIndex ?? 0}张图片（
+                            {imageIndex ?? 0}个附件（
                             {imageItem?.fileName ?? "未知文件"}）
                           </Text>
                           <br />

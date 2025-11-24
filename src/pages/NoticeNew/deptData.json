@@ -1,0 +1,2642 @@
+{
+    "code": 200,
+    "message": "操作成功",
+    "data": [
+        {
+            "parentCode": "330000",
+            "deptName": "杭州市公安局",
+            "deptCode": "330100",
+            "deptLevel": 1,
+            "key": "330100",
+            "label": "杭州市公安局",
+            "value": "330100"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "富阳区公安局",
+            "deptCode": "330183",
+            "deptLevel": 2,
+            "key": "330183",
+            "label": "富阳区公安局",
+            "value": "330183"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "桐庐县公安局",
+            "deptCode": "330122",
+            "deptLevel": 2,
+            "key": "330122",
+            "label": "桐庐县公安局",
+            "value": "330122"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "建德市公安局",
+            "deptCode": "330182000000",
+            "deptLevel": 2,
+            "key": "330182000000",
+            "label": "建德市公安局",
+            "value": "330182000000"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "淳安县公安局",
+            "deptCode": "330127",
+            "deptLevel": 2,
+            "key": "330127",
+            "label": "淳安县公安局",
+            "value": "330127"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "上城区分局",
+            "deptCode": "330102",
+            "deptLevel": 2,
+            "key": "330102",
+            "label": "上城区分局",
+            "value": "330102"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "下城区分局",
+            "deptCode": "330103",
+            "deptLevel": 2,
+            "key": "330103",
+            "label": "下城区分局",
+            "value": "330103"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "拱墅区分局",
+            "deptCode": "330105",
+            "deptLevel": 2,
+            "key": "330105",
+            "label": "拱墅区分局",
+            "value": "330105"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "西湖区分局",
+            "deptCode": "330106",
+            "deptLevel": 2,
+            "key": "330106",
+            "label": "西湖区分局",
+            "value": "330106"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "滨江区分局",
+            "deptCode": "330108",
+            "deptLevel": 2,
+            "key": "330108",
+            "label": "滨江区分局",
+            "value": "330108"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "萧山区分局",
+            "deptCode": "330109",
+            "deptLevel": 2,
+            "key": "330109",
+            "label": "萧山区分局",
+            "value": "330109"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "经济技术开发区公安分局",
+            "deptCode": "330118",
+            "deptLevel": 2,
+            "key": "330118",
+            "label": "经济技术开发区公安分局",
+            "value": "330118"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "西湖风景名胜区分局",
+            "deptCode": "330119",
+            "deptLevel": 2,
+            "key": "330119",
+            "label": "西湖风景名胜区分局",
+            "value": "330119"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "临安市公安局",
+            "deptCode": "330185",
+            "deptLevel": 2,
+            "key": "330185",
+            "label": "临安市公安局",
+            "value": "330185"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "江干区分局",
+            "deptCode": "330104",
+            "deptLevel": 2,
+            "key": "330104",
+            "label": "江干区分局",
+            "value": "330104"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "余杭区分局",
+            "deptCode": "330110",
+            "deptLevel": 2,
+            "key": "330110",
+            "label": "余杭区分局",
+            "value": "330110"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "三墩派出所",
+            "deptCode": "330106700000",
+            "deptLevel": 3,
+            "key": "330106700000",
+            "label": "三墩派出所",
+            "value": "330106700000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "蒋村派出所",
+            "deptCode": "330106690000",
+            "deptLevel": 3,
+            "key": "330106690000",
+            "label": "蒋村派出所",
+            "value": "330106690000"
+        },
+        {
+            "parentCode": "330118",
+            "deptName": "白杨派出所",
+            "deptCode": "330118520000",
+            "deptLevel": 3,
+            "key": "330118520000",
+            "label": "白杨派出所",
+            "value": "330118520000"
+        },
+        {
+            "parentCode": "330118",
+            "deptName": "下沙派出所",
+            "deptCode": "330118510000",
+            "deptLevel": 3,
+            "key": "330118510000",
+            "label": "下沙派出所",
+            "value": "330118510000"
+        },
+        {
+            "parentCode": "330182000000",
+            "deptName": "梅城派出所",
+            "deptCode": "330182530000",
+            "deptLevel": 3,
+            "key": "330182530000",
+            "label": "梅城派出所",
+            "value": "330182530000"
+        },
+        {
+            "parentCode": "330182000000",
+            "deptName": "乾潭派出所",
+            "deptCode": "330182550000",
+            "deptLevel": 3,
+            "key": "330182550000",
+            "label": "乾潭派出所",
+            "value": "330182550000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "大同派出所",
+            "deptCode": "330182590000",
+            "deptLevel": 3,
+            "key": "330182590000",
+            "label": "大同派出所",
+            "value": "330182590000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "三都派出所",
+            "deptCode": "330182570000",
+            "deptLevel": 3,
+            "key": "330182570000",
+            "label": "三都派出所",
+            "value": "330182570000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "大洋派出所",
+            "deptCode": "330182580000",
+            "deptLevel": 3,
+            "key": "330182580000",
+            "label": "大洋派出所",
+            "value": "330182580000"
+        },
+        {
+            "parentCode": "330118",
+            "deptName": "闻潮派出所",
+            "deptCode": "330118530000",
+            "deptLevel": 3,
+            "key": "330118530000",
+            "label": "闻潮派出所",
+            "value": "330118530000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "城南派出所",
+            "deptCode": "330122520000",
+            "deptLevel": 3,
+            "key": "330122520000",
+            "label": "城南派出所",
+            "value": "330122520000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "城厢派出所",
+            "deptCode": "330109510000",
+            "deptLevel": 3,
+            "key": "330109510000",
+            "label": "城厢派出所",
+            "value": "330109510000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "留下派出所",
+            "deptCode": "330106610000",
+            "deptLevel": 3,
+            "key": "330106610000",
+            "label": "留下派出所",
+            "value": "330106610000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "小河派出所",
+            "deptCode": "330105530000",
+            "deptLevel": 3,
+            "key": "330105530000",
+            "label": "小河派出所",
+            "value": "330105530000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "望江派出所",
+            "deptCode": "330102580000",
+            "deptLevel": 3,
+            "key": "330102580000",
+            "label": "望江派出所",
+            "value": "330102580000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "武林派出所",
+            "deptCode": "330103520000",
+            "deptLevel": 3,
+            "key": "330103520000",
+            "label": "武林派出所",
+            "value": "330103520000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "长庆派出所",
+            "deptCode": "330103540000",
+            "deptLevel": 3,
+            "key": "330103540000",
+            "label": "长庆派出所",
+            "value": "330103540000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "潮鸣派出所",
+            "deptCode": "330103530000",
+            "deptLevel": 3,
+            "key": "330103530000",
+            "label": "潮鸣派出所",
+            "value": "330103530000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "朝晖路派出所",
+            "deptCode": "330103560000",
+            "deptLevel": 3,
+            "key": "330103560000",
+            "label": "朝晖路派出所",
+            "value": "330103560000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "东新派出所",
+            "deptCode": "330103580000",
+            "deptLevel": 3,
+            "key": "330103580000",
+            "label": "东新派出所",
+            "value": "330103580000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "文晖派出所",
+            "deptCode": "330103610000",
+            "deptLevel": 3,
+            "key": "330103610000",
+            "label": "文晖派出所",
+            "value": "330103610000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "西溪派出所",
+            "deptCode": "330106550000",
+            "deptLevel": 3,
+            "key": "330106550000",
+            "label": "西溪派出所",
+            "value": "330106550000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "玉泉派出所",
+            "deptCode": "330106520000",
+            "deptLevel": 3,
+            "key": "330106520000",
+            "label": "玉泉派出所",
+            "value": "330106520000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "古荡派出所",
+            "deptCode": "330106600000",
+            "deptLevel": 3,
+            "key": "330106600000",
+            "label": "古荡派出所",
+            "value": "330106600000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "青山派出所",
+            "deptCode": "330185520000",
+            "deptLevel": 3,
+            "key": "330185520000",
+            "label": "青山派出所",
+            "value": "330185520000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "横畈派出所",
+            "deptCode": "330185540000",
+            "deptLevel": 3,
+            "key": "330185540000",
+            "label": "横畈派出所",
+            "value": "330185540000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "於潜派出所",
+            "deptCode": "330185560000",
+            "deptLevel": 3,
+            "key": "330185560000",
+            "label": "於潜派出所",
+            "value": "330185560000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "昌北派出所",
+            "deptCode": "330185590000",
+            "deptLevel": 3,
+            "key": "330185590000",
+            "label": "昌北派出所",
+            "value": "330185590000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "横村派出所",
+            "deptCode": "330122550000",
+            "deptLevel": 3,
+            "key": "330122550000",
+            "label": "横村派出所",
+            "value": "330122550000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "分水派出所",
+            "deptCode": "330122530000",
+            "deptLevel": 3,
+            "key": "330122530000",
+            "label": "分水派出所",
+            "value": "330122530000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "凤川派出所",
+            "deptCode": "330122570000",
+            "deptLevel": 3,
+            "key": "330122570000",
+            "label": "凤川派出所",
+            "value": "330122570000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "运河派出所",
+            "deptCode": "330110550000",
+            "deptLevel": 3,
+            "key": "330110550000",
+            "label": "运河派出所",
+            "value": "330110550000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "乔司派出所",
+            "deptCode": "330110570000",
+            "deptLevel": 3,
+            "key": "330110570000",
+            "label": "乔司派出所",
+            "value": "330110570000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "仁和派出所",
+            "deptCode": "330110600000",
+            "deptLevel": 3,
+            "key": "330110600000",
+            "label": "仁和派出所",
+            "value": "330110600000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "良渚派出所",
+            "deptCode": "330110610000",
+            "deptLevel": 3,
+            "key": "330110610000",
+            "label": "良渚派出所",
+            "value": "330110610000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "余杭派出所",
+            "deptCode": "330110670000",
+            "deptLevel": 3,
+            "key": "330110670000",
+            "label": "余杭派出所",
+            "value": "330110670000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "五常派出所",
+            "deptCode": "330110700000",
+            "deptLevel": 3,
+            "key": "330110700000",
+            "label": "五常派出所",
+            "value": "330110700000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "瓶窑派出所",
+            "deptCode": "330110640000",
+            "deptLevel": 3,
+            "key": "330110640000",
+            "label": "瓶窑派出所",
+            "value": "330110640000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "黄湖派出所（鸬鸟）",
+            "deptCode": "330110750000",
+            "deptLevel": 3,
+            "key": "330110750000",
+            "label": "黄湖派出所（鸬鸟）",
+            "value": "330110750000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "曙光路派出所",
+            "deptCode": "330110560000",
+            "deptLevel": 3,
+            "key": "330110560000",
+            "label": "曙光路派出所",
+            "value": "330110560000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "星桥派出所",
+            "deptCode": "330110540000",
+            "deptLevel": 3,
+            "key": "330110540000",
+            "label": "星桥派出所",
+            "value": "330110540000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "黄湖派出所（百丈）",
+            "deptCode": "330110740000",
+            "deptLevel": 3,
+            "key": "330110740000",
+            "label": "黄湖派出所（百丈）",
+            "value": "330110740000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "仓前派出所",
+            "deptCode": "330110860000",
+            "deptLevel": 3,
+            "key": "330110860000",
+            "label": "仓前派出所",
+            "value": "330110860000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "九堡派出所",
+            "deptCode": "330104620000",
+            "deptLevel": 3,
+            "key": "330104620000",
+            "label": "九堡派出所",
+            "value": "330104620000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "小营派出所",
+            "deptCode": "330102520000",
+            "deptLevel": 3,
+            "key": "330102520000",
+            "label": "小营派出所",
+            "value": "330102520000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "石桥派出所",
+            "deptCode": "330103590000",
+            "deptLevel": 3,
+            "key": "330103590000",
+            "label": "石桥派出所",
+            "value": "330103590000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "文新派出所",
+            "deptCode": "330106720000",
+            "deptLevel": 3,
+            "key": "330106720000",
+            "label": "文新派出所",
+            "value": "330106720000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "新安江派出所",
+            "deptCode": "330182510000",
+            "deptLevel": 3,
+            "key": "330182510000",
+            "label": "新安江派出所",
+            "value": "330182510000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "新塘派出所",
+            "deptCode": "330109530000",
+            "deptLevel": 3,
+            "key": "330109530000",
+            "label": "新塘派出所",
+            "value": "330109530000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "双浦派出所",
+            "deptCode": "330106640000",
+            "deptLevel": 3,
+            "key": "330106640000",
+            "label": "双浦派出所",
+            "value": "330106640000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "转塘派出所",
+            "deptCode": "330106620000",
+            "deptLevel": 3,
+            "key": "330106620000",
+            "label": "转塘派出所",
+            "value": "330106620000"
+        },
+        {
+            "parentCode": "330108",
+            "deptName": "西兴（钱塘）派出所",
+            "deptCode": "330108510000",
+            "deptLevel": 3,
+            "key": "330108510000",
+            "label": "西兴（钱塘）派出所",
+            "value": "330108510000"
+        },
+        {
+            "parentCode": "330108",
+            "deptName": "长河派出所",
+            "deptCode": "330108520000",
+            "deptLevel": 3,
+            "key": "330108520000",
+            "label": "长河派出所",
+            "value": "330108520000"
+        },
+        {
+            "parentCode": "330108",
+            "deptName": "浦沿（高教园区）派出所",
+            "deptCode": "330108530000",
+            "deptLevel": 3,
+            "key": "330108530000",
+            "label": "浦沿（高教园区）派出所",
+            "value": "330108530000"
+        },
+        {
+            "parentCode": "330108",
+            "deptName": "高新派出所",
+            "deptCode": "330108550000",
+            "deptLevel": 3,
+            "key": "330108550000",
+            "label": "高新派出所",
+            "value": "330108550000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "汾口派出所",
+            "deptCode": "330127570000",
+            "deptLevel": 3,
+            "key": "330127570000",
+            "label": "汾口派出所",
+            "value": "330127570000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "灵桥派出所",
+            "deptCode": "330183550000",
+            "deptLevel": 3,
+            "key": "330183550000",
+            "label": "灵桥派出所",
+            "value": "330183550000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "常安派出所",
+            "deptCode": "330183570000",
+            "deptLevel": 3,
+            "key": "330183570000",
+            "label": "常安派出所",
+            "value": "330183570000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "新登派出所",
+            "deptCode": "330183590000",
+            "deptLevel": 3,
+            "key": "330183590000",
+            "label": "新登派出所",
+            "value": "330183590000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "龙门派出所",
+            "deptCode": "330183710000",
+            "deptLevel": 3,
+            "key": "330183710000",
+            "label": "龙门派出所",
+            "value": "330183710000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "米市巷派出所",
+            "deptCode": "330105510000",
+            "deptLevel": 3,
+            "key": "330105510000",
+            "label": "米市巷派出所",
+            "value": "330105510000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "拱宸桥派出所",
+            "deptCode": "330105550000",
+            "deptLevel": 3,
+            "key": "330105550000",
+            "label": "拱宸桥派出所",
+            "value": "330105550000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "和睦派出所",
+            "deptCode": "330105560000",
+            "deptLevel": 3,
+            "key": "330105560000",
+            "label": "和睦派出所",
+            "value": "330105560000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "大关派出所",
+            "deptCode": "330105620000",
+            "deptLevel": 3,
+            "key": "330105620000",
+            "label": "大关派出所",
+            "value": "330105620000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "康桥派出所",
+            "deptCode": "330105600000",
+            "deptLevel": 3,
+            "key": "330105600000",
+            "label": "康桥派出所",
+            "value": "330105600000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "凯旋派出所",
+            "deptCode": "330104530000",
+            "deptLevel": 3,
+            "key": "330104530000",
+            "label": "凯旋派出所",
+            "value": "330104530000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "采荷派出所",
+            "deptCode": "330104590000",
+            "deptLevel": 3,
+            "key": "330104590000",
+            "label": "采荷派出所",
+            "value": "330104590000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "四季青派出所",
+            "deptCode": "330104540000",
+            "deptLevel": 3,
+            "key": "330104540000",
+            "label": "四季青派出所",
+            "value": "330104540000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "丁桥派出所",
+            "deptCode": "330104580000",
+            "deptLevel": 3,
+            "key": "330104580000",
+            "label": "丁桥派出所",
+            "value": "330104580000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "城东派出所",
+            "deptCode": "330104610000",
+            "deptLevel": 3,
+            "key": "330104610000",
+            "label": "城东派出所",
+            "value": "330104610000"
+        },
+        {
+            "parentCode": "330119",
+            "deptName": "九溪派出所",
+            "deptCode": "330119600000",
+            "deptLevel": 3,
+            "key": "330119600000",
+            "label": "九溪派出所",
+            "value": "330119600000"
+        },
+        {
+            "parentCode": "330119",
+            "deptName": "岳庙派出所",
+            "deptCode": "330119570000",
+            "deptLevel": 3,
+            "key": "330119570000",
+            "label": "岳庙派出所",
+            "value": "330119570000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "清波派出所",
+            "deptCode": "330102510000",
+            "deptLevel": 3,
+            "key": "330102510000",
+            "label": "清波派出所",
+            "value": "330102510000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "湖滨派出所",
+            "deptCode": "330102540000",
+            "deptLevel": 3,
+            "key": "330102540000",
+            "label": "湖滨派出所",
+            "value": "330102540000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "南星派出所",
+            "deptCode": "330102560000",
+            "deptLevel": 3,
+            "key": "330102560000",
+            "label": "南星派出所",
+            "value": "330102560000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "宁围派出所",
+            "deptCode": "330109640000",
+            "deptLevel": 3,
+            "key": "330109640000",
+            "label": "宁围派出所",
+            "value": "330109640000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "闻堰派出所",
+            "deptCode": "330109650000",
+            "deptLevel": 3,
+            "key": "330109650000",
+            "label": "闻堰派出所",
+            "value": "330109650000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "衙前派出所",
+            "deptCode": "330109620000",
+            "deptLevel": 3,
+            "key": "330109620000",
+            "label": "衙前派出所",
+            "value": "330109620000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "益农派出所",
+            "deptCode": "330109600000",
+            "deptLevel": 3,
+            "key": "330109600000",
+            "label": "益农派出所",
+            "value": "330109600000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "南阳派出所",
+            "deptCode": "330109570000",
+            "deptLevel": 3,
+            "key": "330109570000",
+            "label": "南阳派出所",
+            "value": "330109570000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "临浦派出所",
+            "deptCode": "330109660000",
+            "deptLevel": 3,
+            "key": "330109660000",
+            "label": "临浦派出所",
+            "value": "330109660000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "浦阳派出所",
+            "deptCode": "330109680000",
+            "deptLevel": 3,
+            "key": "330109680000",
+            "label": "浦阳派出所",
+            "value": "330109680000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "义桥派出所",
+            "deptCode": "330109670000",
+            "deptLevel": 3,
+            "key": "330109670000",
+            "label": "义桥派出所",
+            "value": "330109670000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "所前派出所",
+            "deptCode": "330109710000",
+            "deptLevel": 3,
+            "key": "330109710000",
+            "label": "所前派出所",
+            "value": "330109710000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "戴村派出所",
+            "deptCode": "330109690000",
+            "deptLevel": 3,
+            "key": "330109690000",
+            "label": "戴村派出所",
+            "value": "330109690000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "河上派出所",
+            "deptCode": "330109700000",
+            "deptLevel": 3,
+            "key": "330109700000",
+            "label": "河上派出所",
+            "value": "330109700000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "靖江派出所",
+            "deptCode": "330109750000",
+            "deptLevel": 3,
+            "key": "330109750000",
+            "label": "靖江派出所",
+            "value": "330109750000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "水上派出所",
+            "deptCode": "330122590000",
+            "deptLevel": 3,
+            "key": "330122590000",
+            "label": "水上派出所",
+            "value": "330122590000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "进化派出所",
+            "deptCode": "330109780000",
+            "deptLevel": 3,
+            "key": "330109780000",
+            "label": "进化派出所",
+            "value": "330109780000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "楼塔派出所",
+            "deptCode": "330109790000",
+            "deptLevel": 3,
+            "key": "330109790000",
+            "label": "楼塔派出所",
+            "value": "330109790000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "锦城派出所",
+            "deptCode": "330185510000",
+            "deptLevel": 3,
+            "key": "330185510000",
+            "label": "锦城派出所",
+            "value": "330185510000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "寿昌派出所",
+            "deptCode": "330182540000",
+            "deptLevel": 3,
+            "key": "330182540000",
+            "label": "寿昌派出所",
+            "value": "330182540000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "杨村桥派出所",
+            "deptCode": "330182560000",
+            "deptLevel": 3,
+            "key": "330182560000",
+            "label": "杨村桥派出所",
+            "value": "330182560000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "北干派出所",
+            "deptCode": "330109540000",
+            "deptLevel": 3,
+            "key": "330109540000",
+            "label": "北干派出所",
+            "value": "330109540000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "东洲派出所",
+            "deptCode": "330183720000",
+            "deptLevel": 3,
+            "key": "330183720000",
+            "label": "东洲派出所",
+            "value": "330183720000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "城南派出所",
+            "deptCode": "330182520000",
+            "deptLevel": 3,
+            "key": "330182520000",
+            "label": "城南派出所",
+            "value": "330182520000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "新街派出所",
+            "deptCode": "330109630000",
+            "deptLevel": 3,
+            "key": "330109630000",
+            "label": "新街派出所",
+            "value": "330109630000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "玲珑派出所",
+            "deptCode": "330185530000",
+            "deptLevel": 3,
+            "key": "330185530000",
+            "label": "玲珑派出所",
+            "value": "330185530000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "昌化派出所",
+            "deptCode": "330185600000",
+            "deptLevel": 3,
+            "key": "330185600000",
+            "label": "昌化派出所",
+            "value": "330185600000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "瑶琳派出所",
+            "deptCode": "330122540000",
+            "deptLevel": 3,
+            "key": "330122540000",
+            "label": "瑶琳派出所",
+            "value": "330122540000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "塘栖派出所",
+            "deptCode": "330110580000",
+            "deptLevel": 3,
+            "key": "330110580000",
+            "label": "塘栖派出所",
+            "value": "330110580000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "南苑派出所",
+            "deptCode": "330110530000",
+            "deptLevel": 3,
+            "key": "330110530000",
+            "label": "南苑派出所",
+            "value": "330110530000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "市北派出所",
+            "deptCode": "330109550000",
+            "deptLevel": 3,
+            "key": "330109550000",
+            "label": "市北派出所",
+            "value": "330109550000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "上塘派出所",
+            "deptCode": "330105590000",
+            "deptLevel": 3,
+            "key": "330105590000",
+            "label": "上塘派出所",
+            "value": "330105590000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "闸弄口派出所",
+            "deptCode": "330104510000",
+            "deptLevel": 3,
+            "key": "330104510000",
+            "label": "闸弄口派出所",
+            "value": "330104510000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "省府路派出所",
+            "deptCode": "330106710000",
+            "deptLevel": 3,
+            "key": "330106710000",
+            "label": "省府路派出所",
+            "value": "330106710000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "城区派出所",
+            "deptCode": "330127510000",
+            "deptLevel": 3,
+            "key": "330127510000",
+            "label": "城区派出所",
+            "value": "330127510000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "城郊派出所",
+            "deptCode": "330127520000",
+            "deptLevel": 3,
+            "key": "330127520000",
+            "label": "城郊派出所",
+            "value": "330127520000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "城东派出所",
+            "deptCode": "330183510000",
+            "deptLevel": 3,
+            "key": "330183510000",
+            "label": "城东派出所",
+            "value": "330183510000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "城西派出所",
+            "deptCode": "330183520000",
+            "deptLevel": 3,
+            "key": "330183520000",
+            "label": "城西派出所",
+            "value": "330183520000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "三山派出所",
+            "deptCode": "330183620000",
+            "deptLevel": 3,
+            "key": "330183620000",
+            "label": "三山派出所",
+            "value": "330183620000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "富春江派出所",
+            "deptCode": "330122560000",
+            "deptLevel": 3,
+            "key": "330122560000",
+            "label": "富春江派出所",
+            "value": "330122560000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "江南派出所",
+            "deptCode": "330122580000",
+            "deptLevel": 3,
+            "key": "330122580000",
+            "label": "江南派出所",
+            "value": "330122580000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "临平派出所",
+            "deptCode": "330110730000",
+            "deptLevel": 3,
+            "key": "330110730000",
+            "label": "临平派出所",
+            "value": "330110730000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "崇贤派出所",
+            "deptCode": "330110590000",
+            "deptLevel": 3,
+            "key": "330110590000",
+            "label": "崇贤派出所",
+            "value": "330110590000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "中泰派出所",
+            "deptCode": "330110690000",
+            "deptLevel": 3,
+            "key": "330110690000",
+            "label": "中泰派出所",
+            "value": "330110690000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "径山派出所",
+            "deptCode": "330110650000",
+            "deptLevel": 3,
+            "key": "330110650000",
+            "label": "径山派出所",
+            "value": "330110650000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "蜀山派出所",
+            "deptCode": "330109730000",
+            "deptLevel": 3,
+            "key": "330109730000",
+            "label": "蜀山派出所",
+            "value": "330109730000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "瓜沥派出所",
+            "deptCode": "330109590000",
+            "deptLevel": 3,
+            "key": "330109590000",
+            "label": "瓜沥派出所",
+            "value": "330109590000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "大市派出所",
+            "deptCode": "330127580000",
+            "deptLevel": 3,
+            "key": "330127580000",
+            "label": "大市派出所",
+            "value": "330127580000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "姜家派出所",
+            "deptCode": "330127560000",
+            "deptLevel": 3,
+            "key": "330127560000",
+            "label": "姜家派出所",
+            "value": "330127560000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "临岐派出所",
+            "deptCode": "330127550000",
+            "deptLevel": 3,
+            "key": "330127550000",
+            "label": "临岐派出所",
+            "value": "330127550000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "石林派出所",
+            "deptCode": "330127530000",
+            "deptLevel": 3,
+            "key": "330127530000",
+            "label": "石林派出所",
+            "value": "330127530000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "大源派出所",
+            "deptCode": "330183540000",
+            "deptLevel": 3,
+            "key": "330183540000",
+            "label": "大源派出所",
+            "value": "330183540000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "万市派出所",
+            "deptCode": "330183600000",
+            "deptLevel": 3,
+            "key": "330183600000",
+            "label": "万市派出所",
+            "value": "330183600000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "湖墅派出所",
+            "deptCode": "330105520000",
+            "deptLevel": 3,
+            "key": "330105520000",
+            "label": "湖墅派出所",
+            "value": "330105520000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "祥符派出所",
+            "deptCode": "330105570000",
+            "deptLevel": 3,
+            "key": "330105570000",
+            "label": "祥符派出所",
+            "value": "330105570000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "笕桥派出所",
+            "deptCode": "330104560000",
+            "deptLevel": 3,
+            "key": "330104560000",
+            "label": "笕桥派出所",
+            "value": "330104560000"
+        },
+        {
+            "parentCode": "330104",
+            "deptName": "彭埠派出所",
+            "deptCode": "330104550000",
+            "deptLevel": 3,
+            "key": "330104550000",
+            "label": "彭埠派出所",
+            "value": "330104550000"
+        },
+        {
+            "parentCode": "330119",
+            "deptName": "南山派出所",
+            "deptCode": "330119610000",
+            "deptLevel": 3,
+            "key": "330119610000",
+            "label": "南山派出所",
+            "value": "330119610000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "紫阳派出所",
+            "deptCode": "330102570000",
+            "deptLevel": 3,
+            "key": "330102570000",
+            "label": "紫阳派出所",
+            "value": "330102570000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "城南派出所",
+            "deptCode": "330183530000",
+            "deptLevel": 3,
+            "key": "330183530000",
+            "label": "城南派出所",
+            "value": "330183530000"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "水上派出所",
+            "deptCode": "330183630000",
+            "deptLevel": 3,
+            "key": "330183630000",
+            "label": "水上派出所",
+            "value": "330183630000"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "水上派出所",
+            "deptCode": "330182630000",
+            "deptLevel": 3,
+            "key": "330182630000",
+            "label": "水上派出所",
+            "value": "330182630000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "青云派出所",
+            "deptCode": "330185550000",
+            "deptLevel": 3,
+            "key": "330185550000",
+            "label": "青云派出所",
+            "value": "330185550000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "天目山派出所",
+            "deptCode": "330185570000",
+            "deptLevel": 3,
+            "key": "330185570000",
+            "label": "天目山派出所",
+            "value": "330185570000"
+        },
+        {
+            "parentCode": "330122",
+            "deptName": "城北派出所",
+            "deptCode": "330122510000",
+            "deptLevel": 3,
+            "key": "330122510000",
+            "label": "城北派出所",
+            "value": "330122510000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "北山派出所",
+            "deptCode": "330106530000",
+            "deptLevel": 3,
+            "key": "330106530000",
+            "label": "北山派出所",
+            "value": "330106530000"
+        },
+        {
+            "parentCode": "330109",
+            "deptName": "党湾派出所",
+            "deptCode": "330109770000",
+            "deptLevel": 3,
+            "key": "330109770000",
+            "label": "党湾派出所",
+            "value": "330109770000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "翠苑派出所",
+            "deptCode": "330106560000",
+            "deptLevel": 3,
+            "key": "330106560000",
+            "label": "翠苑派出所",
+            "value": "330106560000"
+        },
+        {
+            "parentCode": "330103",
+            "deptName": "天水派出所",
+            "deptCode": "330103510000",
+            "deptLevel": 3,
+            "key": "330103510000",
+            "label": "天水派出所",
+            "value": "330103510000"
+        },
+        {
+            "parentCode": "330119",
+            "deptName": "灵隐派出所",
+            "deptCode": "330119580000",
+            "deptLevel": 3,
+            "key": "330119580000",
+            "label": "灵隐派出所",
+            "value": "330119580000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "站前派出所",
+            "deptCode": "330102550000",
+            "deptLevel": 3,
+            "key": "330102550000",
+            "label": "站前派出所",
+            "value": "330102550000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "闲林派出所",
+            "deptCode": "330110680000",
+            "deptLevel": 3,
+            "key": "330110680000",
+            "label": "闲林派出所",
+            "value": "330110680000"
+        },
+        {
+            "parentCode": "330127",
+            "deptName": "威坪派出所",
+            "deptCode": "330127540000",
+            "deptLevel": 3,
+            "key": "330127540000",
+            "label": "威坪派出所",
+            "value": "330127540000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "半山派出所",
+            "deptCode": "330105580000",
+            "deptLevel": 3,
+            "key": "330105580000",
+            "label": "半山派出所",
+            "value": "330105580000"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "大江东产业集聚区分局",
+            "deptCode": "330111",
+            "deptLevel": 2,
+            "key": "330111",
+            "label": "大江东产业集聚区分局",
+            "value": "330111"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "福堤派出所",
+            "deptCode": "330106760000",
+            "deptLevel": 3,
+            "key": "330106760000",
+            "label": "福堤派出所",
+            "value": "330106760000"
+        },
+        {
+            "parentCode": "330106",
+            "deptName": "求是派出所",
+            "deptCode": "330106750000",
+            "deptLevel": 3,
+            "key": "330106750000",
+            "label": "求是派出所",
+            "value": "330106750000"
+        },
+        {
+            "parentCode": "330118",
+            "deptName": "金沙湖派出所",
+            "deptCode": "330118550000",
+            "deptLevel": 3,
+            "key": "330118550000",
+            "label": "金沙湖派出所",
+            "value": "330118550000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "密渡桥路派出所",
+            "deptCode": "330105610000",
+            "deptLevel": 3,
+            "key": "330105610000",
+            "label": "密渡桥路派出所",
+            "value": "330105610000"
+        },
+        {
+            "parentCode": "330119",
+            "deptName": "柳浪派出所",
+            "deptCode": "330119520000",
+            "deptLevel": 3,
+            "key": "330119520000",
+            "label": "柳浪派出所",
+            "value": "330119520000"
+        },
+        {
+            "parentCode": "330119",
+            "deptName": "水上派出所",
+            "deptCode": "330119080000",
+            "deptLevel": 3,
+            "key": "330119080000",
+            "label": "水上派出所",
+            "value": "330119080000"
+        },
+        {
+            "parentCode": "330111",
+            "deptName": "义蓬派出所",
+            "deptCode": "330111510000",
+            "deptLevel": 3,
+            "key": "330111510000",
+            "label": "义蓬派出所",
+            "value": "330111510000"
+        },
+        {
+            "parentCode": "330111",
+            "deptName": "河庄派出所",
+            "deptCode": "330111550000",
+            "deptLevel": 3,
+            "key": "330111550000",
+            "label": "河庄派出所",
+            "value": "330111550000"
+        },
+        {
+            "parentCode": "330111",
+            "deptName": "新湾派出所",
+            "deptCode": "330111520000",
+            "deptLevel": 3,
+            "key": "330111520000",
+            "label": "新湾派出所",
+            "value": "330111520000"
+        },
+        {
+            "parentCode": "330111",
+            "deptName": "临江派出所",
+            "deptCode": "330111530000",
+            "deptLevel": 3,
+            "key": "330111530000",
+            "label": "临江派出所",
+            "value": "330111530000"
+        },
+        {
+            "parentCode": "330111",
+            "deptName": "前进派出所",
+            "deptCode": "330111540000",
+            "deptLevel": 3,
+            "key": "330111540000",
+            "label": "前进派出所",
+            "value": "330111540000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "黄湖派出所",
+            "deptCode": "330110660000",
+            "deptLevel": 3,
+            "key": "330110660000",
+            "label": "黄湖派出所",
+            "value": "330110660000"
+        },
+        {
+            "parentCode": "330109510000",
+            "deptName": "AAAAA",
+            "deptCode": "330109510002",
+            "deptLevel": 4,
+            "key": "330109510002",
+            "label": "AAAAA",
+            "value": "330109510002"
+        },
+        {
+            "parentCode": "330109650000",
+            "deptName": "责任区1",
+            "deptCode": "330109650001",
+            "deptLevel": 4,
+            "key": "330109650001",
+            "label": "责任区1",
+            "value": "330109650001"
+        },
+        {
+            "parentCode": "330109650000",
+            "deptName": "责任区2",
+            "deptCode": "330109650002",
+            "deptLevel": 4,
+            "key": "330109650002",
+            "label": "责任区2",
+            "value": "330109650002"
+        },
+        {
+            "parentCode": "330109650000",
+            "deptName": "名称已修改",
+            "deptCode": "330109650003",
+            "deptLevel": 4,
+            "key": "330109650003",
+            "label": "名称已修改",
+            "value": "330109650003"
+        },
+        {
+            "parentCode": "330109650000",
+            "deptName": "责任区4",
+            "deptCode": "330109650004",
+            "deptLevel": 4,
+            "key": "330109650004",
+            "label": "责任区4",
+            "value": "330109650004"
+        },
+        {
+            "parentCode": "330109510000",
+            "deptName": "测试",
+            "deptCode": "330109510001",
+            "deptLevel": 4,
+            "key": "330109510001",
+            "label": "测试",
+            "value": "330109510001"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "测试责任区1",
+            "deptCode": "330102510003",
+            "deptLevel": 4,
+            "key": "330102510003",
+            "label": "测试责任区1",
+            "value": "330102510003"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "测试责任区2",
+            "deptCode": "330102510004",
+            "deptLevel": 4,
+            "key": "330102510004",
+            "label": "测试责任区2",
+            "value": "330102510004"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "锦北派出所",
+            "deptCode": "330185650000",
+            "deptLevel": 3,
+            "key": "330185650000",
+            "label": "锦北派出所",
+            "value": "330185650000"
+        },
+        {
+            "parentCode": "330110",
+            "deptName": "东湖派出所",
+            "deptCode": "330110520000",
+            "deptLevel": 3,
+            "key": "330110520000",
+            "label": "东湖派出所",
+            "value": "330110520000"
+        },
+        {
+            "parentCode": "330105",
+            "deptName": "汽车北站派出所",
+            "deptCode": "330105650000",
+            "deptLevel": 3,
+            "key": "330105650000",
+            "label": "汽车北站派出所",
+            "value": "330105650000"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "杜甫村站派出所",
+            "deptCode": "330196580000",
+            "deptLevel": 3,
+            "key": "330196580000",
+            "label": "杜甫村站派出所",
+            "value": "330196580000"
+        },
+        {
+            "parentCode": "330185",
+            "deptName": "板桥派出所",
+            "deptCode": "330185660000",
+            "deptLevel": 3,
+            "key": "330185660000",
+            "label": "板桥派出所",
+            "value": "330185660000"
+        },
+        {
+            "parentCode": "330103510000",
+            "deptName": "测试责任区3",
+            "deptCode": "330103510002",
+            "deptLevel": 4,
+            "key": "330103510002",
+            "label": "测试责任区3",
+            "value": "330103510002"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "地铁公安分局",
+            "deptCode": "330121",
+            "deptLevel": 2,
+            "key": "330121",
+            "label": "地铁公安分局",
+            "value": "330121"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "翁梅站派出所",
+            "deptCode": "330121520000",
+            "deptLevel": 3,
+            "key": "330121520000",
+            "label": "翁梅站派出所",
+            "value": "330121520000"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "湘湖站派出所",
+            "deptCode": "330121510000",
+            "deptLevel": 3,
+            "key": "330121510000",
+            "label": "湘湖站派出所",
+            "value": "330121510000"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "打铁关站派出所",
+            "deptCode": "330121530000",
+            "deptLevel": 3,
+            "key": "330121530000",
+            "label": "打铁关站派出所",
+            "value": "330121530000"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "朝阳站派出所",
+            "deptCode": "330121560000",
+            "deptLevel": 3,
+            "key": "330121560000",
+            "label": "朝阳站派出所",
+            "value": "330121560000"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "市民中心站派出所",
+            "deptCode": "330121570000",
+            "deptLevel": 3,
+            "key": "330121570000",
+            "label": "市民中心站派出所",
+            "value": "330121570000"
+        },
+        {
+            "parentCode": "330121",
+            "deptName": "下沙江滨站派出所",
+            "deptCode": "330196540000",
+            "deptLevel": 3,
+            "key": "330196540000",
+            "label": "下沙江滨站派出所",
+            "value": "330196540000"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "交通治安分局(水上分局)",
+            "deptCode": "330116",
+            "deptLevel": 2,
+            "key": "330116",
+            "label": "交通治安分局(水上分局)",
+            "value": "330116"
+        },
+        {
+            "parentCode": "330116",
+            "deptName": "公交派出所（反扒大队）",
+            "deptCode": "330197550000",
+            "deptLevel": 3,
+            "key": "330197550000",
+            "label": "公交派出所（反扒大队）",
+            "value": "330197550000"
+        },
+        {
+            "parentCode": "330116",
+            "deptName": "新城水上派出所",
+            "deptCode": "330197590000",
+            "deptLevel": 3,
+            "key": "330197590000",
+            "label": "新城水上派出所",
+            "value": "330197590000"
+        },
+        {
+            "parentCode": "330116",
+            "deptName": "钱江水上派出所（奥体中心派出所）",
+            "deptCode": "330197570000",
+            "deptLevel": 3,
+            "key": "330197570000",
+            "label": "钱江水上派出所（奥体中心派出所）",
+            "value": "330197570000"
+        },
+        {
+            "parentCode": "330116",
+            "deptName": "运河水上派出所",
+            "deptCode": "330120520000",
+            "deptLevel": 3,
+            "key": "330120520000",
+            "label": "运河水上派出所",
+            "value": "330120520000"
+        },
+        {
+            "parentCode": "330109650000",
+            "deptName": "测试责任区4",
+            "deptCode": "330109650005",
+            "deptLevel": 4,
+            "key": "330109650005",
+            "label": "测试责任区4",
+            "value": "330109650005"
+        },
+        {
+            "parentCode": "330111",
+            "deptName": "边防派出所",
+            "deptCode": "330111B00100",
+            "deptLevel": 3,
+            "key": "330111B00100",
+            "label": "边防派出所",
+            "value": "330111B00100"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "网络警察分局",
+            "deptCode": "330100110000",
+            "deptLevel": 2,
+            "key": "330100110000",
+            "label": "网络警察分局",
+            "value": "330100110000"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "信息经济公安分局",
+            "deptCode": "330194000000",
+            "deptLevel": 2,
+            "key": "330194000000",
+            "label": "信息经济公安分局",
+            "value": "330194000000"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "南站派出所",
+            "deptCode": "330102690000",
+            "deptLevel": 3,
+            "key": "330102690000",
+            "label": "南站派出所",
+            "value": "330102690000"
+        },
+        {
+            "deptName": "杭州省厅",
+            "deptCode": "330000",
+            "deptLevel": 0,
+            "key": "330000",
+            "label": "杭州省厅",
+            "value": "330000"
+        },
+        {
+            "parentCode": "330102580000",
+            "deptName": "望江责任区",
+            "deptCode": "330102580001",
+            "deptLevel": 4,
+            "key": "330102580001",
+            "label": "望江责任区",
+            "value": "330102580001"
+        },
+        {
+            "parentCode": "330182590000",
+            "deptName": "测试",
+            "deptCode": "330183550001",
+            "deptLevel": 4,
+            "key": "330183550001",
+            "label": "测试",
+            "value": "330183550001"
+        },
+        {
+            "parentCode": "330122530000",
+            "deptName": "1",
+            "deptCode": "330183560001",
+            "deptLevel": 4,
+            "key": "330183560001",
+            "label": "1",
+            "value": "330183560001"
+        },
+        {
+            "parentCode": "330106700000",
+            "deptName": "号键11234567890",
+            "deptCode": "330106700001",
+            "deptLevel": 4,
+            "key": "330106700001",
+            "label": "号键11234567890",
+            "value": "330106700001"
+        },
+        {
+            "parentCode": "330106700000",
+            "deptName": "444",
+            "deptCode": "330106700002",
+            "deptLevel": 4,
+            "key": "330106700002",
+            "label": "444",
+            "value": "330106700002"
+        },
+        {
+            "parentCode": "330106690000",
+            "deptName": "11",
+            "deptCode": "330106690001",
+            "deptLevel": 4,
+            "key": "330106690001",
+            "label": "11",
+            "value": "330106690001"
+        },
+        {
+            "parentCode": "330106700000",
+            "deptName": "a",
+            "deptCode": "330106700003",
+            "deptLevel": 4,
+            "key": "330106700003",
+            "label": "a",
+            "value": "330106700003"
+        },
+        {
+            "parentCode": "330106700000",
+            "deptName": "测试123",
+            "deptCode": "330106700004",
+            "deptLevel": 4,
+            "key": "330106700004",
+            "label": "测试123",
+            "value": "330106700004"
+        },
+        {
+            "parentCode": "330104620000",
+            "deptName": "123",
+            "deptCode": "330104620001",
+            "deptLevel": 4,
+            "key": "330104620001",
+            "label": "123",
+            "value": "330104620001"
+        },
+        {
+            "parentCode": "330106520000",
+            "deptName": "我是责任区",
+            "deptCode": "330106520001",
+            "deptLevel": 4,
+            "key": "330106520001",
+            "label": "我是责任区",
+            "value": "330106520001"
+        },
+        {
+            "parentCode": "330106700000",
+            "deptName": "222",
+            "deptCode": "330106700005",
+            "deptLevel": 4,
+            "key": "330106700005",
+            "label": "222",
+            "value": "330106700005"
+        },
+        {
+            "parentCode": "330122520000",
+            "deptName": "11111",
+            "deptCode": "330183610002",
+            "deptLevel": 4,
+            "key": "330183610002",
+            "label": "11111",
+            "value": "330183610002"
+        },
+        {
+            "parentCode": "330122520000",
+            "deptName": "112255",
+            "deptCode": "330183610003",
+            "deptLevel": 4,
+            "key": "330183610003",
+            "label": "112255",
+            "value": "330183610003"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "设计师洛索洛芬",
+            "deptCode": "330102510005",
+            "deptLevel": 4,
+            "key": "330102510005",
+            "label": "设计师洛索洛芬",
+            "value": "330102510005"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "责任区1",
+            "deptCode": "330102510006",
+            "deptLevel": 4,
+            "key": "330102510006",
+            "label": "责任区1",
+            "value": "330102510006"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "责任区2",
+            "deptCode": "330102510007",
+            "deptLevel": 4,
+            "key": "330102510007",
+            "label": "责任区2",
+            "value": "330102510007"
+        },
+        {
+            "parentCode": "330122520000",
+            "deptName": "1.2345678901e+029",
+            "deptCode": "330183610004",
+            "deptLevel": 4,
+            "key": "330183610004",
+            "label": "1.2345678901e+029",
+            "value": "330183610004"
+        },
+        {
+            "parentCode": "330122520000",
+            "deptName": "1212121",
+            "deptCode": "330183610005",
+            "deptLevel": 4,
+            "key": "330183610005",
+            "label": "1212121",
+            "value": "330183610005"
+        },
+        {
+            "parentCode": "330122520000",
+            "deptName": "989898",
+            "deptCode": "330183610006",
+            "deptLevel": 4,
+            "key": "330183610006",
+            "label": "989898",
+            "value": "330183610006"
+        },
+        {
+            "parentCode": "330104510000",
+            "deptName": "testr",
+            "deptCode": "330104510001",
+            "deptLevel": 4,
+            "key": "330104510001",
+            "label": "testr",
+            "value": "330104510001"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "梵蒂冈地方规定",
+            "deptCode": "330102510008",
+            "deptLevel": 4,
+            "key": "330102510008",
+            "label": "梵蒂冈地方规定",
+            "value": "330102510008"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "测试一下啊",
+            "deptCode": "330102510009",
+            "deptLevel": 4,
+            "key": "330102510009",
+            "label": "测试一下啊",
+            "value": "330102510009"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "城站派出所",
+            "deptCode": "330102610000",
+            "deptLevel": 3,
+            "key": "330102610000",
+            "label": "城站派出所",
+            "value": "330102610000"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "测试三下",
+            "deptCode": "330102510011",
+            "deptLevel": 4,
+            "key": "330102510011",
+            "label": "测试三下",
+            "value": "330102510011"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "这真的是最后一个=_=",
+            "deptCode": "330102510012",
+            "deptLevel": 4,
+            "key": "330102510012",
+            "label": "这真的是最后一个=_=",
+            "value": "330102510012"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "1",
+            "deptCode": "330102510013",
+            "deptLevel": 4,
+            "key": "330102510013",
+            "label": "1",
+            "value": "330102510013"
+        },
+        {
+            "parentCode": "330104510000",
+            "deptName": "52",
+            "deptCode": "330104510002",
+            "deptLevel": 4,
+            "key": "330104510002",
+            "label": "52",
+            "value": "330104510002"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "这个责任区",
+            "deptCode": "330102510014",
+            "deptLevel": 4,
+            "key": "330102510014",
+            "label": "这个责任区",
+            "value": "330102510014"
+        },
+        {
+            "parentCode": "330106720000",
+            "deptName": "lh测试责任区",
+            "deptCode": "330106720001",
+            "deptLevel": 4,
+            "key": "330106720001",
+            "label": "lh测试责任区",
+            "value": "330106720001"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "435",
+            "deptCode": "330102510015",
+            "deptLevel": 4,
+            "key": "330102510015",
+            "label": "435",
+            "value": "330102510015"
+        },
+        {
+            "parentCode": "330109650000",
+            "deptName": "1/2责任区",
+            "deptCode": "330109650006",
+            "deptLevel": 4,
+            "key": "330109650006",
+            "label": "1/2责任区",
+            "value": "330109650006"
+        },
+        {
+            "parentCode": "330106520000",
+            "deptName": "二号责任区",
+            "deptCode": "330106520002",
+            "deptLevel": 4,
+            "key": "330106520002",
+            "label": "二号责任区",
+            "value": "330106520002"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "在吸纳",
+            "deptCode": "330102510016",
+            "deptLevel": 4,
+            "key": "330102510016",
+            "label": "在吸纳",
+            "value": "330102510016"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "123",
+            "deptCode": "330102510017",
+            "deptLevel": 4,
+            "key": "330102510017",
+            "label": "123",
+            "value": "330102510017"
+        },
+        {
+            "parentCode": "330102510000",
+            "deptName": "测试人员wh",
+            "deptCode": "330102510018",
+            "deptLevel": 4,
+            "key": "330102510018",
+            "label": "测试人员wh",
+            "value": "330102510018"
+        },
+        {
+            "parentCode": "330102520000",
+            "deptName": "测试人员wh",
+            "deptCode": "330102520002",
+            "deptLevel": 4,
+            "key": "330102520002",
+            "label": "测试人员wh",
+            "value": "330102520002"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "001派出所",
+            "deptCode": "330102777",
+            "deptLevel": 3,
+            "key": "330102777",
+            "label": "001派出所",
+            "value": "330102777"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "002派出所",
+            "deptCode": "0000002",
+            "deptLevel": 3,
+            "key": "0000002",
+            "label": "002派出所",
+            "value": "0000002"
+        },
+        {
+            "parentCode": "451",
+            "deptName": "测试2",
+            "deptCode": "ca6c8433-92d8-4993-b",
+            "deptLevel": 4,
+            "key": "ca6c8433-92d8-4993-b",
+            "label": "测试2",
+            "value": "ca6c8433-92d8-4993-b"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试",
+            "deptCode": "8764",
+            "deptLevel": 3,
+            "key": "8764",
+            "label": "测试",
+            "value": "8764"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试街道",
+            "deptCode": "1",
+            "deptLevel": 3,
+            "key": "1",
+            "label": "测试街道",
+            "value": "1"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "测试分局勿用迁出",
+            "deptCode": "ceshi796431",
+            "deptLevel": 2,
+            "key": "ceshi796431",
+            "label": "测试分局勿用迁出",
+            "value": "ceshi796431"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "分局信息测试勿用",
+            "deptCode": "cehhk98665",
+            "deptLevel": 2,
+            "key": "cehhk98665",
+            "label": "分局信息测试勿用",
+            "value": "cehhk98665"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "社区2",
+            "deptCode": "aa50397d-6709-4ae6-8",
+            "deptLevel": 4,
+            "key": "aa50397d-6709-4ae6-8",
+            "label": "社区2",
+            "value": "aa50397d-6709-4ae6-8"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "社区1",
+            "deptCode": "726591e8-92dc-476f-9",
+            "deptLevel": 4,
+            "key": "726591e8-92dc-476f-9",
+            "label": "社区1",
+            "value": "726591e8-92dc-476f-9"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "社区1",
+            "deptCode": "59b5f370-4bea-4bf3-b",
+            "deptLevel": 4,
+            "key": "59b5f370-4bea-4bf3-b",
+            "label": "社区1",
+            "value": "59b5f370-4bea-4bf3-b"
+        },
+        {
+            "parentCode": "ceshi796431",
+            "deptName": "001派出所",
+            "deptCode": "001",
+            "deptLevel": 3,
+            "key": "001",
+            "label": "001派出所",
+            "value": "001"
+        },
+        {
+            "parentCode": "001",
+            "deptName": "001责任区",
+            "deptCode": "a16e46fa-974f-478f-a",
+            "deptLevel": 4,
+            "key": "a16e46fa-974f-478f-a",
+            "label": "001责任区",
+            "value": "a16e46fa-974f-478f-a"
+        },
+        {
+            "parentCode": "cehhk98665",
+            "deptName": "恢复测试",
+            "deptCode": "96",
+            "deptLevel": 3,
+            "key": "96",
+            "label": "恢复测试",
+            "value": "96"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "审核测试",
+            "deptCode": "5995a869-3ce9-4959-a",
+            "deptLevel": 4,
+            "key": "5995a869-3ce9-4959-a",
+            "label": "审核测试",
+            "value": "5995a869-3ce9-4959-a"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "责任区65",
+            "deptCode": "e235b8f7-3b6a-4ef8-8",
+            "deptLevel": 4,
+            "key": "e235b8f7-3b6a-4ef8-8",
+            "label": "责任区65",
+            "value": "e235b8f7-3b6a-4ef8-8"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "审核测试1",
+            "deptCode": "03c1de45-9f61-4126-a",
+            "deptLevel": 4,
+            "key": "03c1de45-9f61-4126-a",
+            "label": "审核测试1",
+            "value": "03c1de45-9f61-4126-a"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "责任区21",
+            "deptCode": "869fe1c1-4f0a-4b53-8",
+            "deptLevel": 4,
+            "key": "869fe1c1-4f0a-4b53-8",
+            "label": "责任区21",
+            "value": "869fe1c1-4f0a-4b53-8"
+        },
+        {
+            "parentCode": "96",
+            "deptName": "责任区13",
+            "deptCode": "0f8ddb7c-5b3e-42d5-b",
+            "deptLevel": 4,
+            "key": "0f8ddb7c-5b3e-42d5-b",
+            "label": "责任区13",
+            "value": "0f8ddb7c-5b3e-42d5-b"
+        },
+        {
+            "parentCode": "96",
+            "deptName": "责任区76",
+            "deptCode": "6fb799d4-1b76-4b4a-b",
+            "deptLevel": 4,
+            "key": "6fb799d4-1b76-4b4a-b",
+            "label": "责任区76",
+            "value": "6fb799d4-1b76-4b4a-b"
+        },
+        {
+            "parentCode": "cehhk98665",
+            "deptName": "迁入派出所",
+            "deptCode": "qrpcs",
+            "deptLevel": 3,
+            "key": "qrpcs",
+            "label": "迁入派出所",
+            "value": "qrpcs"
+        },
+        {
+            "parentCode": "cehhk98665",
+            "deptName": "迁出派出所",
+            "deptCode": "qcpcs",
+            "deptLevel": 3,
+            "key": "qcpcs",
+            "label": "迁出派出所",
+            "value": "qcpcs"
+        },
+        {
+            "parentCode": "qcpcs",
+            "deptName": "迁出责任区",
+            "deptCode": "d01292fc-49b6-4632-9",
+            "deptLevel": 4,
+            "key": "d01292fc-49b6-4632-9",
+            "label": "迁出责任区",
+            "value": "d01292fc-49b6-4632-9"
+        },
+        {
+            "parentCode": "330102777",
+            "deptName": "1",
+            "deptCode": "796fd7c4-1732-4a85-b",
+            "deptLevel": 4,
+            "key": "796fd7c4-1732-4a85-b",
+            "label": "1",
+            "value": "796fd7c4-1732-4a85-b"
+        },
+        {
+            "parentCode": "96",
+            "deptName": "责任区88",
+            "deptCode": "5179454a-52f2-4670-a",
+            "deptLevel": 4,
+            "key": "5179454a-52f2-4670-a",
+            "label": "责任区88",
+            "value": "5179454a-52f2-4670-a"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "分局信息测试",
+            "deptCode": "46454533",
+            "deptLevel": 2,
+            "key": "46454533",
+            "label": "分局信息测试",
+            "value": "46454533"
+        },
+        {
+            "parentCode": "96",
+            "deptName": "责任区12",
+            "deptCode": "9b82819c-e9d6-45da-8",
+            "deptLevel": 4,
+            "key": "9b82819c-e9d6-45da-8",
+            "label": "责任区12",
+            "value": "9b82819c-e9d6-45da-8"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "分局删除测试",
+            "deptCode": "864",
+            "deptLevel": 2,
+            "key": "864",
+            "label": "分局删除测试",
+            "value": "864"
+        },
+        {
+            "parentCode": "330120520000",
+            "deptName": "22222222",
+            "deptCode": "9ae6ebed-fd0a-4ac1-8",
+            "deptLevel": 4,
+            "key": "9ae6ebed-fd0a-4ac1-8",
+            "label": "22222222",
+            "value": "9ae6ebed-fd0a-4ac1-8"
+        },
+        {
+            "parentCode": "330121570000",
+            "deptName": "4444",
+            "deptCode": "b7ffd820-16b9-46b8-9",
+            "deptLevel": 4,
+            "key": "b7ffd820-16b9-46b8-9",
+            "label": "4444",
+            "value": "b7ffd820-16b9-46b8-9"
+        },
+        {
+            "parentCode": "330183590000",
+            "deptName": "sdfgsdfg",
+            "deptCode": "2c02d7ab-8bfe-42a4-8",
+            "deptLevel": 4,
+            "key": "2c02d7ab-8bfe-42a4-8",
+            "label": "sdfgsdfg",
+            "value": "2c02d7ab-8bfe-42a4-8"
+        },
+        {
+            "parentCode": "864",
+            "deptName": "荆防颗",
+            "deptCode": "46",
+            "deptLevel": 3,
+            "key": "46",
+            "label": "荆防颗",
+            "value": "46"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试派出所10",
+            "deptCode": "15",
+            "deptLevel": 3,
+            "key": "15",
+            "label": "测试派出所10",
+            "value": "15"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试派出所1",
+            "deptCode": "8652311",
+            "deptLevel": 3,
+            "key": "8652311",
+            "label": "测试派出所1",
+            "value": "8652311"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试派出所5",
+            "deptCode": "14",
+            "deptLevel": 3,
+            "key": "14",
+            "label": "测试派出所5",
+            "value": "14"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试派出所2",
+            "deptCode": "200005",
+            "deptLevel": 3,
+            "key": "200005",
+            "label": "测试派出所2",
+            "value": "200005"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试派出所8",
+            "deptCode": "200001",
+            "deptLevel": 3,
+            "key": "200001",
+            "label": "测试派出所8",
+            "value": "200001"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试派出所测试",
+            "deptCode": "7645",
+            "deptLevel": 3,
+            "key": "7645",
+            "label": "测试派出所测试",
+            "value": "7645"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试分局",
+            "deptCode": "123456",
+            "deptLevel": 3,
+            "key": "123456",
+            "label": "测试分局",
+            "value": "123456"
+        },
+        {
+            "parentCode": "330102",
+            "deptName": "测试信息",
+            "deptCode": "46331",
+            "deptLevel": 3,
+            "key": "46331",
+            "label": "测试信息",
+            "value": "46331"
+        },
+        {
+            "parentCode": "330183",
+            "deptName": "测试派出所",
+            "deptCode": "00000012",
+            "deptLevel": 3,
+            "key": "00000012",
+            "label": "测试派出所",
+            "value": "00000012"
+        },
+        {
+            "parentCode": "330183550000",
+            "deptName": "灵桥2",
+            "deptCode": "529dc736-d046-463d-9",
+            "deptLevel": 4,
+            "key": "529dc736-d046-463d-9",
+            "label": "灵桥2",
+            "value": "529dc736-d046-463d-9"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "南方基地",
+            "deptCode": "1001",
+            "deptLevel": 2,
+            "key": "1001",
+            "label": "南方基地",
+            "value": "1001"
+        },
+        {
+            "parentCode": "330100",
+            "deptName": "技术中心(杭分)",
+            "deptCode": "1002",
+            "deptLevel": 2,
+            "key": "1002",
+            "label": "技术中心(杭分)",
+            "value": "1002"
+        },
+        {
+            "parentCode": "1002",
+            "deptName": "开发组",
+            "deptCode": "1002001",
+            "deptLevel": 3,
+            "key": "1002001",
+            "label": "开发组",
+            "value": "1002001"
+        },
+        {
+            "parentCode": "1002",
+            "deptName": "测试组",
+            "deptCode": "1002002",
+            "deptLevel": 3,
+            "key": "1002002",
+            "label": "测试组",
+            "value": "1002002"
+        },
+        {
+            "parentCode": "1001",
+            "deptName": "技术组（技术）",
+            "deptCode": "1001001",
+            "deptLevel": 3,
+            "key": "1001001",
+            "label": "技术组（技术）",
+            "value": "1001001"
+        },
+        {
+            "parentCode": "1001",
+            "deptName": "研发组",
+            "deptCode": "1001002",
+            "deptLevel": 3,
+            "key": "1001002",
+            "label": "研发组",
+            "value": "1001002"
+        },
+        {
+            "parentCode": "1001",
+            "deptName": "运维组（服务器）",
+            "deptCode": "1001004",
+            "deptLevel": 3,
+            "key": "1001004",
+            "label": "运维组（服务器）",
+            "value": "1001004"
+        },
+        {
+            "parentCode": "1001",
+            "deptName": "测试专向组",
+            "deptCode": "1001005",
+            "deptLevel": 3,
+            "key": "1001005",
+            "label": "测试专向组",
+            "value": "1001005"
+        },
+        {
+            "parentCode": "330182",
+            "deptName": "三元区",
+            "deptCode": "47",
+            "deptLevel": 4,
+            "key": "47",
+            "label": "三元区",
+            "value": "47"
+        }
+    ]
+}

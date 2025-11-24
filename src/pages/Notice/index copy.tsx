@@ -289,8 +289,41 @@ const Notice: React.FC = () => {
       // 使用传入的taskIdsParam或默认的businessTopics
       const effectiveTaskIds = taskIdsParam !== undefined ? taskIdsParam : businessTopics;
       
+      // 修改deptCodes处理逻辑：如果用户所在单位下有很多单位，应该把所有单位都带上
+      let deptCodes: string[] = [];
+      if (departments.length > 0) {
+        // 如果用户手动选择了部门，则使用选择的部门
+        deptCodes = departments;
+      } else if (departmentsData.length > 0) {
+        // 如果没有手动选择部门，但有部门数据
+        // 获取所有部门代码
+        const getAllDepartmentCodes = (nodes: ExtendedDataNode[]): string[] => {
+          let result: string[] = [];
+          
+          const traverse = (deptNodes: ExtendedDataNode[]) => {
+            deptNodes.forEach(node => {
+              if (node.deptCode) {
+                result.push(node.deptCode);
+              }
+              if (node.children && node.children.length > 0) {
+                traverse(node.children);
+              }
+            });
+          };
+          
+          traverse(nodes);
+          return result;
+        };
+        
+        // 获取所有部门代码
+        deptCodes = getAllDepartmentCodes(departmentsData);
+      } else {
+        // 如果都没有，则使用空数组
+        deptCodes = [];
+      }
+
       console.log("🔍 调试信息:", {
-        deptCodes: departments,
+        deptCodes: deptCodes,
         taskIds: effectiveTaskIds,
         startTime: formatDateTime(currentStartTime),
         当前时间: formatDateTime(new Date().toISOString()),
@@ -304,10 +337,11 @@ const Notice: React.FC = () => {
         businessTopicsContent: effectiveTaskIds,
         isDepartmentsArray: Array.isArray(departments),
         isBusinessTopicsArray: Array.isArray(effectiveTaskIds),
+        finalDeptCodes: deptCodes,
       });
 
       const noticeRes: ApiResponse<any> = await thirdservice.notice({
-        deptCodes: departments,
+        deptCodes: deptCodes,
         taskIds: effectiveTaskIds, // 使用effectiveTaskIds而不是businessTopics
         startTime: formatDateTime(currentStartTime),
       });
@@ -340,7 +374,7 @@ const Notice: React.FC = () => {
       console.error("检查新任务失败:", error);
       message.error("检查新任务失败，请检查网络连接");
     }
-  }, [businessTopics, departments, startTimeRef, startContinuousSound]);
+  }, [businessTopics, departments, departmentsData, startTimeRef, startContinuousSound]);
 
   // 开始倒计时
   const startCountdown = useCallback((seconds: number) => {

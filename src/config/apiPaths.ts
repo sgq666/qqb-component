@@ -24,6 +24,7 @@ export const OTHER_SERVICE_PATHS = {
   HK_STATS_DEPT_TREE: `${THIRD_SERVICE_BASE_URL}/hk/stats/dept/tree`,
   HK_STATS_TASK_TREE: `${THIRD_SERVICE_BASE_URL}/hk/stats/task/tree`,
   HK_STATS_NOTICE: `${THIRD_SERVICE_BASE_URL}/hk/stats/notice`,
+  HK_STATS_NOTICE_LOG_UPLOAD: `${THIRD_SERVICE_BASE_URL}/hk/notice/error/log`,
   JN_CURRENT_USER_INFO: `${THIRD_SERVICE_BASE_URL}/JN/current/user/info`,
 };
 

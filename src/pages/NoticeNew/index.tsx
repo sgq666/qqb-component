@@ -105,6 +105,7 @@ interface ListenHistoryItem {
   hitRes: any[]; // 任务详情
   businessTopics: string[]; // 当前选中的业务专题
   departments: string[]; // 当前选中的责任单位
+  startTime?: string; // 监听开始时间（可选字段，用于向后兼容）
 }
 
 // 模拟数据 - 实际使用时应该从API获取
@@ -337,22 +338,14 @@ const NoticeNew: React.FC = () => {
 
   // 获取当前用户信息
   const [currentUser, setCurrentUser] = useState<User | null>(null);
+  // 新增状态：业务专题ID到名称的映射
+  const [businessTopicMap, setBusinessTopicMap] = useState<Map<string, string>>(new Map());
 
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
         const userRes: ApiResponse<User> = await thirdservice.currentUser();
         setCurrentUser(userRes.data);
-        // setCurrentUser({
-        //   id: 1,
-        //   username: "zhangsan",
-        //   chineseName: "张三",
-        //   idcardNo: "110101199003071234",
-        //   policeCode: "J000001",
-        //   deptCode: "100000",
-        //   phoneNo: "13800138000",
-        //   powerId: "1",
-        // });
       } catch (error) {
         console.error("获取用户信息失败:", error);
         message.error("获取用户信息失败");
@@ -366,7 +359,7 @@ const NoticeNew: React.FC = () => {
   const interval = searchParams.get("interval") || 1;
   const deptLevel = searchParams.get("deptLevel") || 0;
   const [hasNotice, setHasNotice] = useState<boolean>(false);
-  const [intervalMinutes, setIntervalMinutes] = useState<number>(5);
+  const [intervalMinutes, setIntervalMinutes] = useState<number>(1);
   const [isListening, setIsListening] = useState<boolean>(false);
   const [startTime, setStartTime] = useState<string>(new Date().toISOString());
   const [countdown, setCountdown] = useState<number>(0); // 倒计时秒数
@@ -501,31 +494,96 @@ const NoticeNew: React.FC = () => {
       const validDepartments = (departments as string[]).filter(
         (dept: string) => dept && dept.trim() !== ""
       );
-      const deptCodes =
-        validDepartments.length > 0
-          ? validDepartments
-          : currentUser?.deptCode
-          ? [currentUser.deptCode]
-          : [];
+      
+      // 修改deptCodes处理逻辑：使用选中的所有责任单位代码
+      let deptCodes: string[] = [];
+      if (validDepartments.length > 0) {
+        // 如果用户手动选择了部门，则使用选择的部门（所有选中的责任单位代码）
+        deptCodes = validDepartments;
+      } else if (currentUser?.deptCode) {
+        // 如果没有手动选择部门，但有当前用户部门代码
+        // 首先检查表单中是否已经存在选中的部门
+        const formValues = form.getFieldsValue();
+        console.log("获取到的表单值:", formValues); // 添加调试日志
+        
+        const selectedDepartments = formValues.departments || [];
+        console.log("表单中选中的责任单位:", selectedDepartments); // 添加调试日志
+        
+        if (selectedDepartments.length > 0) {
+          // 如果表单中已经有选中的部门，直接使用这些部门
+          deptCodes = selectedDepartments;
+          console.log("使用表单中已选中的部门:", selectedDepartments);
+        } else {
+          // 根据deptLevel确定默认选中的部门范围
+          let defaultDepartments: string[] = [];
+          
+          // 查找当前用户所在部门
+          const findUserDept = (nodes: ExtendedDataNode[]): ExtendedDataNode | undefined => {
+            for (const node of nodes) {
+              if (node.deptCode === currentUser.deptCode) {
+                return node;
+              }
+              if (node.children && node.children.length > 0) {
+                const found = findUserDept(node.children);
+                if (found) return found;
+              }
+            }
+            return undefined;
+          };
+          
+          const userDept = findUserDept(departmentsData);
+          
+          if (userDept) {
+            // 根据deptLevel确定选中范围
+            const targetLevel = Number(deptLevel);
+            const userDeptLevel = userDept.deptLevel || 0;
+            
+            if (userDeptLevel <= targetLevel) {
+              // 如果用户部门层级小于等于目标层级，只选中用户所在部门
+              defaultDepartments = [userDept.deptCode!];
+            } else {
+              // 如果用户部门层级大于目标层级，选中用户部门及其下级部门（根据层级限制）
+              const collectDepartments = (node: ExtendedDataNode, currentLevel: number): string[] => {
+                let result: string[] = [];
+                
+                // 添加当前部门
+                if (node.deptCode) {
+                  result.push(node.deptCode);
+                }
+                
+                // 递归添加所有子级部门
+                if (node.children && node.children.length > 0) {
+                  node.children.forEach(child => {
+                    result = result.concat(collectDepartments(child, currentLevel + 1));
+                  });
+                }
+                
+                return result;
+              };
+              
+              defaultDepartments = collectDepartments(userDept, userDeptLevel);
+            }
+          } else if (currentUser.deptCode) {
+            // 如果没有找到用户部门，但用户有deptCode，仍然设置为默认选中
+            defaultDepartments = [currentUser.deptCode];
+          }
+          
+          deptCodes = defaultDepartments;
+        }
+      } else {
+        // 如果都没有，则使用空数组
+        deptCodes = [];
+      }
 
-      console.log("🔍 调试信息:", {
+      // 添加日志：打印下拉框中选中的责任单位和调用notice接口携带的责任单位
+      console.log("下拉框中选中的责任单位:", validDepartments);
+      console.log("调用notice接口携带的责任单位:", deptCodes);
+      
+      // 添加日志：在调用notice接口前打印详细信息
+      console.log("即将调用notice接口:", {
         deptCodes: deptCodes,
         taskIds: businessTopics,
-        startTime: formatDateTime(currentStartTime),
-        当前时间: formatDateTime(new Date().toISOString()),
-      });
-
-      // 添加额外的调试信息
-      console.log("🔍 详细调试信息:", {
-        departmentsLength: departments.length,
-        validDepartmentsLength: validDepartments.length,
-        businessTopicsLength: businessTopics.length,
-        departmentsContent: departments,
-        validDepartmentsContent: validDepartments,
-        businessTopicsContent: businessTopics,
-        isDepartmentsArray: Array.isArray(departments),
-        isBusinessTopicsArray: Array.isArray(businessTopics),
-        currentUserDeptCode: currentUser?.deptCode,
+        startTime: formatDateTime(currentStartTime)
       });
 
       const noticeRes: ApiResponse<any> = await thirdservice.notice({
@@ -544,6 +602,7 @@ const NoticeNew: React.FC = () => {
         hitRes: hitRes,
         businessTopics: [...businessTopics],
         departments: [...validDepartments], // 使用过滤后的有效部门列表
+        startTime: startTimeRef.current // 添加监听开始时间
       };
 
       // 更新监听历史记录
@@ -558,10 +617,6 @@ const NoticeNew: React.FC = () => {
         message.success(`检测到 ${data.size} 个新任务！`);
         // 每次检查完成后,有发现新任务才更新startTime为当前时间
         const newStartTime = new Date().toISOString();
-        console.log("⏰ 更新startTime:", {
-          请求时使用的时间: formatDateTime(currentStartTime),
-          更新后的时间: formatDateTime(newStartTime),
-        });
         // 同时更新状态和引用
         setStartTime(newStartTime);
         startTimeRef.current = newStartTime;
@@ -589,11 +644,12 @@ const NoticeNew: React.FC = () => {
         hitRes: [],
         businessTopics: businessTopics,
         departments: validDepartments, // 使用过滤后的有效部门列表
+        startTime: startTimeRef.current // 添加监听开始时间
       };
 
       setListenHistory((prev) => [historyItem, ...prev.slice(0, 999)]);
     }
-  }, [form, currentUser, startContinuousSound]);
+  }, [form, currentUser, departmentsData]);
 
   // 开始倒计时
   const startCountdown = useCallback((seconds: number) => {
@@ -622,9 +678,12 @@ const NoticeNew: React.FC = () => {
     (intervalValue?: number) => {
       // 获取表单数据
       const formData = form.getFieldsValue();
-      const { businessTopics = [], intervalMinutes: formIntervalMinutes } =
+      console.log("开始监听时获取到的表单数据:", formData); // 添加调试日志
+      
+      const { businessTopics = [], departments = [], intervalMinutes: formIntervalMinutes } =
         formData as {
           businessTopics?: string[];
+          departments?: string[];
           intervalMinutes?: number;
         };
 
@@ -644,6 +703,68 @@ const NoticeNew: React.FC = () => {
       if (businessTopics.length === 0) {
         message.warning("请选择至少一个业务专题");
         return;
+      }
+
+      // 确保在手动监听时也设置默认部门（如果未选择）
+      if (departments.length === 0 && currentUser?.deptCode) {
+        // 根据deptLevel确定默认选中的部门范围
+        let defaultDepartments: string[] = [];
+        
+        // 查找当前用户所在部门
+        const findUserDept = (nodes: ExtendedDataNode[]): ExtendedDataNode | undefined => {
+          for (const node of nodes) {
+            if (node.deptCode === currentUser.deptCode) {
+              return node;
+            }
+            if (node.children && node.children.length > 0) {
+              const found = findUserDept(node.children);
+              if (found) return found;
+            }
+          }
+          return undefined;
+        };
+        
+        const userDept = findUserDept(departmentsData);
+        
+        if (userDept) {
+          // 根据deptLevel确定选中范围
+          const targetLevel = Number(deptLevel);
+          const userDeptLevel = userDept.deptLevel || 0;
+          
+          if (userDeptLevel <= targetLevel) {
+            // 如果用户部门层级小于等于目标层级，只选中用户所在部门
+            defaultDepartments = [userDept.deptCode!];
+          } else {
+            // 如果用户部门层级大于目标层级，选中用户部门及其下级部门（根据层级限制）
+            const collectDepartments = (node: ExtendedDataNode, currentLevel: number): string[] => {
+              let result: string[] = [];
+              
+              // 添加当前部门
+              if (node.deptCode) {
+                result.push(node.deptCode);
+              }
+              
+              // 递归添加所有子级部门
+              if (node.children && node.children.length > 0) {
+                node.children.forEach(child => {
+                  result = result.concat(collectDepartments(child, currentLevel + 1));
+                });
+              }
+              
+              return result;
+            };
+            
+            defaultDepartments = collectDepartments(userDept, userDeptLevel);
+          }
+        } else if (currentUser.deptCode) {
+          // 如果没有找到用户部门，但用户有deptCode，仍然设置为默认选中
+          defaultDepartments = [currentUser.deptCode];
+        }
+        
+        form.setFieldsValue({
+          departments: defaultDepartments,
+        });
+        console.log("手动监听 - 设置默认部门:", defaultDepartments);
       }
 
       setIsListening(true);
@@ -671,20 +792,40 @@ const NoticeNew: React.FC = () => {
         }, 100);
       }, effectiveInterval * 60 * 1000);
     },
-    [form, intervalMinutes, checkForNewTasks, startCountdown]
+    [form, intervalMinutes, checkForNewTasks, startCountdown, currentUser, departmentsData]
   );
 
   // 当用户信息和部门数据都加载完成后，设置默认选中的部门
   useEffect(() => {
+    console.log("默认选中部门useEffect触发:", currentUser, departmentsData.length); // 添加调试日志
+    
     if (
       currentUser &&
       departmentsData.length > 0 &&
       !hasSetDefaultDepartment.current
     ) {
-      // 查找用户所在部门
-      const findUserDept = (
-        nodes: ExtendedDataNode[]
-      ): ExtendedDataNode | null => {
+      console.log("用户部门代码:", currentUser.deptCode); // 添加调试日志
+      
+      // 获取表单中已选中的部门（如果有的话）
+      const formValues = form.getFieldsValue();
+      console.log("默认选中部门时获取到的表单值:", formValues); // 添加调试日志
+      
+      const selectedDepartments = formValues.departments || [];
+      
+      // 如果已经有选中的部门，使用选中的所有责任单位代码
+      if (selectedDepartments.length > 0) {
+        // 已经有选中的部门，不需要再设置默认选中
+        hasSetDefaultDepartment.current = true; // 标记已设置默认选中
+        console.log("已存在选中的部门，不需要设置默认选中:", selectedDepartments);
+        return;
+      }
+      
+      // 根据deptLevel确定默认选中的部门范围
+      let defaultDepartments: string[] = [];
+      console.log("当前用户的deptLevel:", deptLevel); // 添加调试日志
+      
+      // 查找当前用户所在部门
+      const findUserDept = (nodes: ExtendedDataNode[]): ExtendedDataNode | undefined => {
         for (const node of nodes) {
           if (node.deptCode === currentUser.deptCode) {
             return node;
@@ -694,34 +835,64 @@ const NoticeNew: React.FC = () => {
             if (found) return found;
           }
         }
-        return null;
+        return undefined;
       };
-
+      
       const userDept = findUserDept(departmentsData);
+      console.log("找到的用户部门:", userDept); // 添加调试日志
+      console.log("部门数据中是否包含用户部门:", !!userDept); // 添加调试日志
+      
+      if (userDept) {
+        // 根据deptLevel确定选中范围
+        const targetLevel = Number(deptLevel);
+        const userDeptLevel = userDept.deptLevel || 0;
+        console.log("默认选中部门 - targetLevel:", targetLevel, "userDeptLevel:", userDeptLevel); // 添加调试日志
+          
+        // 修复：总是收集所有子级部门，忽略deptLevel限制
+        console.log("默认选中部门 - 将收集所有子级部门，忽略deptLevel限制");
+          
+        const collectDepartments = (node: ExtendedDataNode, currentLevel: number): string[] => {
+          let result: string[] = [];
+          
+          // 添加当前部门
+          if (node.deptCode) {
+            result.push(node.deptCode);
+            console.log("默认选中部门 - 添加部门:", node.deptCode);
+          }
+          
+          // 递归添加所有子级部门
+          if (node.children && node.children.length > 0) {
+            node.children.forEach(child => {
+              result = result.concat(collectDepartments(child, currentLevel + 1));
+            });
+          }
+          
+          return result;
+        };
+          
+        defaultDepartments = collectDepartments(userDept, userDeptLevel);
+        console.log("默认选中部门 - 收集到的所有部门:", defaultDepartments);
+      } else if (currentUser.deptCode) {
+        // 如果没有找到用户部门，但用户有deptCode，仍然设置为默认选中
+        defaultDepartments = [currentUser.deptCode];
+      }
 
-      // 如果找到了用户所在部门，则设置为默认选中
-      if (userDept && userDept.deptCode) {
-        console.log(
-          "默认选中用户所在部门:",
-          userDept.deptName,
-          userDept.deptCode
-        );
+      // 设置默认选中部门
+      if (defaultDepartments.length > 0) {
         form.setFieldsValue({
-          departments: [userDept.deptCode],
+          departments: defaultDepartments,
         });
         hasSetDefaultDepartment.current = true; // 标记已设置默认选中
-      } else {
-        console.log("未找到用户所在部门，用户deptCode:", currentUser.deptCode);
-        // 如果没有找到用户所在部门，但用户有deptCode，仍然设置为默认选中
-        if (currentUser.deptCode) {
-          form.setFieldsValue({
-            departments: [currentUser.deptCode],
-          });
-          hasSetDefaultDepartment.current = true;
-        }
+        console.log("默认选中部门:", defaultDepartments);
+        
+        // 添加延迟，检查表单值是否被正确设置
+        setTimeout(() => {
+          const currentFormValues = form.getFieldsValue();
+          console.log("默认选中部门 - 延迟检查表单值:", currentFormValues);
+        }, 100);
       }
     }
-  }, [currentUser, departmentsData, form]);
+  }, [currentUser, form, departmentsData, deptLevel]);
 
   // 初始化音频
   useEffect(() => {
@@ -796,22 +967,17 @@ const NoticeNew: React.FC = () => {
   // 加载业务专题数据
   const loadBusinessTopics = async (): Promise<ExtendedDataNode[]> => {
     try {
-      console.log("📡 正在加载业务专题数据...");
       const deptRes: ApiResponse<any[]> = await thirdservice.taskTree();
-      // const deptRes = { data: mockBusinessTopics };
 
       // 检查响应数据
       if (!deptRes.data || !Array.isArray(deptRes.data)) {
-        console.warn("业务专题数据格式异常:", deptRes);
         message.warning("业务专题数据格式异常，使用模拟数据");
         return mockBusinessTopics;
       }
 
       const transformedData = transformTreeData(deptRes.data, "business");
-      console.log("✅ 业务专题数据加载成功:", transformedData);
       return transformedData;
     } catch (error) {
-      console.error("业务专题数据加载失败:", error);
       message.error("业务专题数据加载失败，使用模拟数据");
       return mockBusinessTopics;
     }
@@ -820,19 +986,15 @@ const NoticeNew: React.FC = () => {
   // 加载责任单位数据
   const loadDepartments = useCallback(async (): Promise<ExtendedDataNode[]> => {
     try {
-      console.log("📡 正在加载责任单位数据...");
       const taskRes: ApiResponse<any[]> = await thirdservice.getDeptList();
-      // const taskRes = { data: mockDepartments };
 
       // 检查响应数据
       if (!taskRes.data || !Array.isArray(taskRes.data)) {
-        console.warn("责任单位数据格式异常:", taskRes);
         message.warning("责任单位数据格式异常，使用模拟数据");
         taskRes.data = mockDepartments;
       }
 
       // 构建部门树结构
-      console.log("deptLevel", deptLevel);
       let topLevelDeptCode = "";
 
       // 如果有当前用户信息，根据用户所在部门和deptLevel确定最顶级部门代码
@@ -841,7 +1003,6 @@ const NoticeNew: React.FC = () => {
         const userDept = taskRes.data.find(
           (dept) => dept.deptCode === currentUser.deptCode
         );
-        console.log("userDept", userDept);
         if (userDept) {
           const userDeptLevel = userDept.deptLevel || 0;
           if (userDeptLevel <= Number(deptLevel)) {
@@ -874,7 +1035,6 @@ const NoticeNew: React.FC = () => {
           }
         }
       }
-      console.log("顶级部门代码:", topLevelDeptCode);
 
       const buildTree = () => {
         const deptList = taskRes.data;
@@ -894,9 +1054,7 @@ const NoticeNew: React.FC = () => {
       const treeData = buildTree();
       return treeData;
     } catch (error) {
-      console.error("责任单位数据加载失败:", error);
       message.error("责任单位数据加载失败，使用模拟数据");
-
       return mockDepartments;
     }
   }, [currentUser, deptLevel]);
@@ -908,14 +1066,27 @@ const NoticeNew: React.FC = () => {
       // 先加载业务专题数据
       const businessTopicsResponse = await loadBusinessTopics();
       setBusinessTopicsData(businessTopicsResponse);
+      
+      // 构建业务专题ID到名称的映射
+      const topicMap = new Map<string, string>();
+      const buildMap = (nodes: ExtendedDataNode[]) => {
+        nodes.forEach(node => {
+          if (node.id && node.name) {
+            // 确保ID是字符串类型
+            topicMap.set(String(node.id), node.name);
+          }
+          if (node.children && node.children.length > 0) {
+            buildMap(node.children);
+          }
+        });
+      };
+      buildMap(businessTopicsResponse);
+      setBusinessTopicMap(topicMap);
 
       // 再加载责任单位数据
       const departmentsResponse = await loadDepartments();
       setDepartmentsData(departmentsResponse);
-
-      console.log("✅ 数据加载完成");
     } catch (error) {
-      console.error("数据加载失败:", error);
       message.error("数据加载失败，请刷新页面重试");
       // 如果接口失败，使用模拟数据作为备选
       setBusinessTopicsData(mockBusinessTopics);
@@ -947,22 +1118,100 @@ const NoticeNew: React.FC = () => {
 
         console.log("有效的业务专题ID：", taskIdArray);
 
-        // 设置表单值
-        form.setFieldsValue({
+        // 构造要设置的表单值
+        const formValues: any = {
           businessTopics: taskIdArray,
-        });
+        };
 
+        // 如果有当前用户信息，设置默认部门为根据deptLevel确定的部门
+        if (currentUser?.deptCode && departmentsData.length > 0) {
+          // 获取表单中已选中的部门（如果有的话）
+          const formValues = form.getFieldsValue();
+          console.log("自动监听时获取到的表单值:", formValues); // 添加调试日志
+          
+          const selectedDepartments = formValues.departments || [];
+          
+          // 添加日志：打印自动监听时下拉框中选中的责任单位
+          console.log("自动监听 - 下拉框中选中的责任单位:", selectedDepartments);
+          
+          // 如果已经有选中的部门，使用选中的所有责任单位代码
+          if (selectedDepartments.length > 0) {
+            // 使用表单中已选中的部门
+            formValues.departments = selectedDepartments;
+            console.log("自动监听 - 使用已选中的部门:", selectedDepartments);
+          } else {
+            // 如果没有选中的部门，则根据deptLevel确定默认选中的部门范围
+            let defaultDepartments: string[] = [];
+            
+            // 查找当前用户所在部门
+            const findUserDept = (nodes: ExtendedDataNode[]): ExtendedDataNode | undefined => {
+              for (const node of nodes) {
+                if (node.deptCode === currentUser.deptCode) {
+                  return node;
+                }
+                if (node.children && node.children.length > 0) {
+                  const found = findUserDept(node.children);
+                  if (found) return found;
+                }
+              }
+              return undefined;
+            };
+            
+            const userDept = findUserDept(departmentsData);
+            console.log("自动监听 - 找到的用户部门:", userDept); // 添加调试日志
+            
+            if (userDept) {
+              // 根据deptLevel确定选中范围
+              const targetLevel = Number(deptLevel);
+              const userDeptLevel = userDept.deptLevel || 0;
+              console.log("自动监听 - targetLevel:", targetLevel, "userDeptLevel:", userDeptLevel); // 添加调试日志
+              
+              // 修复：总是收集所有子级部门，忽略deptLevel限制
+              console.log("自动监听 - 将收集所有子级部门，忽略deptLevel限制");
+              
+              const collectDepartments = (node: ExtendedDataNode, currentLevel: number): string[] => {
+                let result: string[] = [];
+                
+                // 添加当前部门
+                if (node.deptCode) {
+                  result.push(node.deptCode);
+                  console.log("自动监听 - 添加部门:", node.deptCode);
+                }
+                
+                // 递归添加所有子级部门
+                if (node.children && node.children.length > 0) {
+                  node.children.forEach(child => {
+                    result = result.concat(collectDepartments(child, currentLevel + 1));
+                  });
+                }
+                
+                return result;
+              };
+              
+              defaultDepartments = collectDepartments(userDept, userDeptLevel);
+              console.log("自动监听 - 收集到的所有部门:", defaultDepartments);
+            } else if (currentUser.deptCode) {
+              // 如果没有找到用户部门，但用户有deptCode，仍然设置为默认选中
+              defaultDepartments = [currentUser.deptCode];
+            }
+            
+            formValues.departments = defaultDepartments;
+            console.log("自动监听 - 设置默认部门:", defaultDepartments);
+          }
+        }
+
+        // 设置表单值
+        form.setFieldsValue(formValues);
+        
+        // 添加日志：打印设置后的表单值
+        console.log("自动监听 - 设置后的表单值:", formValues);
+        
         // 如果有有效的业务专题，则自动开始监听
         if (taskIdArray.length > 0) {
           let intervalValue = 5; // 默认间隔5分钟
           if (interval && !isNaN(Number(interval)) && Number(interval) > 0) {
             intervalValue = Number(interval);
           }
-
-          // 设置表单中的间隔时间
-          form.setFieldsValue({
-            intervalMinutes: intervalValue,
-          });
 
           // 延迟一小段时间确保状态更新完成后再开始监听
           setTimeout(() => {
@@ -974,7 +1223,7 @@ const NoticeNew: React.FC = () => {
       // 如果没有taskIds参数，只加载数据
       loadInitialData();
     }
-  }, [taskIds, interval, loadInitialData, startListening, form]);
+  }, [taskIds, interval, loadInitialData, startListening, form, currentUser, departmentsData]);
 
   // 监听hanNotice状态变化，控制音频播放
   useEffect(() => {
@@ -1062,12 +1311,15 @@ const NoticeNew: React.FC = () => {
 
   // 业务专题选择变化
   const onBusinessTopicChange: TreeSelectProps["onChange"] = (values) => {
+    console.log("业务专题选择变化，选中的值:", values); // 添加调试日志
+    
     // 过滤掉非叶子节点
     const filteredValues = filterBusinessTopicNonLeafValues(
       values,
       businessTopicsData
     );
-
+    console.log("过滤后的业务专题值:", filteredValues); // 添加调试日志
+    
     // 限制最多选择10个
     if (filteredValues.length > 10) {
       message.warning("业务专题最多只能选择10个");
@@ -1077,18 +1329,26 @@ const NoticeNew: React.FC = () => {
     form.setFieldsValue({
       businessTopics: filteredValues,
     });
+    
+    console.log("已设置表单中的业务专题值:", filteredValues); // 添加调试日志
   };
 
   // 责任单位选择变化
   const onDepartmentChange: TreeSelectProps["onChange"] = (values) => {
+    console.log("责任单位选择变化，选中的值:", values); // 添加调试日志
+    
     // 过滤掉无效节点（允许所有节点）
     const filteredValues = filterDepartmentInvalidValues(
       values,
       departmentsData
     );
+    console.log("过滤后的责任单位值:", filteredValues); // 添加调试日志
+    
     form.setFieldsValue({
       departments: filteredValues,
     });
+    
+    console.log("已设置表单中的责任单位值:", filteredValues); // 添加调试日志
   };
 
   // 触发震动
@@ -1160,6 +1420,42 @@ const NoticeNew: React.FC = () => {
     message.success("监听历史已清空");
   };
 
+  // 异常日志上报
+  const reportErrorLog = async () => {
+    if (selectedHistoryKeys.length === 0) {
+      message.warning("请先选择要上报的异常数据");
+      return;
+    }
+
+    try {
+      // 过滤出选中的历史记录
+      const selectedItems = listenHistory.filter((item) =>
+        selectedHistoryKeys.includes(item.id)
+      );
+
+      // 构造上报数据，格式化时间戳
+      const reportData = {
+        errorData: selectedItems.map(item => ({
+          ...item,
+          timestamp: formatDateTime(item.timestamp), // 格式化时间戳为 YYYY-MM-DD HH:mm:ss
+          startTime: item.startTime ? formatDateTime(item.startTime) : undefined // 格式化开始时间
+        })),
+        reporter: currentUser?.chineseName || "未知用户",
+        reporterId: currentUser?.id || "未知用户",
+        reportTime: formatDateTime(new Date().toISOString()), // 添加上报时间
+        // 可以添加更多上报信息
+      };
+
+      // 调用上报接口
+      await thirdservice.logUpload(reportData);
+      
+      message.success("异常日志上报成功");
+    } catch (error) {
+      console.error("异常日志上报失败:", error);
+      message.error("异常日志上报失败，请检查网络连接");
+    }
+  };
+
   // 显示新任务详情
   const showTaskDetails = (item: ListenHistoryItem) => {
     setSelectedHistoryItem(item);
@@ -1178,8 +1474,29 @@ const NoticeNew: React.FC = () => {
       selectedHistoryKeys.includes(item.id)
     );
 
+    // 修改导出数据格式，修复时间字段格式问题
+    const formattedItems = selectedItems.map(item => {
+      // 格式化时间字段
+      const formattedTimestamp = formatDateTime(item.timestamp);
+      const formattedStartTime = item.startTime ? formatDateTime(item.startTime) : undefined;
+      
+      // 处理业务专题名称，根据业务的id去业务专题里查找业务专题的名称
+      const businessTopicNames = getBusinessTopicNames(item.businessTopics);
+      
+      // 处理责任单位名称
+      const departmentNames = getDepartmentNames(item.departments);
+      
+      return {
+        ...item,
+        timestamp: formattedTimestamp, // 使用格式化后的时间
+        startTime: formattedStartTime, // 格式化开始时间
+        businessTopicNames: businessTopicNames,
+        departmentNames: departmentNames
+      };
+    });
+
     // 创建JSON数据
-    const jsonData = JSON.stringify(selectedItems, null, 2);
+    const jsonData = JSON.stringify(formattedItems, null, 2);
 
     // 创建下载链接
     const blob = new Blob([jsonData], { type: "application/json" });
@@ -1211,26 +1528,15 @@ const NoticeNew: React.FC = () => {
 
   // 获取业务专题名称
   const getBusinessTopicNames = (topicIds: string[]): string[] => {
-    const findTopicName = (
-      nodes: ExtendedDataNode[],
-      id: string
-    ): string | null => {
-      for (const node of nodes) {
-        if (node.id === id) {
-          return node.name || "未知业务专题";
-        }
-        if (node.children && node.children.length > 0) {
-          const found = findTopicName(node.children, id);
-          if (found) return found;
-        }
-      }
-      return null;
-    };
-
-    return topicIds.map((id) => {
-      const name = findTopicName(businessTopicsData, id);
+    // 直接从Map中获取业务专题名称，确保ID是字符串类型
+    const result = topicIds.map(id => {
+      // 确保ID是字符串类型
+      const stringId = String(id);
+      const name = businessTopicMap.get(stringId);
       return name || "未知业务专题";
     });
+    
+    return result;
   };
 
   // 获取责任单位名称
@@ -1281,7 +1587,7 @@ const NoticeNew: React.FC = () => {
               form={form}
               layout="vertical"
               initialValues={{
-                intervalMinutes: 5,
+                intervalMinutes: interval,
               }}
             >
               <Form.Item
@@ -1434,6 +1740,11 @@ const NoticeNew: React.FC = () => {
                     导出选中
                   </Button>
                 )}
+                {selectedHistoryKeys.length > 0 && (
+                  <Button size="small" type="primary" danger onClick={reportErrorLog}>
+                    上报异常({selectedHistoryKeys.length})
+                  </Button>
+                )}
                 {listenHistory.length > 0 && (
                   <Button size="small" onClick={clearHistory}>
                     清空历史
@@ -1559,6 +1870,12 @@ const NoticeNew: React.FC = () => {
                 <strong>监听时间:</strong>{" "}
                 {formatDateTime(selectedHistoryItem.timestamp)}
               </p>
+              {selectedHistoryItem.startTime && (
+                <p>
+                  <strong>监听开始时间:</strong>{" "}
+                  {formatDateTime(selectedHistoryItem.startTime)}
+                </p>
+              )}
               <Form.Item noStyle shouldUpdate>
                 {({ getFieldValue }) => (
                   <>
