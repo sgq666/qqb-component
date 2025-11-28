@@ -120,10 +120,13 @@ const Fulltext: React.FC = () => {
   const fetchRichTextData = async (id: string) => {
     setDataLoading(true);
     try {
+      // 读取.env中的REACT_APP_IS_APP配置
+      const appCall = process.env.REACT_APP_IS_APP || "0";
+      
       // 模拟API调用
-      console.log("请求参数：", { id });
+      console.log("请求参数：", { id, appCall });
       const fulltextRes: ApiResponse<RichTextData> =
-        await thirdservice.getFulltextById({ id });
+        await thirdservice.getFulltextById({ id, appCall });
       const date = fulltextRes.data;
 
       // 模拟数据
@@ -247,7 +250,7 @@ const Fulltext: React.FC = () => {
         // 新增操作
         console.log("新增请求参数：", saveData);
         saveData.id = "";
-        thirdservice.addFulltext(saveData);
+        thirdservice.createFulltext(saveData);
       }
 
       setTimeout(() => {

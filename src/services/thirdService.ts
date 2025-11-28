@@ -50,12 +50,13 @@ class ThirdService {
   }
 
   //添加富文本配置
-  public async addFulltext(data: any): Promise<ApiResponse<any>> {
+  public async createFulltext(data: any): Promise<ApiResponse<any>> {
     return requestService.post<ApiResponse<any>>(
       OTHER_SERVICE_PATHS.HK_FULLTEXT_CREAT,
       data
     );
   }
+
   //修改富文本配置
   public async updateFulltext(data: any): Promise<ApiResponse<any>> {
     return requestService.post<ApiResponse<any>>(
@@ -98,6 +99,18 @@ class ThirdService {
   public async currentUser(): Promise<ApiResponse<User>> {
     return requestService.post<ApiResponse<User>>(
       OTHER_SERVICE_PATHS.JN_CURRENT_USER_INFO
+    );
+  }
+
+  // 获取日报统计数据
+  public async getDayCountData(params: {
+    taskIds?: string[];
+    beginTime?: string;
+    endTime?: string;
+  }): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_STATS_DAY_COUNT, // 使用正确的API路径
+      params
     );
   }
 }

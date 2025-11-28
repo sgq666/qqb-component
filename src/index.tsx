@@ -3,6 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import dayjs from "dayjs";
+import "dayjs/locale/zh-cn";
+
+// 设置dayjs为中文
+dayjs.locale("zh-cn");
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

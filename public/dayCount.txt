@@ -1,0 +1,777 @@
+[
+    {
+      "date": "2025-11-12",
+      "deptCode": "469005870000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-13",
+      "deptCode": "469002530000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-13",
+      "deptCode": "469005830000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-13",
+      "deptCode": "469005870000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-14",
+      "deptCode": "469002530000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-17",
+      "deptCode": "469005830000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-17",
+      "deptCode": "469026610000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-18",
+      "deptCode": "469005580000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-18",
+      "deptCode": "469026610000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005500000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005550000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005570000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005590000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005600000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005620000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005630000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005650000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005660000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005720000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005830000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005840000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469005860000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-19",
+      "deptCode": "469026610000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "460105530000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005540000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005570000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005610000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005650000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005660000",
+      "deptDayCount": "8"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005670000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005720000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005730000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-20",
+      "deptCode": "469005820000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "460203550000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469002530000",
+      "deptDayCount": "12"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005500000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005570000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005580000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005590000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005610000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005660000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005730000",
+      "deptDayCount": "7"
+    },
+    {
+      "date": "2025-11-21",
+      "deptCode": "469005860000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-22",
+      "deptCode": "469005730000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-22",
+      "deptCode": "469005870000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-23",
+      "deptCode": "460203520000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-23",
+      "deptCode": "469005570000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "460203520000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "460203810000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469005590000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469005610000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469005650000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469005660000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469005720000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469005730000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-24",
+      "deptCode": "469025580000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "460203520000",
+      "deptDayCount": "7"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "460203550000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "460203570000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "460203810000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469001520000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002510000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002530000",
+      "deptDayCount": "18"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002560000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002570000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002580000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002600000",
+      "deptDayCount": "14"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002610000",
+      "deptDayCount": "6"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002630000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002640000",
+      "deptDayCount": "6"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002660000",
+      "deptDayCount": "11"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469002830000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005500000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005540000",
+      "deptDayCount": "7"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005550000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005560000",
+      "deptDayCount": "14"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005590000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005610000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005620000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005630000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005650000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005660000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005670000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005710000",
+      "deptDayCount": "13"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005720000",
+      "deptDayCount": "8"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005820000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005830000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469005870000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007560000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007580000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007590000",
+      "deptDayCount": "11"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007610000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007630000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007660000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007860000",
+      "deptDayCount": "10"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469007870000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025510000",
+      "deptDayCount": "13"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025520000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025530000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025560000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025570000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025580000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-25",
+      "deptCode": "469025610000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "460203550000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "460203560000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "460203570000",
+      "deptDayCount": "10"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "460205510000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "460205570000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469001510000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469001520000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469001530000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469001590000",
+      "deptDayCount": "5"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002510000",
+      "deptDayCount": "75"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002530000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002570000",
+      "deptDayCount": "14"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002590000",
+      "deptDayCount": "14"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002600000",
+      "deptDayCount": "6"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002610000",
+      "deptDayCount": "15"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002630000",
+      "deptDayCount": "6"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002640000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002700000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002830000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469002850000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005550000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005560000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005570000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005580000",
+      "deptDayCount": "4"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005600000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005610000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005620000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005630000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005650000",
+      "deptDayCount": "6"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005660000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005670000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005710000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005820000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005830000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469005870000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007510000",
+      "deptDayCount": "12"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007560000",
+      "deptDayCount": "13"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007580000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007590000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007610000",
+      "deptDayCount": "9"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007630000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007850000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007860000",
+      "deptDayCount": "2"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007870000",
+      "deptDayCount": "7"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469007880000",
+      "deptDayCount": "1"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025510000",
+      "deptDayCount": "11"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025520000",
+      "deptDayCount": "10"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025570000",
+      "deptDayCount": "13"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025580000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025590000",
+      "deptDayCount": "10"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025610000",
+      "deptDayCount": "3"
+    },
+    {
+      "date": "2025-11-26",
+      "deptCode": "469025620000",
+      "deptDayCount": "2"
+    }
+  ]

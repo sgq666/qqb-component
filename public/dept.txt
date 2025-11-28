@@ -1,0 +1,2787 @@
+[
+    {
+      "deptCode": "460105000000",
+      "deptName": "秀英分局",
+      "parentCode": "460100000000"
+    },
+    {
+      "deptCode": "460106000000",
+      "deptName": "龙华分局",
+      "parentCode": "460100000000"
+    },
+    {
+      "deptCode": "460107000000",
+      "deptName": "琼山分局",
+      "parentCode": "460100000000"
+    },
+    {
+      "deptCode": "460108000000",
+      "deptName": "美兰分局",
+      "parentCode": "460100000000"
+    },
+    {
+      "deptCode": "460109000000",
+      "deptName": "江东分局",
+      "parentCode": "460100000000"
+    },
+    {
+      "deptCode": "460110000000",
+      "deptName": "美兰国际机场分局",
+      "parentCode": "460100000000"
+    },
+    {
+      "deptCode": "460100000000",
+      "deptName": "海口市公安局",
+      "parentCode": "460000000000"
+    },
+    {
+      "deptCode": "460105520000",
+      "deptName": "海秀西路派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105600000",
+      "deptName": "五源河派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105560000",
+      "deptName": "永兴派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105580000",
+      "deptName": "东山派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105540000",
+      "deptName": "长流派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105570000",
+      "deptName": "石山派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105510000",
+      "deptName": "秀英派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105530000",
+      "deptName": "海秀派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105730000",
+      "deptName": "新海海岸派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105720000",
+      "deptName": "博南海岸派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105550000",
+      "deptName": "西秀派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460106030000",
+      "deptName": "治安警察大队",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106540000",
+      "deptName": "中山派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106530000",
+      "deptName": "城西派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106510000",
+      "deptName": "大同派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106570000",
+      "deptName": "海垦派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106520000",
+      "deptName": "金贸派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106710000",
+      "deptName": "长堤海岸派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106560000",
+      "deptName": "金宇派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106550000",
+      "deptName": "滨海派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106580000",
+      "deptName": "龙泉派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106590000",
+      "deptName": "龙桥派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106610000",
+      "deptName": "新坡派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460106600000",
+      "deptName": "遵谭派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460107540000",
+      "deptName": "凤翔派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107560000",
+      "deptName": "龙昆南派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107600000",
+      "deptName": "三门坡派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107510000",
+      "deptName": "滨江派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107520000",
+      "deptName": "忠介派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107570000",
+      "deptName": "龙塘派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107530000",
+      "deptName": "国兴派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107920000",
+      "deptName": "东昌派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107620000",
+      "deptName": "旧州派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107590000",
+      "deptName": "红旗派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107610000",
+      "deptName": "大坡派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107580000",
+      "deptName": "云龙派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107550000",
+      "deptName": "云露派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107640000",
+      "deptName": "新民派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107650000",
+      "deptName": "谭文派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107630000",
+      "deptName": "甲子派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460107910000",
+      "deptName": "红明派出所",
+      "parentCode": "460107000000"
+    },
+    {
+      "deptCode": "460108590000",
+      "deptName": "和平南派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108580000",
+      "deptName": "人民路派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108550000",
+      "deptName": "海府路派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108620000",
+      "deptName": "三江派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108530000",
+      "deptName": "海甸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108560000",
+      "deptName": "蓝天派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108510000",
+      "deptName": "博爱派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108910000",
+      "deptName": "新江派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108710000",
+      "deptName": "桂林洋海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108770000",
+      "deptName": "三江湾海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108740000",
+      "deptName": "红岛海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108570000",
+      "deptName": "白龙派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108610000",
+      "deptName": "演丰派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108600000",
+      "deptName": "灵山派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108730000",
+      "deptName": "东营海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108720000",
+      "deptName": "塔市海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108920000",
+      "deptName": "桂林洋派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108760000",
+      "deptName": "新埠海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108640000",
+      "deptName": "高校区派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108630000",
+      "deptName": "大致坡派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108520000",
+      "deptName": "白沙派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460108650000",
+      "deptName": "咸来派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460110030100",
+      "deptName": "治安消防大队",
+      "parentCode": "460110000000"
+    },
+    {
+      "deptCode": "460110030300",
+      "deptName": "机场派出所",
+      "parentCode": "460110000000"
+    },
+    {
+      "deptCode": "460000000000",
+      "deptName": "海南省公安厅",
+      "parentCode": ""
+    },
+    {
+      "deptCode": "460400000000",
+      "deptName": "儋州市公安局",
+      "parentCode": "460000000000"
+    },
+    {
+      "deptCode": "460400030000",
+      "deptName": "治安警察支队",
+      "parentCode": "460400000000"
+    },
+    {
+      "deptCode": "460400020000",
+      "deptName": "经济犯罪侦查支队",
+      "parentCode": "460400000000"
+    },
+    {
+      "deptCode": "460400010000",
+      "deptName": "国内安全保卫支队",
+      "parentCode": "460400000000"
+    },
+    {
+      "deptCode": "460400016000",
+      "deptName": "南华港海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400039000",
+      "deptName": "松鸣海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400040000",
+      "deptName": "白马井海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400013000",
+      "deptName": "新英海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400028000",
+      "deptName": "龙门港海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400018000",
+      "deptName": "兰训海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400035000",
+      "deptName": "松林海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400031000",
+      "deptName": "银滩湾海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400005000",
+      "deptName": "西培派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400012000",
+      "deptName": "西庆派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400038000",
+      "deptName": "西联派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400022000",
+      "deptName": "西流派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400023000",
+      "deptName": "新盈派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400036000",
+      "deptName": "红岭派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400037000",
+      "deptName": "龙山派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400003000",
+      "deptName": "解放派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400002000",
+      "deptName": "东风派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400004000",
+      "deptName": "前进派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400024000",
+      "deptName": "和庆派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400025000",
+      "deptName": "兰洋派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400014000",
+      "deptName": "雅星派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400026000",
+      "deptName": "南丰派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400033000",
+      "deptName": "白马井派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400034000",
+      "deptName": "王五派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400015000",
+      "deptName": "大成派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400009000",
+      "deptName": "新州派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400029000",
+      "deptName": "木棠派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400008000",
+      "deptName": "东成派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400006000",
+      "deptName": "宝岛派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400041000",
+      "deptName": "松涛水库派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460409501000",
+      "deptName": "小铲滩海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460409502000",
+      "deptName": "新英湾派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460409503000",
+      "deptName": "新都派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460409504000",
+      "deptName": "洋浦湾海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460409505000",
+      "deptName": "新都海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460409506000",
+      "deptName": "三都海岸派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "460400007000",
+      "deptName": "八一派出所",
+      "parentCode": "460400030000"
+    },
+    {
+      "deptCode": "461000000001",
+      "deptName": "省管市县",
+      "parentCode": "460000000000"
+    },
+    {
+      "deptCode": "469029000000",
+      "deptName": "保亭黎族苗族自治县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469002510000",
+      "deptName": "嘉积派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002530000",
+      "deptName": "城北派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002560000",
+      "deptName": "中原派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002570000",
+      "deptName": "阳江派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002580000",
+      "deptName": "龙江派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002590000",
+      "deptName": "会山派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002600000",
+      "deptName": "大路派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002610000",
+      "deptName": "万泉派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002630000",
+      "deptName": "石壁派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002640000",
+      "deptName": "塔洋派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002660000",
+      "deptName": "长坡派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002680000",
+      "deptName": "潭门派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002690000",
+      "deptName": "彬村山派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002700000",
+      "deptName": "博鳌派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002830000",
+      "deptName": "青葛海岸派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002840000",
+      "deptName": "东海海岸派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "469002850000",
+      "deptName": "龙湾港海岸派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "460106620000",
+      "deptName": "草坡派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "469030690000",
+      "deptName": "南方派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030700000",
+      "deptName": "长安派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030710000",
+      "deptName": "乘坡派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030720000",
+      "deptName": "太平派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "460207500000",
+      "deptName": "南田派出所",
+      "parentCode": "460200400000"
+    },
+    {
+      "deptCode": "460105902000",
+      "deptName": "西海岸海岸派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460106871000",
+      "deptName": "万绿园海岸派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460000T00000",
+      "deptName": "港航公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "460200T00000",
+      "deptName": "三亚港分局",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "469007T05200",
+      "deptName": "八所港码头派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460000T00023",
+      "deptName": "海口新海港派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460200T05100",
+      "deptName": "三亚港港区派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "469007T05100",
+      "deptName": "八所港港区派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460000100001",
+      "deptName": "番阳林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100002",
+      "deptName": "通什林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100003",
+      "deptName": "佛罗林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100004",
+      "deptName": "卡法岭林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100005",
+      "deptName": "佳西林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100006",
+      "deptName": "望林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469030530000",
+      "deptName": "县城派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030540000",
+      "deptName": "黎母山派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030550000",
+      "deptName": "红毛派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030560000",
+      "deptName": "什运派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030570000",
+      "deptName": "中平派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030580000",
+      "deptName": "长征派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030590000",
+      "deptName": "和平派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030600000",
+      "deptName": "上安派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030610000",
+      "deptName": "吊罗山派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030620000",
+      "deptName": "海石派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030630000",
+      "deptName": "新进派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030640000",
+      "deptName": "大丰派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030650000",
+      "deptName": "阳江派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030660000",
+      "deptName": "加钗派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030670000",
+      "deptName": "新伟派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030680000",
+      "deptName": "岭头派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469021650000",
+      "deptName": "金鸡派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469024740000",
+      "deptName": "红华农场派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "460200000000",
+      "deptName": "三亚市公安局",
+      "parentCode": "460000000000"
+    },
+    {
+      "deptCode": "460202510000",
+      "deptName": "河东派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202520000",
+      "deptName": "月川派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202530000",
+      "deptName": "大东海派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202540000",
+      "deptName": "鹿回头派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202550000",
+      "deptName": "荔枝沟派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202560000",
+      "deptName": "吉阳派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202570000",
+      "deptName": "亚龙湾派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202580000",
+      "deptName": "南新派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202820000",
+      "deptName": "青梅港海岸派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202830000",
+      "deptName": "红沙海岸派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460202840000",
+      "deptName": "安游海岸派出所",
+      "parentCode": "460200100000"
+    },
+    {
+      "deptCode": "460203520000",
+      "deptName": "新风派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460203540000",
+      "deptName": "友谊派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460203550000",
+      "deptName": "凤凰派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460203560000",
+      "deptName": "三亚湾派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460203570000",
+      "deptName": "高峰派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460203810000",
+      "deptName": "三亚港海岸派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460205510000",
+      "deptName": "天涯派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460205520000",
+      "deptName": "崖城派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "460205530000",
+      "deptName": "保港派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "460205550000",
+      "deptName": "崖州湾科技城派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "460205560000",
+      "deptName": "雅亮派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460205570000",
+      "deptName": "育才派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460205580000",
+      "deptName": "南滨派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "460205880000",
+      "deptName": "海角海岸派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460205890000",
+      "deptName": "港门海岸派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "460205900000",
+      "deptName": "梅联海岸派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "460205910000",
+      "deptName": "西岛海岸派出所",
+      "parentCode": "460200200000"
+    },
+    {
+      "deptCode": "460206510000",
+      "deptName": "机场派出所",
+      "parentCode": "460200500000"
+    },
+    {
+      "deptCode": "460206520000",
+      "deptName": "候机楼派出所",
+      "parentCode": "460200500000"
+    },
+    {
+      "deptCode": "460207510000",
+      "deptName": "林旺派出所",
+      "parentCode": "460200400000"
+    },
+    {
+      "deptCode": "460207850000",
+      "deptName": "蜈支洲海岸派出所",
+      "parentCode": "460200400000"
+    },
+    {
+      "deptCode": "460207860000",
+      "deptName": "后海海岸派出所",
+      "parentCode": "460200400000"
+    },
+    {
+      "deptCode": "460207870000",
+      "deptName": "海棠湾海岸派出所",
+      "parentCode": "460200400000"
+    },
+    {
+      "deptCode": "460106730000",
+      "deptName": "海口港海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460300000000",
+      "deptName": "三沙市公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469001000000",
+      "deptName": "五指山市公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469001510000",
+      "deptName": "河南派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001520000",
+      "deptName": "河北派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001530000",
+      "deptName": "南圣派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001540000",
+      "deptName": "畅好派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001550000",
+      "deptName": "水满派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001570000",
+      "deptName": "毛道派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001580000",
+      "deptName": "毛阳派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469001590000",
+      "deptName": "番阳派出所",
+      "parentCode": "469001000000"
+    },
+    {
+      "deptCode": "469002000000",
+      "deptName": "琼海市公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469005900000",
+      "deptName": "赤水海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469006000000",
+      "deptName": "万宁市公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469006510000",
+      "deptName": "北坡派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006520000",
+      "deptName": "长丰派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006530000",
+      "deptName": "东澳派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006540000",
+      "deptName": "万城派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006550000",
+      "deptName": "牛漏派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006560000",
+      "deptName": "城西派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006570000",
+      "deptName": "新梅派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006580000",
+      "deptName": "三更罗派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006590000",
+      "deptName": "库区派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006600000",
+      "deptName": "山根派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006610000",
+      "deptName": "城南派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006620000",
+      "deptName": "东星派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006640000",
+      "deptName": "后安派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006650000",
+      "deptName": "乐来派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006660000",
+      "deptName": "和乐派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469028830000",
+      "deptName": "黎安海岸派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028840000",
+      "deptName": "东华海岸派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028850000",
+      "deptName": "军田海岸派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469029510000",
+      "deptName": "城镇派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469005660000",
+      "deptName": "铺前派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005670000",
+      "deptName": "潭牛派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005680000",
+      "deptName": "东路派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005710000",
+      "deptName": "蓬莱派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005720000",
+      "deptName": "重兴派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005730000",
+      "deptName": "会文派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005810000",
+      "deptName": "高隆湾海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005820000",
+      "deptName": "木兰湾海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005830000",
+      "deptName": "口牙海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005840000",
+      "deptName": "抱虎海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005850000",
+      "deptName": "潮滩港海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005860000",
+      "deptName": "淇水湾海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005870000",
+      "deptName": "冯家海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005890000",
+      "deptName": "五龙港海岸派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005000000",
+      "deptName": "文昌市公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469005500000",
+      "deptName": "文城派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005540000",
+      "deptName": "龙楼派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005550000",
+      "deptName": "东郊派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005560000",
+      "deptName": "东阁派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005570000",
+      "deptName": "文教派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005580000",
+      "deptName": "昌洒派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005590000",
+      "deptName": "抱罗派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005600000",
+      "deptName": "公坡派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005610000",
+      "deptName": "清澜派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005620000",
+      "deptName": "翁田派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005630000",
+      "deptName": "冯坡派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469005650000",
+      "deptName": "锦山派出所",
+      "parentCode": "469005000000"
+    },
+    {
+      "deptCode": "469029530000",
+      "deptName": "加茂派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029540000",
+      "deptName": "什玲派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029550000",
+      "deptName": "响水派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029560000",
+      "deptName": "保城派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029570000",
+      "deptName": "三道派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029580000",
+      "deptName": "毛感派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029590000",
+      "deptName": "南林派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029600000",
+      "deptName": "六弓派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029610000",
+      "deptName": "城南派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029620000",
+      "deptName": "城北派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029630000",
+      "deptName": "西河派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029640000",
+      "deptName": "南茂派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029650000",
+      "deptName": "金江派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469029660000",
+      "deptName": "新星派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469030000000",
+      "deptName": "琼中黎族苗族自治县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469030510000",
+      "deptName": "湾岭派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469030520000",
+      "deptName": "营根派出所",
+      "parentCode": "469030000000"
+    },
+    {
+      "deptCode": "469029520000",
+      "deptName": "新政派出所",
+      "parentCode": "469029000000"
+    },
+    {
+      "deptCode": "469027550000",
+      "deptName": "万冲派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027520000",
+      "deptName": "抱由派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469800200016",
+      "deptName": "五指山站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "460205540000",
+      "deptName": "梅山派出所",
+      "parentCode": "460200300000"
+    },
+    {
+      "deptCode": "469027540000",
+      "deptName": "志仲派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "460000100007",
+      "deptName": "太平林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100008",
+      "deptName": "福山林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100009",
+      "deptName": "临高角林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100010",
+      "deptName": "多文林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469800200001",
+      "deptName": "火车轮渡南港派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "460000100011",
+      "deptName": "上埇林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100012",
+      "deptName": "会山林区派出所",
+      "parentCode": "469002000000"
+    },
+    {
+      "deptCode": "460000100013",
+      "deptName": "南林林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100014",
+      "deptName": "青皮林林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100015",
+      "deptName": "六连林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100016",
+      "deptName": "三更罗林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100018",
+      "deptName": "枫木林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100019",
+      "deptName": "昌化林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100020",
+      "deptName": "七叉林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469007580000",
+      "deptName": "新龙派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007590000",
+      "deptName": "大田派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007600000",
+      "deptName": "东河派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007610000",
+      "deptName": "天安派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007630000",
+      "deptName": "江边派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "467300100004",
+      "deptName": "子宰林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "467300100005",
+      "deptName": "长臂猿自然保护区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100021",
+      "deptName": "雅加林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469800200012",
+      "deptName": "棋子湾站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "460000100022",
+      "deptName": "龙门林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100023",
+      "deptName": "金鸡岭林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100024",
+      "deptName": "八门湾林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469007810000",
+      "deptName": "八所港海岸派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007850000",
+      "deptName": "四更海岸派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007860000",
+      "deptName": "新村海岸派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007870000",
+      "deptName": "感城海岸派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007880000",
+      "deptName": "板桥海岸派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469021000000",
+      "deptName": "定安县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469021510000",
+      "deptName": "龙州派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021520000",
+      "deptName": "龙湖派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021530000",
+      "deptName": "南丽湖派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021540000",
+      "deptName": "龙门派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021550000",
+      "deptName": "龙河派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021560000",
+      "deptName": "翰林派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021570000",
+      "deptName": "岭口派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021580000",
+      "deptName": "黄竹派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021590000",
+      "deptName": "塔岭派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021600000",
+      "deptName": "富文派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021610000",
+      "deptName": "新竹派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021620000",
+      "deptName": "定城派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021630000",
+      "deptName": "仙沟派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021640000",
+      "deptName": "雷鸣派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469021670000",
+      "deptName": "中瑞派出所",
+      "parentCode": "469021000000"
+    },
+    {
+      "deptCode": "469022000000",
+      "deptName": "屯昌县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469022510000",
+      "deptName": "屯城派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022520000",
+      "deptName": "屯郊派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022530000",
+      "deptName": "大同派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022540000",
+      "deptName": "坡心派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022550000",
+      "deptName": "枫木派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022560000",
+      "deptName": "新兴派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022570000",
+      "deptName": "南吕派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022580000",
+      "deptName": "乌坡派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "460000T00024",
+      "deptName": "马村港派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460200T05200",
+      "deptName": "凤凰岛国际邮轮港派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460200T05300",
+      "deptName": "南山港派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460000100025",
+      "deptName": "岛东林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100026",
+      "deptName": "会文林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100027",
+      "deptName": "白马岭林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100028",
+      "deptName": "红毛林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "467700100003",
+      "deptName": "松涛林场派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100029",
+      "deptName": "新州林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100030",
+      "deptName": "番加林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469800200013",
+      "deptName": "儋州站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200014",
+      "deptName": "白马井站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "460200100000",
+      "deptName": "吉阳分局",
+      "parentCode": "460200000000"
+    },
+    {
+      "deptCode": "460200400000",
+      "deptName": "海棠分局",
+      "parentCode": "460200000000"
+    },
+    {
+      "deptCode": "460200500000",
+      "deptName": "机场分局",
+      "parentCode": "460200000000"
+    },
+    {
+      "deptCode": "469800200000",
+      "deptName": "海口铁路公安处",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469800200002",
+      "deptName": "海口站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200003",
+      "deptName": "海口东站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200006",
+      "deptName": "万宁站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200007",
+      "deptName": "陵水站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200008",
+      "deptName": "三亚站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200009",
+      "deptName": "凤凰机场站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200010",
+      "deptName": "乐东站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200011",
+      "deptName": "东方站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "469800200015",
+      "deptName": "临高南站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "460200200000",
+      "deptName": "天涯分局",
+      "parentCode": "460200000000"
+    },
+    {
+      "deptCode": "460000100031",
+      "deptName": "保梅林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100017",
+      "deptName": "新兴林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100042",
+      "deptName": "子宰林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100044",
+      "deptName": "长臂猿自然保护区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000T05100",
+      "deptName": "海口港港区派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "469006670000",
+      "deptName": "新中派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006680000",
+      "deptName": "东兴派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006690000",
+      "deptName": "北大派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006710000",
+      "deptName": "禄马派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006720000",
+      "deptName": "东山岭派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006730000",
+      "deptName": "南桥派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006740000",
+      "deptName": "城北派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006750000",
+      "deptName": "河东派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006760000",
+      "deptName": "河西派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006770000",
+      "deptName": "东岭派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006780000",
+      "deptName": "东和派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006790000",
+      "deptName": "南林派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006810000",
+      "deptName": "山钦湾海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006830000",
+      "deptName": "神州半岛海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006840000",
+      "deptName": "石梅湾海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006850000",
+      "deptName": "乌场海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006860000",
+      "deptName": "港北海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006870000",
+      "deptName": "新梅海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469006880000",
+      "deptName": "山根湾海岸派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469007000000",
+      "deptName": "东方市公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469007510000",
+      "deptName": "八所派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007540000",
+      "deptName": "工业园区派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469007560000",
+      "deptName": "三家派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "460000100032",
+      "deptName": "岛西林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100033",
+      "deptName": "猕猴岭林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469800200005",
+      "deptName": "琼海站派出所",
+      "parentCode": "469800200000"
+    },
+    {
+      "deptCode": "460000100034",
+      "deptName": "崖城林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100035",
+      "deptName": "抱龙林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100040",
+      "deptName": "海棠林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100041",
+      "deptName": "甘什岭林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100000",
+      "deptName": "海南省森林公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469024820000",
+      "deptName": "厚水湾海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469026630000",
+      "deptName": "王下派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "460200300000",
+      "deptName": "崖州分局",
+      "parentCode": "460200000000"
+    },
+    {
+      "deptCode": "469026810000",
+      "deptName": "棋子湾海岸派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026820000",
+      "deptName": "昌化海岸派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469027000000",
+      "deptName": "乐东黎族自治县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469027510000",
+      "deptName": "向阳派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027570000",
+      "deptName": "大安派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027630000",
+      "deptName": "乐中派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027640000",
+      "deptName": "力高派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027650000",
+      "deptName": "保显派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027660000",
+      "deptName": "福强派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027670000",
+      "deptName": "保国派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027680000",
+      "deptName": "乐光派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027690000",
+      "deptName": "抱伦派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027700000",
+      "deptName": "尖峰林业派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460207520000",
+      "deptName": "藤桥派出所",
+      "parentCode": "460200400000"
+    },
+    {
+      "deptCode": "469007660000",
+      "deptName": "龙潭派出所",
+      "parentCode": "469007000000"
+    },
+    {
+      "deptCode": "469027600000",
+      "deptName": "永明派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027590000",
+      "deptName": "山荣派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027580000",
+      "deptName": "三平派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027560000",
+      "deptName": "千家派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027790000",
+      "deptName": "福报派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027610000",
+      "deptName": "机场派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027530000",
+      "deptName": "利国派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027620000",
+      "deptName": "尖峰派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027840000",
+      "deptName": "九所海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027810000",
+      "deptName": "黄流海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027820000",
+      "deptName": "莺歌海海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027830000",
+      "deptName": "佛罗海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027850000",
+      "deptName": "望楼港海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "460409000000",
+      "deptName": "洋浦分局",
+      "parentCode": "460400000000"
+    },
+    {
+      "deptCode": "469027860000",
+      "deptName": "岭头海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469027870000",
+      "deptName": "新联海岸派出所",
+      "parentCode": "469027000000"
+    },
+    {
+      "deptCode": "469007T00000",
+      "deptName": "八所港分局",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "469028000000",
+      "deptName": "陵水黎族自治县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469028360100",
+      "deptName": "南喜派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028510000",
+      "deptName": "新村派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028520000",
+      "deptName": "三才派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028530000",
+      "deptName": "陵城派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "460000T05200",
+      "deptName": "海口港码头派出所",
+      "parentCode": "460000T00000"
+    },
+    {
+      "deptCode": "460000100039",
+      "deptName": "天池林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100036",
+      "deptName": "邦溪林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100037",
+      "deptName": "南高岭林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460000100038",
+      "deptName": "南喜林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "469028570000",
+      "deptName": "东华派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028580000",
+      "deptName": "提蒙派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028590000",
+      "deptName": "本号派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028610000",
+      "deptName": "群英派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028620000",
+      "deptName": "文罗派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028630000",
+      "deptName": "隆广派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028660000",
+      "deptName": "光坡派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028670000",
+      "deptName": "英州派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028800000",
+      "deptName": "新村海岸派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028810000",
+      "deptName": "香水湾海岸派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469028820000",
+      "deptName": "清水湾海岸派出所",
+      "parentCode": "469028000000"
+    },
+    {
+      "deptCode": "469006630000",
+      "deptName": "大茂派出所",
+      "parentCode": "469006000000"
+    },
+    {
+      "deptCode": "469023680000",
+      "deptName": "太平派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023690000",
+      "deptName": "山口派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023700000",
+      "deptName": "红岗派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023710000",
+      "deptName": "红光派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023720000",
+      "deptName": "西达派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469024710000",
+      "deptName": "美良派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024830000",
+      "deptName": "博厚海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024840000",
+      "deptName": "美夏海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024850000",
+      "deptName": "马袅海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024860000",
+      "deptName": "临高角海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024870000",
+      "deptName": "金牌港海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469025000000",
+      "deptName": "白沙黎族自治县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469025510000",
+      "deptName": "牙叉派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025520000",
+      "deptName": "元门派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025530000",
+      "deptName": "南开派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025540000",
+      "deptName": "细水派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025550000",
+      "deptName": "阜龙派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025560000",
+      "deptName": "打安派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025570000",
+      "deptName": "青松派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025580000",
+      "deptName": "金波派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025590000",
+      "deptName": "邦溪派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025600000",
+      "deptName": "荣邦派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469025610000",
+      "deptName": "桥南派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469023730000",
+      "deptName": "昆仑派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023740000",
+      "deptName": "和岭派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023750000",
+      "deptName": "金安派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023810000",
+      "deptName": "马村海岸派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023820000",
+      "deptName": "桥头海岸派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023830000",
+      "deptName": "东水派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023840000",
+      "deptName": "老城海岸派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469024000000",
+      "deptName": "临高县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469024610000",
+      "deptName": "东门派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024620000",
+      "deptName": "西门派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024630000",
+      "deptName": "美台派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024640000",
+      "deptName": "加来机场派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024650000",
+      "deptName": "和舍派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024660000",
+      "deptName": "龙波派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024670000",
+      "deptName": "多文派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024680000",
+      "deptName": "皇桐派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024690000",
+      "deptName": "南宝派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024700000",
+      "deptName": "波莲派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024720000",
+      "deptName": "东英派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024730000",
+      "deptName": "东江派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024750000",
+      "deptName": "加来农场派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469024810000",
+      "deptName": "新盈海岸派出所",
+      "parentCode": "469024000000"
+    },
+    {
+      "deptCode": "469022590000",
+      "deptName": "南坤派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022600000",
+      "deptName": "西昌派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022610000",
+      "deptName": "晨星派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022620000",
+      "deptName": "中坤派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022630000",
+      "deptName": "广青派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022640000",
+      "deptName": "尖岭派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022650000",
+      "deptName": "昌南派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469022660000",
+      "deptName": "中建派出所",
+      "parentCode": "469022000000"
+    },
+    {
+      "deptCode": "469023000000",
+      "deptName": "澄迈县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469023510000",
+      "deptName": "老城派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023520000",
+      "deptName": "澄城派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023530000",
+      "deptName": "金江派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023540000",
+      "deptName": "加乐派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023550000",
+      "deptName": "文儒派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023560000",
+      "deptName": "石浮派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023570000",
+      "deptName": "新吴派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023580000",
+      "deptName": "永发派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023590000",
+      "deptName": "瑞溪派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023600000",
+      "deptName": "长安派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023610000",
+      "deptName": "美亭派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023620000",
+      "deptName": "白莲派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023630000",
+      "deptName": "福山派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023640000",
+      "deptName": "中兴派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023650000",
+      "deptName": "大丰派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469023660000",
+      "deptName": "仁兴派出所",
+      "parentCode": "469023000000"
+    },
+    {
+      "deptCode": "469025620000",
+      "deptName": "七坊派出所",
+      "parentCode": "469025000000"
+    },
+    {
+      "deptCode": "469026000000",
+      "deptName": "昌江黎族自治县公安局",
+      "parentCode": "461000000001"
+    },
+    {
+      "deptCode": "469026510000",
+      "deptName": "河北派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026530000",
+      "deptName": "铁城路派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026570000",
+      "deptName": "十月田派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026590000",
+      "deptName": "乌烈派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026600000",
+      "deptName": "昌城派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026610000",
+      "deptName": "叉河派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "469026620000",
+      "deptName": "七叉派出所",
+      "parentCode": "469026000000"
+    },
+    {
+      "deptCode": "1000003",
+      "deptName": "新海林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "1000004",
+      "deptName": "火山口林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "1000002",
+      "deptName": "新民林区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460400021000",
+      "deptName": "蓝洋城派出所",
+      "parentCode": "460400000000"
+    },
+    {
+      "deptCode": "460300201000",
+      "deptName": "永兴海岸派出所",
+      "parentCode": "460300000000"
+    },
+    {
+      "deptCode": "1000001",
+      "deptName": "水上海岸派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "1000005",
+      "deptName": "东寨港自然保护区派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "1000006",
+      "deptName": "园林派出所",
+      "parentCode": "460000100000"
+    },
+    {
+      "deptCode": "460106872000",
+      "deptName": "金盘派出所",
+      "parentCode": "460106000000"
+    },
+    {
+      "deptCode": "460108750000",
+      "deptName": "演海海岸派出所",
+      "parentCode": "460108000000"
+    },
+    {
+      "deptCode": "460105904000",
+      "deptName": "美安派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460105903000",
+      "deptName": "高新区派出所",
+      "parentCode": "460105000000"
+    },
+    {
+      "deptCode": "460100990000",
+      "deptName": "测试派出所",
+      "parentCode": "460106030000"
+    },
+    {
+      "deptCode": "469002860000",
+      "deptName": "乐城国际医疗旅游先行区派出所",
+      "parentCode": "469002000000"
+    }
+  ]

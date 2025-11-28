@@ -3,6 +3,7 @@ import { ConfigProvider } from "antd";
 import zhCN from "antd/lib/locale/zh_CN";
 import "antd/dist/antd.css";
 import Test1 from "./pages/Test1";
+import ExcelTemplateGenerator from "./pages/StatReport/ExcelTemplateGenerator"; // 添加Excel模板生成器页面
 import Ocr from "./pages/Ocr";
 import PhotoInfo from "./pages/PhotoInfo";
 import DeptCode from "./pages/DeptCode";
@@ -19,6 +20,7 @@ import DataMatcher from "./pages/DataMatcher"; // 添加数据匹配页面
 import Tools from "./pages/Tools"; // 添加实用工具页面
 import Geolocation from "./pages/Geolocation"; // 添加地理定位页面
 import OfflineMap from "./pages/OfflineMap"; // 添加离线地图页面
+import JsonProcessor from "./pages/JsonProcessor"; // 添加JSON处理器页面
 import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
@@ -59,6 +61,8 @@ function App() {
           <Route exact path="/tools" component={Tools} /> {/* 添加实用工具路由 */}
           <Route exact path="/geolocation" component={Geolocation} /> {/* 添加地理定位路由 */}
           <Route exact path="/offline-map" component={OfflineMap} /> {/* 添加离线地图路由 */}
+          <Route exact path="/json-processor" component={JsonProcessor} /> {/* 添加JSON处理器路由 */}
+          <Route exact path="/excel-stat" component={ExcelTemplateGenerator} /> {/* 添加Excel模板生成器路由 */}
         </Switch>
       </Router>
     </ConfigProvider>
