@@ -22,7 +22,7 @@ class RequestService {
   constructor() {
     this.instance = axios.create({
       baseURL: process.env.REACT_APP_API_BASE_URL || "",
-      timeout: 10000,
+      timeout: 100000,
       headers: {
         "Content-Type": "application/json",
       },

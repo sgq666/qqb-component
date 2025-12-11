@@ -13,6 +13,7 @@ interface ImportDataItem {
 interface ImportRequest {
   data: ImportDataItem[];
   fileName: string;
+  needPcs: boolean;
 }
 
 // 导入记录接口返回数据
@@ -30,6 +31,10 @@ export interface ImportDetail {
   hjdQu: string; // 户籍地区
   hjdFullAddr: string; // 户籍地地址
   name: string; // 身份证姓名
+  hh: string; // 户号
+  yhzgxdm: string; // 与户主关系代码
+  sjgsdwdm: string; // 机关单位代码
+  sjgsdwmc: string; // 机关单位名称
 }
 
 // 流动人口服务类

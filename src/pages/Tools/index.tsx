@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Input, Typography, Row, Col, message, Upload } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { UploadOutlined, ArrowRightOutlined } from "@ant-design/icons";
 
 const { Title, Text } = Typography;
 const { TextArea } = Input;
@@ -246,6 +246,24 @@ const Tools: React.FC = () => {
                 />
               </div>
             )}
+          </Card>
+        </Col>
+        
+        {/* JSON转Excel */}
+        <Col span={12}>
+          <Card title="JSON转Excel粘贴文本" size="small">
+            <div style={{ marginBottom: "15px" }}>
+              <Text>将二维JSON数组转换为可直接粘贴到Excel中的文本格式</Text>
+            </div>
+            <Button 
+              type="primary" 
+              href="#/json-to-excel"
+              target="_blank"
+              icon={<ArrowRightOutlined />}
+              style={{ marginTop: "10px" }}
+            >
+              打开转换工具
+            </Button>
           </Card>
         </Col>
       </Row>

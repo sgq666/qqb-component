@@ -21,6 +21,10 @@ import Tools from "./pages/Tools"; // 添加实用工具页面
 import Geolocation from "./pages/Geolocation"; // 添加地理定位页面
 import OfflineMap from "./pages/OfflineMap"; // 添加离线地图页面
 import JsonProcessor from "./pages/JsonProcessor"; // 添加JSON处理器页面
+import JsonToExcelConverter from "./pages/JsonToExcelConverter"; // 添加JSON转Excel粘贴文本页面
+import CheckIn from "./pages/CheckIn"; // 添加打卡签到页面
+import CheckInMain from "./pages/CheckIn/CheckInMain"; // 添加打卡管理系统页面
+import CheckPointReporting from "./pages/CheckIn/CheckPointReporting";
 import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
@@ -62,7 +66,11 @@ function App() {
           <Route exact path="/geolocation" component={Geolocation} /> {/* 添加地理定位路由 */}
           <Route exact path="/offline-map" component={OfflineMap} /> {/* 添加离线地图路由 */}
           <Route exact path="/json-processor" component={JsonProcessor} /> {/* 添加JSON处理器路由 */}
+          <Route exact path="/json-to-excel" component={JsonToExcelConverter} /> {/* 添加JSON转Excel粘贴文本路由 */}
           <Route exact path="/excel-stat" component={ExcelTemplateGenerator} /> {/* 添加Excel模板生成器路由 */}
+          <Route exact path="/check-in" component={CheckIn} /> {/* 添加打卡签到路由 */}
+          <Route exact path="/check-in-main" component={CheckInMain} /> {/* 添加打卡管理系统路由 */}
+          <Route exact path="/check-point-reporting" component={CheckPointReporting} />
         </Switch>
       </Router>
     </ConfigProvider>

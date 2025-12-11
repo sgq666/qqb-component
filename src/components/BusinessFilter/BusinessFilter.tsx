@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { TreeSelect, DatePicker, Button, Row, Col, message, ConfigProvider } from "antd";
-import { RangePickerProps } from "antd/lib/date-picker";
 import thirdservice from "../../services/thirdService";
 import zhCN from 'antd/lib/locale/zh_CN';
 import moment from "moment";
@@ -8,9 +7,6 @@ import "moment/locale/zh-cn";
 
 // 确保日期格式正确设置
 const dateFormat = "YYYY-MM-DD";
-
-// 设置DatePicker的默认格式和本地化
-const { RangePicker } = DatePicker;
 
 // 定义部门节点接口
 interface DeptNode {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Card,
   Upload,
@@ -14,8 +14,11 @@ import {
   Progress,
   Tag,
   Switch,
+  Dropdown,
+  Menu,
+  Checkbox,
 } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { UploadOutlined, DownOutlined } from "@ant-design/icons";
 import * as XLSX from "xlsx";
 import ldrkService, {
   ImportRecord,
@@ -33,6 +36,7 @@ interface PersonData {
   idCardNo: string;
   sourceName: string; // 姓名字段改为sourceName
   ldrkSuccess: number;
+  needPcs: number;
 }
 
 const Ldrk: React.FC = () => {
@@ -54,6 +58,14 @@ const Ldrk: React.FC = () => {
   const [detailsLoading, setDetailsLoading] = useState(false);
   const [selectedRecordUuid, setSelectedRecordUuid] = useState("");
   const [showMismatchOnly, setShowMismatchOnly] = useState(false); // 只显示姓名不匹配的数据
+  const [needPcs, setNeedPcs] = useState(false);
+  const needPcsRef = useRef(needPcs); // 创建ref来保存needPcs的最新值
+  
+  // 更新needPcsRef当needPcs变化时
+  useEffect(() => {
+    needPcsRef.current = needPcs;
+  }, [needPcs]);
+
   const [detailDisplayData, setDetailDisplayData] = useState<ImportDetail[]>(
     []
   );
@@ -212,12 +224,21 @@ const Ldrk: React.FC = () => {
 
         rows.forEach((row: any[]) => {
           if (row && row.length > Math.max(nameIndex, idCardIndex)) {
-            const sourceName = row[nameIndex] ? String(row[nameIndex]).trim() : "";
-            const idCardNo = row[idCardIndex] ? String(row[idCardIndex]).trim() : "";
-            
+            const sourceName = row[nameIndex]
+              ? String(row[nameIndex]).trim()
+              : "";
+            const idCardNo = row[idCardIndex]
+              ? String(row[idCardIndex]).trim()
+              : "";
+
             // 只要身份证号不为空就添加数据，姓名可以为空
             if (idCardNo) {
-              result.push({ sourceName, idCardNo, ldrkSuccess: 0 });
+              result.push({
+                sourceName,
+                idCardNo,
+                ldrkSuccess: 0,
+                needPcs: needPcsRef.current ? 1 : 0, // 使用ref中的最新值
+              });
             }
           }
         });
@@ -255,6 +276,7 @@ const Ldrk: React.FC = () => {
       // 调用后端接口导入数据
       await ldrkService.importExcelData({
         data: allData,
+        needPcs: needPcs,
         fileName: fileName,
       });
 
@@ -359,6 +381,11 @@ const Ldrk: React.FC = () => {
       key: "successCount",
     },
     {
+      title: "pcs成功数",
+      dataIndex: "pcsSuccessCount",
+      key: "pcsSuccessCount",
+    },
+    {
       title: "导入进度",
       key: "progress",
       render: (_: any, record: ImportRecord) => {
@@ -414,7 +441,47 @@ const Ldrk: React.FC = () => {
     },
   ];
 
-  // 表格列定义 - 导入详情
+  // 添加列显示控制状态（包含ImportDetail的所有字段）
+  const [visibleColumns, setVisibleColumns] = useState<string[]>([
+    "sourceName",
+    "idCardNo",
+    "hjdQu",
+    "hjdFullAddr",
+    "name",
+    "hh",
+    "yhzgxdm",
+    "sjgsdwdm",
+    "sjgsdwmc",
+    "match",
+  ]);
+
+  // 列配置选项（包含ImportDetail的所有字段）
+  const columnOptions = [
+    { label: "姓名", value: "sourceName" },
+    { label: "身份证号码", value: "idCardNo" },
+    { label: "户籍地区", value: "hjdQu" },
+    { label: "户籍地地址", value: "hjdFullAddr" },
+    { label: "身份证姓名", value: "name" },
+    { label: "户号", value: "hh" },
+    { label: "与户主关系代码", value: "yhzgxdm" },
+    { label: "机关单位代码", value: "sjgsdwdm" },
+    { label: "机关单位名称", value: "sjgsdwmc" },
+    { label: "姓名匹配", value: "match" },
+  ];
+
+  // 处理列显示变化
+  const handleColumnChange = (checkedValues: string[]) => {
+    setVisibleColumns(checkedValues);
+  };
+
+  // 获取可见的列定义
+  const getVisibleColumns = () => {
+    return detailColumns.filter(column => 
+      visibleColumns.includes(column.key as string)
+    );
+  };
+
+  // 表格列定义 - 导入详情（包含ImportDetail的所有字段）
   const detailColumns = [
     {
       title: "姓名",
@@ -440,6 +507,26 @@ const Ldrk: React.FC = () => {
       title: "身份证姓名",
       dataIndex: "name",
       key: "name",
+    },
+    {
+      title: "户号",
+      dataIndex: "hh",
+      key: "hh",
+    },
+    {
+      title: "与户主关系代码",
+      dataIndex: "yhzgxdm",
+      key: "yhzgxdm",
+    },
+    {
+      title: "机关单位代码",
+      dataIndex: "sjgsdwdm",
+      key: "sjgsdwdm",
+    },
+    {
+      title: "机关单位名称",
+      dataIndex: "sjgsdwmc",
+      key: "sjgsdwmc",
     },
     {
       title: "姓名匹配",
@@ -552,6 +639,91 @@ const Ldrk: React.FC = () => {
     }
   };
 
+  // 处理导出功能 - 根据当前过滤条件导出数据（支持自定义列）
+  const handleExportFilteredDataWithCustomColumns = async () => {
+    if (detailDisplayData.length === 0) {
+      message.warning("没有数据可以导出");
+      return;
+    }
+
+    try {
+      // 只导出用户选择的列
+      const filteredData = detailDisplayData.map(item => {
+        const filteredItem: any = {};
+        visibleColumns.forEach(columnKey => {
+          switch (columnKey) {
+            case "sourceName":
+              filteredItem["姓名"] = item.sourceName;
+              break;
+            case "idCardNo":
+              filteredItem["身份证号码"] = item.idCardNo;
+              break;
+            case "hjdQu":
+              filteredItem["户籍地区"] = item.hjdQu;
+              break;
+            case "hjdFullAddr":
+              filteredItem["户籍地地址"] = item.hjdFullAddr;
+              break;
+            case "name":
+              filteredItem["身份证姓名"] = item.name;
+              break;
+            case "hh":
+              filteredItem["户号"] = item.hh;
+              break;
+            case "yhzgxdm":
+              filteredItem["与户主关系代码"] = item.yhzgxdm;
+              break;
+            case "sjgsdwdm":
+              filteredItem["机关单位代码"] = item.sjgsdwdm;
+              break;
+            case "sjgsdwmc":
+              filteredItem["机关单位名称"] = item.sjgsdwmc;
+              break;
+            case "match":
+              filteredItem["姓名匹配"] = item.sourceName === item.name ? "匹配" : "不匹配";
+              break;
+          }
+        });
+        return filteredItem;
+      });
+
+      // 使用前端xlsx库导出数据
+      const record = importRecords.find((r) => r.uuid === selectedRecordUuid);
+      const fileName = record ? record.fileName : "导出数据";
+      
+      // 创建工作簿
+      const wb = XLSX.utils.book_new();
+      
+      // 创建工作表
+      const ws = XLSX.utils.json_to_sheet(filteredData);
+      
+      // 添加工作表到工作簿
+      XLSX.utils.book_append_sheet(wb, ws, "导入详情");
+      
+      // 导出文件
+      XLSX.writeFile(wb, `${fileName}_自定义列.xlsx`);
+      
+      message.success("过滤后数据导出成功");
+    } catch (error) {
+      console.error("导出数据时出错:", error);
+      message.error("数据导出失败，请重试");
+    }
+  };
+
+  // 创建列选择下拉菜单
+  const columnMenu = (
+    <Menu>
+      <Menu.Item>
+        <Checkbox.Group 
+          options={columnOptions} 
+          value={visibleColumns} 
+          onChange={handleColumnChange as any}
+          style={{ display: 'flex', flexDirection: 'column' }}
+        />
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <div style={{ padding: "20px" }}>
       <Card>
@@ -589,6 +761,16 @@ const Ldrk: React.FC = () => {
                         搜索到 {displayData.length} 条匹配记录
                       </Text>
                     )}
+                  </Col>
+                  <Col>
+                    <Text>是否需要补充派出所信息:</Text>
+                    <Switch
+                      checked={needPcs}
+                      onChange={setNeedPcs}
+                      checkedChildren="是"
+                      unCheckedChildren="否"
+                      style={{ marginLeft: "10px" }}
+                    />
                   </Col>
                   <Col>
                     <Search
@@ -705,12 +887,24 @@ const Ldrk: React.FC = () => {
                     >
                       导出当前
                     </Button>
+                    <Dropdown overlay={columnMenu} trigger={["click"]}>
+                      <Button>
+                        选择列 <DownOutlined />
+                      </Button>
+                    </Dropdown>
+                    <Button
+                      type="primary"
+                      onClick={handleExportFilteredDataWithCustomColumns}
+                      disabled={detailDisplayData.length === 0}
+                    >
+                      导出自定义列
+                    </Button>
                   </Col>
                 </Row>
 
                 <Table
                   dataSource={detailDisplayData}
-                  columns={detailColumns}
+                  columns={getVisibleColumns()}
                   rowKey={(record, index) => `${detailCurrentPage}-${index}`}
                   pagination={false}
                   scroll={{ y: 400 }}
