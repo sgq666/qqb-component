@@ -7,7 +7,6 @@ import {
   Row,
   Col,
   message,
-  Upload,
   Table,
   Space,
   Tag,
@@ -17,10 +16,9 @@ import {
   EnvironmentOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-import type { UploadProps } from "antd/es/upload/interface";
-import type { RcFile } from "antd/es/upload";
 import { CheckPoint } from "./types";
 import GeolocationUtils from "../../utils/GeolocationUtils";
+import { ImageUploader } from "../../components";
 
 interface CheckPointReportingProps {
   checkPoints: CheckPoint[];
@@ -36,7 +34,6 @@ const CheckPointReporting: React.FC<CheckPointReportingProps> = ({
   onDeleteCheckPoint,
 }) => {
   const [loading, setLoading] = useState(false);
-  const [photoList, setPhotoList] = useState<any[]>([]);
   const [currentLocation, setCurrentLocation] = useState<{
     latitude: number;
     longitude: number;
@@ -68,30 +65,6 @@ const CheckPointReporting: React.FC<CheckPointReportingProps> = ({
       });
   };
 
-  // 上传图片相关
-  const uploadProps: UploadProps = {
-    beforeUpload: (file: RcFile) => {
-      const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
-      if (!isJpgOrPng) {
-        message.error("只能上传 JPG/PNG 格式的图片!");
-      }
-      const isLt2M = file.size / 1024 / 1024 < 2;
-      if (!isLt2M) {
-        message.error("图片大小不能超过 2MB!");
-      }
-      return isJpgOrPng && isLt2M;
-    },
-    onChange: (info) => {
-      setPhotoList(info.fileList);
-    },
-    listType: "picture-card",
-    fileList: photoList,
-    showUploadList: {
-      showPreviewIcon: true,
-      showRemoveIcon: true,
-    },
-  };
-
   // 添加打卡点
   const handleAddCheckpoint = (values: any) => {
     setLoading(true);
@@ -107,7 +80,6 @@ const CheckPointReporting: React.FC<CheckPointReportingProps> = ({
     setTimeout(() => {
       onAddCheckPoint(newCheckpoint);
       setLoading(false);
-      setPhotoList([]);
       form.resetFields();
       message.success("打卡点添加成功");
     }, 1000);
@@ -123,6 +95,13 @@ const CheckPointReporting: React.FC<CheckPointReportingProps> = ({
         message.success("删除成功");
       },
     });
+  };
+
+  // 文件上传成功后的回调函数
+  const handleImageUploaded = (fileInfo: any) => {
+    console.log('图片上传成功:', fileInfo);
+    // 在这里可以处理上传成功的图片，比如保存图片ID到表单中
+    // 或者显示图片信息等
   };
 
   return (
@@ -206,13 +185,13 @@ const CheckPointReporting: React.FC<CheckPointReportingProps> = ({
               <Form.Item
                 name="photo"
                 label="打卡点照片"
+                extra="支持常见图片格式，大小不超过10MB"
               >
-                <Upload {...uploadProps}>
-                  <div>
-                    <PlusOutlined />
-                    <div style={{ marginTop: 8 }}>上传照片</div>
-                  </div>
-                </Upload>
+                <ImageUploader 
+                  onImageUploaded={handleImageUploaded} 
+                  accept=".jpg,.jpeg,.png,.gif"
+                  maxFileSize={10}
+                />
               </Form.Item>
             </Col>
           </Row>

@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-import { Button, Input, Space, Typography, Card, Row, Col } from "antd";
-import { CopyOutlined } from "@ant-design/icons";
+import { Button, Input, Space, Typography, Card, Row, Col, List, Input as AntInput, message } from "antd";
+import { CopyOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const { Title, Text } = Typography;
 
 const JsonToExcelConverter: React.FC = () => {
   const [inputJson, setInputJson] = useState<string>("");
   const [resultText, setResultText] = useState<string>("");
+  const [taskList, setTaskList] = useState<string[]>([
+    "严重精神障碍患者日常管控",
+    "刑满释放未满5年人员管控",
+    "涉枪涉爆人员管控",
+    "退役涉访人员常态管控",
+    "娱乐场所日常检查",
+    "11月份家庭、婚姻纠纷化解",
+  ]);
+  const [newTask, setNewTask] = useState<string>("");
+  
   const deptArr = [
     "天涯分局",
     "东方市公安局",
@@ -17,14 +27,20 @@ const JsonToExcelConverter: React.FC = () => {
     "白沙黎族自治县公安局",
   ];
 
-  const taskArr = [
-    "严重精神障碍患者日常管控",
-    "刑满释放未满5年人员管控",
-    "涉枪涉爆人员管控",
-    "退役涉访人员常态管控",
-    "娱乐场所日常检查",
-    "11月份家庭、婚姻纠纷化解",
-  ];
+  // 添加新任务
+  const addTask = () => {
+    if (newTask.trim() !== "") {
+      setTaskList([...taskList, newTask.trim()]);
+      setNewTask("");
+    }
+  };
+
+  // 删除任务
+  const removeTask = (index: number) => {
+    const newList = [...taskList];
+    newList.splice(index, 1);
+    setTaskList(newList);
+  };
 
   // 将二维数组转换为可粘贴到Excel的文本格式
   const convertArrayToExcelText = (data: any[][]): string => {
@@ -65,7 +81,7 @@ const JsonToExcelConverter: React.FC = () => {
           (item: any) => item.deptName === dept
         );
         const arr: any[] = [];
-        for (const task of taskArr) {
+        for (const task of taskList) {
           const taskItemArr = deptItemArr.filter(
             (item: any) => item.taskName === task
           );
@@ -90,8 +106,26 @@ const JsonToExcelConverter: React.FC = () => {
   };
 
   // 复制结果到剪贴板
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(resultText);
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(resultText);
+      // 提供用户反馈
+      message.success('已复制到剪贴板');
+    } catch (err) {
+      console.error('复制失败:', err);
+      // 降级方案：选择文本并提示用户手动复制
+      const textArea = document.createElement('textarea');
+      textArea.value = resultText;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        message.success('已复制到剪贴板');
+      } catch (err) {
+        message.error('复制失败，请手动选择文本进行复制');
+      }
+      document.body.removeChild(textArea);
+    }
   };
 
   return (
@@ -147,11 +181,53 @@ const JsonToExcelConverter: React.FC = () => {
         </Row>
 
         <div style={{ marginTop: "24px" }}>
+          <Title level={4}>任务配置:</Title>
+          <Text type="secondary">
+            默认任务列表，可以添加或删除任务项
+          </Text>
+          
+          <div style={{ marginTop: "12px" }}>
+            <Space.Compact style={{ width: '100%' }}>
+              <AntInput 
+                placeholder="输入新任务名称" 
+                value={newTask}
+                onChange={(e) => setNewTask(e.target.value)}
+                onPressEnter={addTask}
+              />
+              <Button type="primary" icon={<PlusOutlined />} onClick={addTask}>
+                添加任务
+              </Button>
+            </Space.Compact>
+          </div>
+          
+          <List
+            bordered
+            dataSource={taskList}
+            renderItem={(item, index) => (
+              <List.Item
+                actions={[
+                  <Button 
+                    type="text" 
+                    icon={<DeleteOutlined />} 
+                    onClick={() => removeTask(index)}
+                    danger
+                  />
+                ]}
+              >
+                <div>{index + 1}. {item}</div>
+              </List.Item>
+            )}
+            style={{ marginTop: "12px" }}
+          />
+        </div>
+
+        <div style={{ marginTop: "24px" }}>
           <Title level={4}>使用说明:</Title>
           <ul>
             <li>在上方输入框中输入有效的JSON格式二维数组</li>
             <li>点击"处理JSON并生成Excel文本"按钮执行转换</li>
             <li>转换结果可在下方文本框中查看，并可复制到Excel中</li>
+            <li>可以通过"任务配置"区域添加或删除任务项</li>
             <li>
               Excel会自动将制表符(\t)分隔的内容放入不同列，换行符(\n)分隔的内容放入不同行
             </li>

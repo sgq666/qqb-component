@@ -2,6 +2,19 @@ import requestService from "./requestService";
 import { ApiResponse, User } from "../types/index";
 import { OTHER_SERVICE_PATHS } from "../config/apiPaths";
 
+// 任务模型接口
+export interface TaskModel {
+  id: string;
+  name: string;
+}
+
+// 任务关联关系接口
+export interface TaskRelation {
+  taskId: string;
+  taskName: string;
+  taskModels: TaskModel[];
+}
+
 // 数据服务类
 class ThirdService {
   //获取附件信息  data: {id: string}
@@ -73,9 +86,43 @@ class ThirdService {
   }
 
   // 获取任务树结构
-  public async taskTree(): Promise<ApiResponse<any>> {
+  public async taskTree(useNonCycleApi: boolean = false): Promise<ApiResponse<any>> {
     return requestService.post<ApiResponse<any>>(
-      OTHER_SERVICE_PATHS.HK_STATS_TASK_TREE
+      useNonCycleApi ? 
+        OTHER_SERVICE_PATHS.HK_STATS_TASK_TREE_NOT_CYCLE : 
+        OTHER_SERVICE_PATHS.HK_STATS_TASK_TREE
+    );
+  }
+
+  // 获取任务关联关系列表
+  public async getTaskRelations(taskId?: string | number): Promise<ApiResponse<TaskRelation[]>> {
+    return requestService.post<ApiResponse<TaskRelation[]>>(
+      OTHER_SERVICE_PATHS.HK_STATS_TASK_RELATION_LIST,
+      taskId ? { taskId } : {}
+    );
+  }
+
+  // 添加任务关联关系
+  public async addTaskRelation(data: TaskRelation): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_STATS_TASK_RELATION_ADD,
+      data
+    );
+  }
+
+  // 更新任务关联关系
+  public async updateTaskRelation(data: TaskRelation): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_STATS_TASK_RELATION_UPDATE,
+      data
+    );
+  }
+
+  // 删除任务关联关系
+  public async deleteTaskRelation(taskId: string): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_STATS_TASK_RELATION_DELETE,
+      { taskId }
     );
   }
 

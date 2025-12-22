@@ -25,6 +25,7 @@ import JsonToExcelConverter from "./pages/JsonToExcelConverter"; // 添加JSON�
 import CheckIn from "./pages/CheckIn"; // 添加打卡签到页面
 import CheckInMain from "./pages/CheckIn/CheckInMain"; // 添加打卡管理系统页面
 import CheckPointReporting from "./pages/CheckIn/CheckPointReporting";
+import TaskRelationManager from "./pages/TaskRelation/TaskRelationManager";
 import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
@@ -71,6 +72,7 @@ function App() {
           <Route exact path="/check-in" component={CheckIn} /> {/* 添加打卡签到路由 */}
           <Route exact path="/check-in-main" component={CheckInMain} /> {/* 添加打卡管理系统路由 */}
           <Route exact path="/check-point-reporting" component={CheckPointReporting} />
+          <Route exact path="/task-relation" component={TaskRelationManager} />
         </Switch>
       </Router>
     </ConfigProvider>
