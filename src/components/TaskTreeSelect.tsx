@@ -14,11 +14,13 @@ interface TreeNode {
 
 interface TaskTreeSelectProps extends TreeSelectProps<string | number | (string | number)[]> {
   onlyRootNode?: boolean; // 是否只允许选择根节点
+  onlyLeafNode?: boolean; // 是否只允许选择叶子节点
   useNonCycleApi?: boolean; // 是否使用非周期接口
 }
 
 const TaskTreeSelect: React.FC<TaskTreeSelectProps> = ({
   onlyRootNode = true,
+  onlyLeafNode = false,
   useNonCycleApi = false,
   ...selectProps
 }) => {
@@ -74,10 +76,21 @@ const TaskTreeSelect: React.FC<TaskTreeSelectProps> = ({
     if (!nodes || nodes.length === 0) return [];
 
     return nodes.map(node => {
+      const hasChildren = node.children && node.children.length > 0;
+      
+      let selectable = true;
+      
+      if (onlyRootNode) {
+        // 如果只允许选择根节点，则非根节点设置为不可选择
+        selectable = isRoot;
+      } else if (onlyLeafNode) {
+        // 如果只允许选择叶子节点，则有子节点的节点不可选择
+        selectable = !hasChildren;
+      }
+      
       const modifiedNode: TreeNode = {
         ...node,
-        // 如果只允许选择根节点，则非根节点设置为不可选择
-        selectable: !(onlyRootNode && !isRoot)
+        selectable
       };
 
       // 递归处理子节点

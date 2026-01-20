@@ -55,6 +55,11 @@ class RequestService {
     // 在 requestService.ts 的响应拦截器中添加业务逻辑错误处理
     this.instance.interceptors.response.use(
       (response: AxiosResponse) => {
+        // 对于blob类型的响应（如文件下载），跳过业务逻辑检查
+        if (response.config.responseType === 'blob') {
+          return response;
+        }
+        
         // 检查业务逻辑错误
         if (response.data && response.data.code !== 200) {
           message.error(response.data.message || "请求失败");
@@ -223,6 +228,11 @@ class RequestService {
 
   public delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
     return this.instance.delete(url, config);
+  }
+
+  // 用于处理文件下载等需要特殊响应类型的请求
+  public request<T = any>(config: AxiosRequestConfig): Promise<T> {
+    return this.instance(config);
   }
 }
 

@@ -26,6 +26,8 @@ import CheckIn from "./pages/CheckIn"; // 添加打卡签到页面
 import CheckInMain from "./pages/CheckIn/CheckInMain"; // 添加打卡管理系统页面
 import CheckPointReporting from "./pages/CheckIn/CheckPointReporting";
 import TaskRelationManager from "./pages/TaskRelation/TaskRelationManager";
+import WorkLogPage from "./pages/WorkLog";
+import FormReplacePage from "./pages/FormReplace";
 import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
@@ -73,6 +75,8 @@ function App() {
           <Route exact path="/check-in-main" component={CheckInMain} /> {/* 添加打卡管理系统路由 */}
           <Route exact path="/check-point-reporting" component={CheckPointReporting} />
           <Route exact path="/task-relation" component={TaskRelationManager} />
+          <Route exact path="/work-log" component={WorkLogPage} />
+          <Route exact path="/form-replace" component={FormReplacePage} />
         </Switch>
       </Router>
     </ConfigProvider>
