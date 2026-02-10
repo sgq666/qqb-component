@@ -14,7 +14,6 @@ import {
   message,
   Input,
   Select,
-  Radio,
   TreeSelect,
   Modal,
   Checkbox,
@@ -719,64 +718,6 @@ const WorkLogPage: React.FC = () => {
     }
   };
 
-  // 更新筛选条件
-  const updateFilterCondition = async (conditionData: any) => {
-    if (!taskId) {
-      message.error("请先选择任务");
-      return;
-    }
-
-    if (!selectedFormId) {
-      message.error("请先选择表单");
-      return;
-    }
-
-    try {
-      // 构建当前筛选条件参数
-      const currentParams = {
-        actionId: queryCurrentFormOnly && selectedFormId ? selectedFormId.toString() : "", // 根据设置决定是否使用当前表单ID
-        taskIds: [taskId.toString()],
-        deptCodes: deptCodes,
-        fieldConfigs:
-          useCustomFieldConfig && customFieldConfigs.length > 0
-            ? customFieldConfigs
-            : fieldConfigs,
-        fieldSearches: fieldSearches,
-        queryCurrentFormOnly: queryCurrentFormOnly, // 添加只查询当前表单的设置
-        startTime:
-          form.getFieldValue(["timeRange", 0])?.format("YYYY-MM-DD HH:mm:ss") ||
-          "",
-        endTime:
-          form.getFieldValue(["timeRange", 1])?.format("YYYY-MM-DD HH:mm:ss") ||
-          "",
-      };
-
-      // 将参数转换为字符串
-      const conditionString = JSON.stringify(currentParams);
-
-      // 调用更新接口
-      const response = await thirdservice.updateFilterCondition({
-        id: conditionData.id,
-        condition: conditionString,
-        remark: conditionData.remark,
-        viewName: conditionData.viewName,
-        updateView: conditionData.viewName ? 1 : 0,
-      });
-
-      if (response.code === 200) {
-        message.success("筛选条件更新成功");
-        setSaveFilterModalVisible(false);
-        saveFilterForm.resetFields();
-        // 重新加载筛选条件列表
-        loadFilterConditionList();
-      } else {
-        message.error(response.message || "更新失败");
-      }
-    } catch (error) {
-      console.error("更新筛选条件失败:", error);
-      message.error("更新失败");
-    }
-  };
 
   // 查询数据
   const fetchData = async (params: any = {}) => {
@@ -1042,62 +983,6 @@ const WorkLogPage: React.FC = () => {
     form.setFieldsValue({ fieldId: undefined });
   };
 
-  // 动态生成表单字段
-  const renderDynamicFormFields = () => {
-    if (!formFields || formFields.length === 0) {
-      return null;
-    }
-
-    return (
-      <Row gutter={24} style={{ marginTop: "16px" }}>
-        {formFields.map((field, index) => (
-          <Col xs={24} sm={12} md={8} lg={6} key={field.fieldKey}>
-            <Form.Item name={field.fieldKey} label={field.fieldValue}>
-              {field.fieldType === "input" || field.fieldType === "text" ? (
-                <Input placeholder={`请输入${field.fieldValue}`} />
-              ) : field.fieldType === "date" ? (
-                <DatePicker
-                  style={{ width: "100%" }}
-                  placeholder={`请选择${field.fieldValue}`}
-                />
-              ) : field.fieldType === "radio" ? (
-                <Radio.Group>
-                  {field.options &&
-                    field.options.map((option) => (
-                      <Radio key={option} value={option}>
-                        {option}
-                      </Radio>
-                    ))}
-                </Radio.Group>
-              ) : field.fieldType === "checkbox" ? (
-                <Checkbox.Group>
-                  {field.options &&
-                    field.options.map((option) => (
-                      <Checkbox key={option} value={option}>
-                        {option}
-                      </Checkbox>
-                    ))}
-                </Checkbox.Group>
-              ) : field.fieldType === "select" ? (
-                <Select placeholder={`请选择${field.fieldValue}`} allowClear>
-                  {field.options &&
-                    field.options.map((option) => (
-                      <Option key={option} value={option}>
-                        {option}
-                      </Option>
-                    ))}
-                </Select>
-              ) : field.fieldType === "file" ? (
-                <Input placeholder={`请选择${field.fieldValue}`} />
-              ) : (
-                <Input placeholder={`请输入${field.fieldValue}`} />
-              )}
-            </Form.Item>
-          </Col>
-        ))}
-      </Row>
-    );
-  };
 
   return (
     <div style={{ padding: "24px" }}>

@@ -28,6 +28,7 @@ import CheckPointReporting from "./pages/CheckIn/CheckPointReporting";
 import TaskRelationManager from "./pages/TaskRelation/TaskRelationManager";
 import WorkLogPage from "./pages/WorkLog";
 import FormReplacePage from "./pages/FormReplace";
+import TaskDisPage from "./pages/TaskDis"; // 添加任务分配页面
 import VConsoleButton from "./components/VConsoleButton"; // 导入 vConsole 控制组件
 import { message, notification } from "antd";
 
@@ -77,6 +78,7 @@ function App() {
           <Route exact path="/task-relation" component={TaskRelationManager} />
           <Route exact path="/work-log" component={WorkLogPage} />
           <Route exact path="/form-replace" component={FormReplacePage} />
+          <Route exact path="/task-dis" component={TaskDisPage} />
         </Switch>
       </Router>
     </ConfigProvider>

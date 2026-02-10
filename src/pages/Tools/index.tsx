@@ -266,6 +266,24 @@ const Tools: React.FC = () => {
             </Button>
           </Card>
         </Col>
+        
+        {/* 任务分配管理 */}
+        <Col span={12}>
+          <Card title="任务分配管理" size="small">
+            <div style={{ marginBottom: "15px" }}>
+              <Text>任务的增删改查及分页展示</Text>
+            </div>
+            <Button 
+              type="primary" 
+              href="#/task-dis"
+              target="_blank"
+              icon={<ArrowRightOutlined />}
+              style={{ marginTop: "10px" }}
+            >
+              打开任务管理
+            </Button>
+          </Card>
+        </Col>
       </Row>
     </div>
   );

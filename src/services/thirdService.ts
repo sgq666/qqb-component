@@ -378,6 +378,61 @@ class ThirdService {
       { id: formId }
     );
   }
+  
+  // 根据任务ID获取对象信息
+  public async getObjectByTaskId(params: { id: number | string }): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      '/rwpt/thirdservice/product/obj/byTaskId',
+      params
+    );
+  }
+  
+  // 根据对象ID获取字段信息
+  public async getFieldsByObjId(params: { id: number | string }): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      '/rwpt/thirdservice/product/field/byObjId',
+      params
+    );
+  }
+  
+  // 获取任务调度配置列表
+  public async getTaskDisConfigList(): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      '/rwpt/thirdservice/taskDisConfig/list',
+      {}
+    );
+  }
+  
+  // 保存任务调度配置
+  public async saveTaskDisConfig(params: any): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_TASK_DIS_CONFIG_SAVE,
+      params
+    );
+  }
+  
+  // 更新任务调度配置
+  public async updateTaskDisConfig(params: any): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      OTHER_SERVICE_PATHS.HK_TASK_DIS_CONFIG_UPDATE,
+      params
+    );
+  }
+  
+  // 删除任务调度配置(通过路径变量)
+  public async deleteTaskDisConfigById(id: number): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      `${OTHER_SERVICE_PATHS.HK_TASK_DIS_CONFIG_DELETE}/${id}`
+    );
+  }
+  
+  // 删除任务调度配置(通过请求体)
+  public async deleteTaskDisConfig(id: number): Promise<ApiResponse<any>> {
+    return requestService.post<ApiResponse<any>>(
+      '/rwpt/thirdservice/taskDisConfig/delete',
+      { id }
+    );
+  }
 }
 
 const thirdservice = new ThirdService();

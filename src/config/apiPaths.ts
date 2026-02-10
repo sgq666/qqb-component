@@ -47,6 +47,9 @@ export const OTHER_SERVICE_PATHS = {
   HK_TASK_WORK_LOG_UPDATE: `${THIRD_SERVICE_BASE_URL}/taskWorkLog/update`, // 更新筛选条件
   HK_TASK_WORK_LOG_DEL: `${THIRD_SERVICE_BASE_URL}/taskWorkLog/del`, // 删除筛选条件
   HK_TASK_WORK_LOG_EXPORT: `${THIRD_SERVICE_BASE_URL}/taskWorkLog/export`, // 导出完成记录
+  HK_TASK_DIS_CONFIG_SAVE: `${THIRD_SERVICE_BASE_URL}/taskDisConfig/save`, // 保存任务调度配置
+  HK_TASK_DIS_CONFIG_UPDATE: `${THIRD_SERVICE_BASE_URL}/taskDisConfig/update`, // 更新任务调度配置
+  HK_TASK_DIS_CONFIG_DELETE: `${THIRD_SERVICE_BASE_URL}/taskDisConfig/delete`, // 删除任务调度配置
   JN_CURRENT_USER_INFO: `${THIRD_SERVICE_BASE_URL}/JN/current/user/info`,
 };
 

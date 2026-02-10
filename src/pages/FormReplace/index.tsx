@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Form, Select, Button, message, Space, Row, Col, Typography, Table, Alert, Modal } from 'antd';
+import { Card, Form, Select, Button, message, Space, Row, Col, Typography, Table, Modal } from 'antd';
 import thirdservice from '../../services/thirdService';
 
 const { Title } = Typography;
@@ -186,18 +186,6 @@ const FormReplacePage: React.FC = () => {
     setShowComparison(false);
   };
   
-  // 交换新旧表单
-  const handleSwapForms = () => {
-    const tempOldForm = selectedOldForm;
-    const tempOldDetails = oldFormDetails;
-    
-    setSelectedOldForm(selectedNewForm);
-    setOldFormDetails(newFormDetails);
-    setSelectedNewForm(tempOldForm);
-    setNewFormDetails(tempOldDetails);
-    
-    setShowComparison(false);
-  };
   
   // 对比表单字段
   const compareFormFields = () => {
@@ -442,7 +430,6 @@ const FormReplacePage: React.FC = () => {
             <li>点击"执行替换"按钮完成表单替换操作</li>
             <li>点击"对比表单"按钮查看两个表单的字段键和字段名差异</li>
             <li>当旧表单ID大于新表单ID时，执行替换会弹出确认提示</li>
-            <li>可以通过访问 <code>/form-replace</code> 路径来访问此页面</li>
           </ul>
         </div>
       </Card>
